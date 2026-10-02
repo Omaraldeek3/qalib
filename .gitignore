@@ -13,3 +13,4 @@ CLAUDE.md
 public/demos/
 public/fonts/
 src/demo/generated/
+.claude/
