@@ -47,6 +47,21 @@
     requestAnimationFrame(step);
   };
 
+  // Big figures shrink to fit their column instead of spilling out of it.
+  const fit = () => $$('.stat__value').forEach(el => {
+    const shown = el.textContent;
+    if (el.dataset.count) el.textContent = el.dataset.count;
+    el.style.fontSize = '';
+    for (let i = 0; i < 3 && el.scrollWidth > el.clientWidth + 1; i++) {
+      el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * el.clientWidth / el.scrollWidth * 0.97}px`;
+    }
+    el.textContent = shown;
+  });
+  fit();
+  if (d.fonts) d.fonts.ready.then(fit);
+  let fitTimer;
+  addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fit, 150); });
+
   // Reveal on scroll.
   const reveal = $$('[data-reveal], [data-split], [data-count]');
   const show = el => { el.classList.add('is-in'); if (el.dataset.count) count(el); };

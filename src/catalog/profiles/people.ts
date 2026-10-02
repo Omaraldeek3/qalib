@@ -125,8 +125,8 @@ export const app: Profile = {
     },
     { kind: 'stats', items: [
       { value: '900+', label: t('محل', 'shops') },
-      { value: '30 min', label: t('متوسط التوصيل', 'average delivery') },
-      { value: '120K', label: t('مستخدم', 'users') },
+      { value: '30', label: t('دقيقة متوسط التوصيل', 'minutes average delivery') },
+      { value: '120', label: t('ألف مستخدم', 'thousand users') },
       { value: '4.8', label: t('تقييم المتاجر', 'store rating') },
     ] },
     {
@@ -318,7 +318,7 @@ export const conference: Profile = {
       { value: '40', label: t('متحدثًا', 'speakers') },
       { value: '1,500', label: t('مشارك', 'attendees') },
       { value: '24', label: t('ورشة عمل', 'workshops') },
-      { value: '$100K', label: t('جوائز', 'in prizes') },
+      { value: '100', label: t('ألف دولار جوائز', 'thousand dollars in prizes') },
     ] },
     {
       kind: 'items', id: 'speakers', nav: t('المتحدثون', 'Speakers'), role: 'extra',

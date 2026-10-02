@@ -115,6 +115,9 @@ export function renderDemo(design: Design, lang: Lang, origin: string): string {
   const fontLinks = demoFonts(design, lang).map(id => `<link rel="stylesheet" href="../../fonts/${id}.css">`).join('\n');
   const decor = [...ctx.decor].join(' ');
   const skip = lang === 'ar' ? 'انتقل إلى المحتوى' : 'Skip to content';
+  // The brand's first letter on its accent colour, so a demo opened in its own tab has a tab icon.
+  const mark = [...brand.replace(/^ال(?=\S{2})/, '')][0] ?? '';
+  const icon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="${design.palette.accent}"/><text x="16" y="16" dy=".35em" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="${design.palette.onAccent}">${escapeHtml(mark)}</text></svg>`;
 
   return `<!doctype html>
 <!-- Qalib design No. ${String(design.no).padStart(3, '0')} "${design.name.en}" (${design.cat}). Live page: ${origin}/${lang}/d/${design.slug}
@@ -127,6 +130,7 @@ export function renderDemo(design: Design, lang: Lang, origin: string): string {
 <meta name="description" content="${escapeHtml(tx(ctx, hero.lead))}">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="${design.palette.bg}">
+<link rel="icon" href="data:image/svg+xml,${encodeURIComponent(icon)}">
 ${fontLinks}
 <script>document.documentElement.classList.add('js')</script>
 <style>

@@ -242,7 +242,7 @@ export const software: Profile = {
       { value: '99.98%', label: t('وقت التشغيل', 'uptime') },
       { value: '140+', label: t('نظامًا في الإنتاج', 'systems in production') },
       { value: '40', label: t('مهندسًا', 'engineers') },
-      { value: '15m', label: t('زمن الاستجابة للأعطال', 'incident response') },
+      { value: '15', label: t('دقيقة للاستجابة لأي عطل', 'minutes to answer an incident') },
     ] },
     {
       kind: 'items', id: 'plans', nav: t('الباقات', 'Plans'), role: 'pricing',
@@ -522,7 +522,7 @@ export const realestate: Profile = {
       { value: '320', label: t('عقارًا متاحًا', 'listings available') },
       { value: '1,100+', label: t('عائلة وجدت بيتها', 'families housed') },
       { value: '14', label: t('عامًا في السوق', 'years in the market') },
-      { value: '48h', label: t('لترتيب زيارة', 'to arrange a viewing') },
+      { value: '48', label: t('ساعة لترتيب زيارة', 'hours to arrange a viewing') },
     ] },
     {
       kind: 'about', id: 'about', nav: t('عنّا', 'About'),

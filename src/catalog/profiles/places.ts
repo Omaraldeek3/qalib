@@ -257,7 +257,7 @@ export const gym: Profile = {
       { value: '2,500', label: t('متر مربع', 'square metres') },
       { value: '60', label: t('درسًا أسبوعيًا', 'classes a week') },
       { value: '18', label: t('مدرّبًا', 'coaches') },
-      { value: '25m', label: t('مسبح', 'pool') },
+      { value: '25', label: t('مترًا طول المسبح', 'metre pool') },
     ] },
     {
       kind: 'items', id: 'schedule', nav: t('الجدول', 'Schedule'), role: 'schedule',

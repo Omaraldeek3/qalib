@@ -48,7 +48,7 @@ export const perfume: Profile = {
     { kind: 'stats', items: [
       { value: '1956', label: t('سنة التأسيس', 'founded') },
       { value: '40+', label: t('زيتًا عطريًا', 'perfume oils') },
-      { value: '12h', label: t('ثبات العطر', 'lasting power') },
+      { value: '12', label: t('ساعة من الثبات', 'hours of lasting power') },
       { value: '3', label: t('أجيال', 'generations') },
     ] },
     {
@@ -165,7 +165,7 @@ export const boutique: Profile = {
       { value: '60', label: t('مطرزة', 'embroiderers') },
       { value: '14', label: t('قرية', 'villages') },
       { value: '100%', label: t('عمل يدوي', 'handmade') },
-      { value: '40h', label: t('لتطريز ثوب واحد', 'to embroider one dress') },
+      { value: '40', label: t('ساعة لتطريز ثوب واحد', 'hours to embroider one dress') },
     ] },
     {
       kind: 'testimonials', id: 'reviews',
