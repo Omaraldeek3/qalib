@@ -1,13 +1,29 @@
-import type { Locale } from './i18n';
+import { CATEGORIES, DESIGNS } from '@/catalog';
+import { num, type Locale } from './i18n';
 
 // The library's own words. Demo content lives in src/catalog/profiles.
+
+type Noun = { one: string; two: string; few: string; many: string };
+const designsAr: Noun = { one: 'تصميم', two: 'تصميمان', few: 'تصاميم', many: 'تصميمًا' };
+const stylesAr: Noun = { one: 'صنف', two: 'صنفان', few: 'أصناف', many: 'صنفًا' };
+
+/** An Arabic count, the noun in the form its number takes: ٣ تصاميم, ١٢ تصميمًا, ١٠٠ تصميم. */
+export function arCount(n: number, noun: Noun): string {
+  if (n === 1) return `${noun.one} واحد`;
+  if (n === 2) return noun.two;
+  const r = n % 100;
+  return `${num(n, 'ar')} ${r >= 3 && r <= 10 ? noun.few : r >= 11 ? noun.many : noun.one}`;
+}
+
+const D = DESIGNS.length;
+const S = CATEGORIES.length;
 
 export const copy = {
   ar: {
     name: 'قالب',
     latin: 'Qalib',
     title: 'قالب · مكتبة تصاميم مواقع مع برومبت جاهز لـ Claude Code',
-    description: '١٠٨ تصاميم مواقع في ١٨ صنفًا، بالعربية والإنجليزية. شاهد كل تصميم حيًا، صف مشروعك، وانسخ برومبت مفصّلًا يبني به Claude Code موقعك بالأسلوب نفسه.',
+    description: `${arCount(D, designsAr)} للمواقع في ${arCount(S, stylesAr)}، بالعربية والإنجليزية. شاهد كل تصميم حيًا، صف مشروعك، وانسخ برومبت مفصّلًا يبني به Claude Code موقعك بالأسلوب نفسه.`,
     nav: { designs: 'التصاميم', styles: 'الأصناف', how: 'كيف يعمل' },
     switchTo: 'English',
     switchShort: 'EN',
@@ -23,9 +39,9 @@ export const copy = {
       { t: 'صف مشروعك', d: 'اسم النشاط، نوعه، اللغات والتقنية التي تفضلها. نحفظها في متصفحك لتنتقل بها بين التصاميم.' },
       { t: 'انسخ البرومبت', d: 'برومبت مفصّل فيه الألوان والخطوط وبنية كل قسم والحركة وقواعد العربية، ورابط العرض المرجعي. ألصقه في Claude Code.' },
     ],
-    stylesTitle: 'ثمانية عشر صنفًا، ولكل صنف شخصيته',
-    stylesLead: 'كل صنف أسلوب كامل بخطوطه وألوانه وأشكاله وحركته، وفي كل صنف ستة تصاميم لأنشطة مختلفة.',
-    designsCount: (n: number) => `${n} تصاميم`,
+    stylesTitle: `${arCount(S, stylesAr)}، ولكل صنف شخصيته`,
+    stylesLead: 'كل صنف أسلوب كامل بخطوطه وألوانه وأشكاله وحركته، وفيه تصاميم لأنشطة مختلفة.',
+    designsCount: (n: number) => arCount(n, designsAr),
     allTitle: 'كل التصاميم',
     filters: { all: 'الكل', style: 'الصنف', type: 'نوع الموقع', anyType: 'كل الأنواع', scheme: 'الألوان', any: 'الكل', light: 'فاتح', dark: 'داكن', animated: 'متحرك فقط', favs: 'المفضلة', clear: 'مسح', results: (n: number) => `${n} تصميمًا` },
     empty: 'لا تصاميم تطابق هذا البحث. جرّب كلمة أخرى أو امسح الفلاتر.',
@@ -93,7 +109,7 @@ export const copy = {
     name: 'Qalib',
     latin: 'قالب',
     title: 'Qalib · a library of website designs with ready Claude Code prompts',
-    description: '108 website designs in 18 styles, in Arabic and English. See every design live, describe your project and copy a detailed prompt that has Claude Code build your site in the same style.',
+    description: `${D} website designs in ${S} styles, in Arabic and English. See every design live, describe your project and copy a detailed prompt that has Claude Code build your site in the same style.`,
     nav: { designs: 'Designs', styles: 'Styles', how: 'How it works' },
     switchTo: 'العربية',
     switchShort: 'ع',
@@ -109,8 +125,8 @@ export const copy = {
       { t: 'Describe your project', d: 'Its name, type, languages and preferred stack. It stays in your browser and follows you from design to design.' },
       { t: 'Copy the prompt', d: 'A detailed prompt with the colours, fonts, every section\'s treatment, motion, Arabic rules and the reference demo. Paste it into Claude Code.' },
     ],
-    stylesTitle: 'Eighteen styles, each with its own character',
-    stylesLead: 'Every style is a complete language of type, colour, shape and motion, with six designs for different kinds of business.',
+    stylesTitle: `${S} styles, each with its own character`,
+    stylesLead: 'Every style is a complete language of type, colour, shape and motion, with designs for different kinds of business.',
     designsCount: (n: number) => `${n} designs`,
     allTitle: 'All designs',
     filters: { all: 'All', style: 'Style', type: 'Type of site', anyType: 'Any type', scheme: 'Colours', any: 'Any', light: 'Light', dark: 'Dark', animated: 'Animated only', favs: 'Favourites', clear: 'Clear', results: (n: number) => `${n} designs` },

@@ -35,9 +35,10 @@ export function Head({ ctx, eyebrow, title, lead, center }: { ctx: Ctx; eyebrow?
   );
 }
 
-export function Section({ id, className, children, num, alt }: { id?: string; className: string; children: ReactNode; num?: number; alt?: boolean }) {
+/** A page section. `pin` makes it a scroll-driven stage (see runtime.js); `rail` also slides its track sideways. */
+export function Section({ id, className, children, num, alt, pin, rail }: { id?: string; className: string; children: ReactNode; num?: number; alt?: boolean; pin?: boolean; rail?: boolean }) {
   return (
-    <section id={id} className={`sec ${className}${alt ? ' sec--alt' : ''}`} data-num={num === undefined ? undefined : String(num).padStart(2, '0')}>
+    <section id={id} className={`sec ${className}${alt ? ' sec--alt' : ''}`} data-num={num === undefined ? undefined : String(num).padStart(2, '0')} data-pin={pin ? '' : undefined} data-rail={rail ? '' : undefined}>
       {children}
     </section>
   );

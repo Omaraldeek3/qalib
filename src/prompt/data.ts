@@ -24,6 +24,8 @@ export type PromptData = {
   fonts: { displayAr: FontRef; bodyAr: FontRef; display: FontRef; body: FontRef; accent?: FontRef };
   motion: Motion;
   decor: string[];
+  /** The scroll and pointer interactions this design uses, hero first. */
+  interactions: string[];
   demoType: L;
   demoProfile: ProfileId;
   outline: OutlineItem[];
@@ -59,6 +61,18 @@ export function outline(p: Profile, design?: Design): OutlineItem[] {
   return items;
 }
 
+const interactiveHeroes: string[] = ['zoom', 'curtain', 'layers', 'spotlight', 'trail', 'tilt'];
+
+/** The interactions a design's page uses, in page order. */
+export function interactions(p: Profile, design: Design): string[] {
+  const layout = resolveLayout(design);
+  const out: string[] = [];
+  if (interactiveHeroes.includes(layout.hero)) out.push(layout.hero);
+  if (layout.about === 'scrub' && p.sections.some(s => s.kind === 'about')) out.push('scrub');
+  if (p.sections.some(s => s.kind === 'items' && itemsVariant(layout, s) === 'rail')) out.push('rail');
+  return out;
+}
+
 export function promptData(design: Design): PromptData {
   const cat = category(design.cat);
   const p = profile(design.profile);
@@ -82,6 +96,7 @@ export function promptData(design: Design): PromptData {
     },
     motion: design.motion ?? cat.motion,
     decor: design.decor ?? [],
+    interactions: interactions(p, design),
     demoType: p.label,
     demoProfile: p.id,
     outline: outline(p, design),

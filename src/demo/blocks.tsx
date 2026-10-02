@@ -17,6 +17,21 @@ export function Marquee({ ctx, data }: { ctx: Ctx; data: MarqueeData }) {
 export function About({ ctx, data, num, alt }: { ctx: Ctx; data: AboutData; num: number; alt: boolean }) {
   const v = ctx.layout.about;
   const title = tx(ctx, data.title);
+  if (v === 'scrub') {
+    // One statement held on screen; its words light up one by one with the scroll.
+    return (
+      <Section id={data.id} className="about about--scrub" num={num} alt={alt} pin>
+        <div className="pin__stage">
+          <div className="wrap scrub">
+            <p className="eyebrow">{tx(ctx, data.eyebrow)}</p>
+            <h2 className="scrub__title">{title}</h2>
+            <p className="scrub__text" data-words="">{tx(ctx, data.text[0])}</p>
+            <div className="scrub__meter" aria-hidden="true"><i /></div>
+          </div>
+        </div>
+      </Section>
+    );
+  }
   if (v === 'quote' && data.quote) {
     return (
       <Section id={data.id} className="about about--quote" num={num} alt={alt}>
@@ -122,6 +137,31 @@ export function Items({ ctx, data, num, alt }: { ctx: Ctx; data: ItemsData; num:
   const v = itemsVariant(ctx, data);
   const items = data.items;
   const withImages = items.every(i => i.img !== undefined) && ctx.decor.has('no-card-images') === false && data.role !== 'process';
+  if (v === 'rail') {
+    // The vertical scroll slides the row of cards sideways, then the page carries on.
+    return (
+      <Section id={data.id} className={`items items--rail role-${data.role}`} num={num} alt={alt} pin rail>
+        <div className="pin__stage">
+          <div className="wrap"><Head ctx={ctx} eyebrow={data.eyebrow} title={data.title} lead={data.lead} /></div>
+          <div className="rail__view">
+            <div className="rail__track">
+              {items.map((it, i) => {
+                const p = price(ctx, it);
+                return (
+                  <article className="rail__card" key={i}>
+                    <Pic id={it.img!} alt={tx(ctx, it.title)} className="rail__media" />
+                    <h3 className="rail__title">{tx(ctx, it.title)}</h3>
+                    {(p || it.meta) && <p className="rail__meta">{it.meta && <span>{tx(ctx, it.meta)}</span>}{p && <span className="rail__price">{p}</span>}</p>}
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+          <div className="wrap rail__meter" aria-hidden="true"><i /></div>
+        </div>
+      </Section>
+    );
+  }
   let body;
   switch (v) {
     case 'cards':

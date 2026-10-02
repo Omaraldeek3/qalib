@@ -8,7 +8,7 @@ export function resolveLayout(design: Design): Layout {
   return { ...category(design.cat).defaults, ...design.layout };
 }
 
-const needsImages: ItemsVariant[] = ['zigzag', 'gallery', 'masonry', 'strip'];
+const needsImages: ItemsVariant[] = ['zigzag', 'gallery', 'masonry', 'strip', 'rail'];
 
 /** The variant an items section actually gets: photo layouts fall back when there are no photos. */
 export function itemsVariant(layout: Layout, data: ItemsData): ItemsVariant {

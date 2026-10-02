@@ -1,6 +1,6 @@
 import type { L, Lang } from '@/catalog/types';
 import {
-  aboutText, contactText, ctaText, decorText, footerText, heroText, itemsText, kindText, motionText, navText, pr,
+  aboutText, contactText, ctaText, decorText, footerText, heroText, interactionText, itemsText, kindText, motionText, navText, pr,
   quotesText, roleText, stackText, statsText, type Stack,
 } from './copy';
 import type { FontRef, OutlineItem, PromptData } from './data';
@@ -135,6 +135,9 @@ export function buildPrompt(data: PromptData, brief: Brief, lang: Lang, opts: Pr
   const decor = data.decor.map(d => decorText[d]).filter(Boolean);
   if (decor.length) {
     out.push('', `**${T(pr.decor)}:**`, ...decor.map(d => `- ${T(d)}`));
+  }
+  if (data.interactions.length) {
+    out.push('', `**${T(pr.interactions)}:** ${T(pr.interactionsIntro)}`, '', ...data.interactions.map(k => `- ${T(interactionText[k])}`));
   }
 
   // 7. Technical.

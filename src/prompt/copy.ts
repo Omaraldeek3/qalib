@@ -23,9 +23,52 @@ export const heroText: Record<string, L> = {
   device: t('النص في جهة، وهاتفان يعرضان شاشة التطبيق في الجهة الأخرى.', 'Text on one side; two phone mockups showing the app screen on the other.'),
   poster: t('تكوين كالملصق: عنوان كبير جدًا يتداخل مع صورة كبيرة.', 'A poster composition: a very large headline overlapping a big photo.'),
   arch: t('النص في جهة، وصورة طولية مقصوصة على شكل قوس في الجهة الأخرى.', 'Text on one side; a tall photo cut into an arch on the other.'),
+  zoom: t('واجهة مثبتة: العنوان والتمهيد في الأعلى، وتحتهما صورة في بطاقة مستديرة تكبر مع التمرير حتى تملأ الشاشة، ثم تظهر عليها الدعوة والأزرار.', 'A pinned hero: headline and lead at the top, a photo below in a rounded card that grows with the scroll to fill the screen, then the offer and buttons appear on it.'),
+  curtain: t('واجهة مثبتة: لوحان بلون التمييز يحملان اسم النشاط يغطيان الشاشة وينفتحان كبابين مع التمرير على صورة كاملة فيها العنوان والأزرار.', 'A pinned hero: two accent-coloured panels bearing the brand name cover the screen and open like doors with the scroll onto a full photo with the headline and buttons.'),
+  layers: t('عنوان كبير في المنتصف مع النص والأزرار، وحوله خمس صور ونقطتان تطفو على أعماق مختلفة وتتبع المؤشر.', 'A big centred headline with lead and buttons, surrounded by five photos and two dots floating at different depths that follow the pointer.'),
+  spotlight: t('واجهة معتمة بملء الشاشة: صورة بالأبيض والأسود وعنوان مفرّغ، والمؤشر يحمل دائرة ضوء تكشف الصورة الملونة والعنوان المملوء تحتها.', 'A dark full-screen hero: a grayscale photo and an outlined headline; the pointer carries a circle of light that reveals the colour photo and the filled headline underneath.'),
+  trail: t('عنوان ضخم في المنتصف على خلفية فاتحة جدًا، وحركة المؤشر تُسقط خلفها صورًا تظهر ثم تتلاشى.', 'A huge centred headline on a very light background; moving the pointer drops photos behind it that pop in and fade.'),
+  tilt: t('النص في جهة، وفي الأخرى هاتف أو بطاقة صورة تميل نحو المؤشر مع لمعة متحركة وبطاقتين صغيرتين عائمتين.', 'Text on one side; on the other a phone or photo card that leans toward the pointer, with a moving glare and two small floating chips.'),
+};
+
+/** How each interaction works, precisely enough to rebuild it. */
+export const interactionText: Record<string, L> = {
+  zoom: t(
+    'التكبير: اجعل الواجهة قسمًا طويلًا (نحو 260vh) فيه مسرح ثابت (sticky) بارتفاع 100svh. التقدّم p صفر عند أعلى القسم وواحد حين تصل نهايته إلى أسفل الشاشة. الصورة تملأ المسرح لكنها مقصوصة بـ `clip-path: inset()`، فتبدأ بطاقةً مستديرة الزوايا تحت العنوان مباشرة وتنفتح حتى تملأ الشاشة كلما اقتربت p من الواحد (الهوامش ونصف قطر الزوايا مضروبة في `1 − p`)، والصورة في داخلها تصغر من 1.18 إلى 1. العنوان يصعد ويختفي عند p ≈ 0.4، ثم تظهر الدعوة (سطر العرض والأزرار) فوق الصورة بعد p ≈ 0.6 مع تدرّج داكن للوضوح، وتلميح «مرّر للأسفل» صغير يختفي حين يبدأ التمرير.',
+    'Zoom: make the hero a tall section (about 260vh) holding a sticky stage of 100svh. Progress p is 0 at the top of the section and 1 when its end reaches the bottom of the screen. The photo fills the stage but is clipped with `clip-path: inset()`: it starts as a rounded card just below the headline and opens to the full screen as p nears 1 (the insets and corner radius multiplied by `1 − p`), while the image inside scales from 1.18 to 1. The headline moves up and fades out by p ≈ 0.4; the call to action (the offer line and buttons) fades in over the photo after p ≈ 0.6 on a dark gradient for legibility. A small "scroll down" hint fades as soon as scrolling starts.',
+  ),
+  curtain: t(
+    'الستارة: قسم طويل (نحو 240vh) فيه مسرح ثابت. في الخلف الصورة بملء الشاشة مع العنوان والنص والأزرار، وفي الأمام لوحان، كلٌّ بنصف العرض، بلون التمييز (أحدهما أغمق قليلًا)، يحملان اسم النشاط مقسومًا عليهما بخط عرض ضخم، ومقبض دائري صغير قرب حافة الالتقاء. حين تنتقل p من 0.06 إلى 0.66 ينزلق اللوحان إلى جانبيهما (`translateX` حتى ±101%)، وتصغر الصورة من 1.16 إلى 1، ويصعد النص ويظهر. أخفِ اللوحين بعد p = 0.7.',
+    'Curtain: a tall section (about 240vh) with a sticky stage. Behind, the full-screen photo with the headline, lead and buttons; in front, two panels, each half the width, in the accent colour (one slightly darker), carrying the brand name split across them in huge display type, with a small round knob near the meeting edge. As p goes from 0.06 to 0.66 the panels slide out to their sides (`translateX` up to ±101%), the photo eases from scale 1.16 to 1, and the text rises and fades in. Hide the panels after p = 0.7.',
+  ),
+  layers: t(
+    'الطبقات: تتبّع المؤشر فوق الواجهة كقيمتين من −1 إلى 1 تقتربان من الهدف بتدرّج في كل إطار (lerp نحو 0.07)، وحرّك كل صورة ونقطة بمقدار القيمة × عمقها بالبكسل (من −42 إلى 92) مع ميل ثابت خفيف لكل بطاقة. أبقِ النص فوق الطبقات والبطاقات بعيدة عنه، واعرض على الهاتف أربع بطاقات أصغر.',
+    'Layers: track the pointer over the hero as two values from −1 to 1, eased toward the target each frame (lerp about 0.07), and move each photo and dot by value × its depth in pixels (from −42 to 92), each card keeping a slight fixed rotation. Keep the text above the layers and the cards clear of it; on phones show four smaller cards.',
+  ),
+  spotlight: t(
+    'الكشّاف: نسختان متطابقتان من الواجهة فوق بعضهما تمامًا. السفلى تعرض الصورة بالأبيض والأسود بسطوع نحو 30% والعنوان مفرّغًا، والعليا (`aria-hidden` وبلا روابط) تعرض الصورة بألوانها والعنوان مملوءًا بلون التمييز، مقصوصةً بـ `mask-image: radial-gradient(circle R at x y, #000 40%, transparent 100%)` حيث x وy تتبعان المؤشر بتدرّج (نحو 0.2 في كل إطار) وR نحو 17vw، والضغط يوسّعها إلى نحو 34vw بانتقال ناعم (سجّل نصف القطر بـ `@property`).',
+    'Spotlight: two identical copies of the hero stacked exactly. The bottom one shows the photo in grayscale at about 30% brightness and the headline as an outline; the top one (`aria-hidden`, no links) shows the photo in full colour and the headline filled with the accent colour, masked with `mask-image: radial-gradient(circle R at x y, #000 40%, transparent 100%)`, where x and y follow the pointer, eased (about 0.2 per frame), and R is about 17vw; pressing widens it to about 34vw with a transition (register the radius with `@property`).',
+  ),
+  trail: t(
+    'الأثر: كلما قطع المؤشر 85px أسقِط صورة من صور النشاط (طولية، بعرض نحو 15vw) عنده بميل عشوائي ±8°؛ تظهر بتكبير من 0.45 إلى 1 ثم تتلاشى خلال نحو 1.1 ثانية وتُحذف، وبحد أقصى 14 صورة على الشاشة. التمهيد والعنوان والسطر الصغير بالأبيض مع `mix-blend-mode: difference` فوق الصور، فتبقى مقروءة على الخلفية الفاتحة وتنقلب ألوانها فوق الصور (يحتاج القسم `isolation: isolate` وخلفية خاصة به).',
+    'Trail: every time the pointer travels 85px, drop one of the business\'s photos (portrait, about 15vw wide) at the pointer with a random tilt of ±8°; it pops in (scale 0.45 to 1), fades out over about 1.1s and is removed, with at most 14 on screen. The eyebrow, headline and lead are white with `mix-blend-mode: difference` above the photos, so they read on the light background and invert over the photos (the hero needs `isolation: isolate` and its own background).',
+  ),
+  tilt: t(
+    'الميل: الهاتف أو بطاقة الصورة داخل منظور (1000px) يميل نحو المؤشر (`rotateY` حتى 16° و`rotateX` حتى 12° بتدرّج) ويستدير بضع درجات أثناء مرور الواجهة في الشاشة، ولمعة بيضاء دائرية تتحرك مع المؤشر على سطحه. وبطاقتان صغيرتان عائمتان (شارة ورقم بارز) في زاويتين متقابلتين تتحركان بعمقين مختلفين.',
+    'Tilt: the phone or photo card sits in perspective (1000px), leans toward the pointer (`rotateY` up to 16°, `rotateX` up to 12°, eased) and turns a few degrees as the hero passes through the screen, with a round white glare moving across its surface with the pointer. Two small floating chips (a badge and a key figure) sit at opposite corners and move at different depths.',
+  ),
+  scrub: t(
+    'العبارة: قسم «من نحن» طويل (نحو 220vh) فيه مسرح ثابت يحمل تسمية القسم وعنوانًا صغيرًا والفقرة الأولى بخط العناوين وبحجم كبير جدًا. قسّم الفقرة إلى كلمات، وشفافية كل كلمة `clamp(0.16, p × (عدد الكلمات + 8) − ترتيبها, 1)`، فتُضاء الكلمات واحدة بعد أخرى مع التمرير، وتحتها خط تقدّم رفيع.',
+    'Statement: the about section is tall (about 220vh) with a sticky stage holding the section label, a small heading and the first paragraph set very large in the display face. Split the paragraph into words; each word\'s opacity is `clamp(0.16, p × (words + 8) − index, 1)`, so the words light up one after another as you scroll, over a thin progress line.',
+  ),
+  rail: t(
+    'الشريط الأفقي: قسم فيه مسرح ثابت يحمل العنوان وصفًا واحدًا من بطاقات الصور الطولية أعرض من الشاشة. اجعل ارتفاع القسم ارتفاع الشاشة مضافًا إليه ما يفيض من الصف (`100vh × 1.15 + الفائض`)، وحرّك الصف بمقدار `p × الفائض` نحو جهة البداية (إلى اليمين في العربية وإلى اليسار في الإنجليزية) مع خط تقدّم تحته. ومن دون حركة يُمرَّر الصف جانبيًا باليد.',
+    'Rail: a section with a sticky stage holding the heading and a single row of tall photo cards wider than the screen. Make the section as tall as the screen plus the row\'s overflow (`100vh × 1.15 + overflow`) and translate the row by `p × overflow` toward the start side (rightward in Arabic, leftward in English), with a progress line below. Without motion the row simply scrolls sideways by hand.',
+  ),
 };
 
 export const aboutText: Record<string, L> = {
+  scrub: t('عبارة واحدة كبيرة جدًا تثبت على الشاشة وتُضاء كلماتها واحدة بعد أخرى مع التمرير.', 'One very large statement held on screen, its words lighting up one after another as you scroll.'),
   split: t('عمودان: عنوان وفقرات واقتباس قصير بتوقيع، وصورة طولية تتداخل مع زاويتها صورة أصغر.', 'Two columns: heading, paragraphs and a short signed quote; a tall photo with a smaller photo overlapping its corner.'),
   quote: t('اقتباس كبير في المنتصف بتوقيع، ثم العنوان والفقرات في عمودين، ثم شريط من صورتين.', 'A large centred quote with a signature, then the heading and paragraphs in two columns, then a strip of two photos.'),
   columns: t('العنوان في جهة والفقرات في عمودين نصيين في الجهة الأخرى، ثم صورة عريضة.', 'The heading on one side, the paragraphs in two text columns on the other, then a wide photo.'),
@@ -33,6 +76,7 @@ export const aboutText: Record<string, L> = {
 };
 
 export const itemsText: Record<string, L> = {
+  rail: t('صف من بطاقات الصور الطولية ينزلق جانبيًا مع التمرير للأسفل والقسم ثابت في مكانه', 'a row of tall photo cards that slides sideways as you scroll down while the section holds still'),
   cards: t('شبكة بطاقات (صورة أو أيقونة، عنوان، نص قصير، سعر أو ملاحظة)', 'a grid of cards (photo or icon, title, short text, price or note)'),
   list: t('قائمة صفوف مرقّمة: العنوان والنص، والسعر في الطرف', 'a numbered list of rows: title and text, with the price at the end'),
   menu: t('قائمة طعام في مجموعات، وكل صنف بخط منقّط يمتد إلى سعره', 'a menu in groups, each item with a dotted leader running to its price'),
@@ -254,6 +298,11 @@ export const pr = {
   suggested: t('أقسام مقترحة لموقع «{type}» (أعد استخدام أقرب معالجة من العرض لكل قسم):', 'Suggested sections for a {type} site (reuse the closest treatment from the demo for each one):'),
   motion: t('الحركة', 'Motion'),
   decor: t('زخارف هذا التصميم', 'Decorations in this design'),
+  interactions: t('التفاعلات', 'Interactions'),
+  interactionsIntro: t(
+    'ابنِها بلا مكتبات. الأقسام المثبتة طويلة وفي داخلها مسرح `position: sticky; top: 0; height: 100svh`. معالج تمرير واحد مقيّد بـ requestAnimationFrame يكتب تقدّم كل قسم p (من 0 إلى 1) في متغير CSS، وCSS يحوّله إلى تحويلات و`clip-path` وشفافية عبر `calc()`. تأثيرات المؤشر تكتب متغيرات متدرّجة (من −1 إلى 1، ومواضع بالبكسل) في حلقة رسم واحدة تعمل فقط والقسم ظاهر، وإذا غاب المؤشر ثانيتين تنساب القيم وحدها ببطء حتى يرى أصحاب الشاشات اللمسية التأثير. لا تثبّت شيئًا إلا إذا عمل JavaScript ولم يكن `prefers-reduced-motion` مفعّلًا؛ وإلا فكل قسم تخطيط ثابت يظهر فيه المحتوى كاملًا (صورة التكبير مؤطّرة ومعها الدعوة، والستارة مفتوحة، والعبارة مضاءة كلها، والشريط يُمرَّر باليد). ولا تغيّر سرعة التمرير ولا تمنع العجلة أبدًا.',
+    'Build them without libraries. Pinned sections are tall, with a stage inside that is `position: sticky; top: 0; height: 100svh`. One requestAnimationFrame-throttled scroll handler writes each section\'s progress p (0 to 1) to a CSS variable, and CSS turns it into transforms, `clip-path` and opacity with `calc()`. Pointer effects write eased variables (−1 to 1, and pixel positions) in a single animation loop that runs only while the section is on screen; with no pointer for two seconds the values drift slowly on their own, so touch screens see the effect too. Pin only when JavaScript runs and `prefers-reduced-motion` is not set; otherwise every section is a still layout with all of its content visible (the zoom photo framed with its call to action, the curtain open, the statement fully lit, the rail scrollable by hand). Never change the scroll speed or block the wheel.',
+  ),
   tech: t('المتطلبات التقنية', 'Technical requirements'),
   stack: t('التقنية', 'Stack'),
   techList: [

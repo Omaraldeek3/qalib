@@ -1,6 +1,6 @@
 import type { Category, CategoryId, Layout } from './types';
 
-// The eighteen styles. Each one's DNA is written to be pasted into a prompt
+// The styles. Each one's DNA is written to be pasted into a prompt
 // as is, so it says concretely what to do and what to avoid.
 
 const base: Layout = {
@@ -405,6 +405,28 @@ export const CATEGORIES: Category[] = [
     defaults: layout({ hero: 'fullbleed', contact: 'form' }),
     motion: 'subtle', radius: 8,
     tile: { bg: '#FFFFFF', ink: '#13294B', accent: '#F28C28', font: 'figtree', fontAr: 'cairo' },
+  },
+  {
+    id: 'interactive',
+    name: { ar: 'تفاعلي', en: 'Interactive' },
+    tagline: { ar: 'واجهات تتحرك مع الفأرة ومع التمرير', en: 'Heroes that answer the mouse and the scroll' },
+    description: {
+      ar: 'مواقع تتحرك مع زائرها: صورة تكبر حتى تملأ الشاشة مع التمرير، طبقات تتبع الفأرة، ضوء يكشف ما تحته، ستارة تنفتح، وأقسام تُقرأ كلمة بعد كلمة. لكل تفاعل بديل ثابت يظهر فيه المحتوى كاملًا لمن يفضّل تقليل الحركة.',
+      en: 'Sites that move with their visitor: a photo that grows to fill the screen as you scroll, layers that follow the mouse, a light that reveals what lies underneath, a curtain that opens, sections read word by word. Every interaction has a still version that shows all the content to people who prefer less motion.',
+    },
+    dna: {
+      type: { ar: 'عناوين ضخمة بخط عرض قوي (أحجام حتى 7rem) وسطور قصيرة، ونص بخط واضح بلا تذييل؛ الكلمة الكبيرة جزء من التفاعل.', en: 'Huge headlines in a strong display face (up to 7rem) on short lines, body text in a clear sans; the big words are part of the interaction.' },
+      color: { ar: 'خلفية واحدة قوية (داكنة جدًا أو فاتحة جدًا) ولون رئيسي حيّ واحد، والصور تحمل بقية الألوان.', en: 'One strong background (very dark or very light) and a single vivid accent; the photos carry the rest of the colour.' },
+      layout: { ar: 'واجهة بملء الشاشة تثبت في مكانها (sticky) بينما يقودها التمرير، ثم أقسام عادية تتخللها لحظات مثبتة أخرى (عبارة تُضاء أو شريط بطاقات أفقي).', en: 'A full-screen hero that holds in place (sticky) while the scroll drives it, then regular sections broken by other pinned moments (a statement that lights up, a sideways rail of cards).' },
+      shape: { ar: 'أزرار كبسولية، صور كبيرة بزوايا مستديرة تصبح بعرض الشاشة، وبطاقات عائمة بظلال ناعمة.', en: 'Pill buttons, large rounded photos that become full-bleed, floating cards with soft shadows.' },
+      imagery: { ar: 'صور كبيرة عالية الجودة تصلح لملء الشاشة، وصور صغيرة متعددة للطبقات والأثر.', en: 'Big, high-quality photos that work full screen, plus several smaller ones for layers and trails.' },
+      motion: { ar: 'مرتبطة بالتمرير وبالمؤشر لا بالوقت: متغير تقدم من 0 إلى 1 يحرّك التحويلات، وحركة المؤشر مخففة بالتدرج، وأزرار مغناطيسية؛ وكل ذلك يتوقف مع prefers-reduced-motion.', en: 'Linked to the scroll and the pointer, not to time: a progress value from 0 to 1 drives the transforms, pointer movement is eased, buttons are magnetic; all of it stops with prefers-reduced-motion.' },
+      details: { ar: 'شريط تقدم أعلى الصفحة، تلميح «مرّر للأسفل» يختفي عند البدء، مؤشر دائري يكبر فوق الروابط، وعدّادات للأرقام.', en: 'A progress bar along the top, a "scroll down" hint that fades once you start, a ring cursor that grows over links, counting numbers.' },
+      avoid: { ar: 'خطف التمرير (لا تغيّر سرعة العجلة ولا تمنعها)، محتوى يبقى مخفيًا دون JavaScript، تأثيرات تعيق القراءة، ومكتبات ثقيلة لما تكفيه متغيرات CSS وrequestAnimationFrame.', en: 'Scroll-jacking (never change or block the wheel), content that stays hidden without JavaScript, effects that get in the way of reading, heavy libraries for what CSS variables and requestAnimationFrame can do.' },
+    },
+    defaults: layout({ nav: 'pill', hero: 'zoom', about: 'scrub', quotes: 'marquee', gallery: 'masonry', contact: 'card', cta: 'big', footer: 'big', stats: 'big' }),
+    motion: 'rich', radius: 22,
+    tile: { bg: '#FFD84D', ink: '#141414', accent: '#FF5A36', font: 'unbounded', fontAr: 'lalezar' },
   },
 ];
 

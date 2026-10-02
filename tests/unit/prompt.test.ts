@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { design } from '../../src/catalog/index.ts';
+import { DESIGNS, design } from '../../src/catalog/index.ts';
 import { buildPrompt, emptyBrief, type Brief } from '../../src/prompt/build.ts';
+import { heroText, interactionText } from '../../src/prompt/copy.ts';
 import { promptData } from '../../src/prompt/data.ts';
 
 const origin = 'https://qalib.omardeek.tech';
@@ -56,5 +57,20 @@ describe('prompt builder', () => {
         assert.ok(out.length > 3000, `${d.slug} ${lang} is too short`);
       }
     }
+  });
+
+  it('explains how an interactive design moves, in both languages, and only there', () => {
+    const swell = promptData(design('swell')!);
+    assert.deepEqual(swell.interactions, ['zoom', 'scrub', 'rail']);
+    const en = buildPrompt(swell, emptyBrief, 'en', { origin });
+    for (const s of ['**Interactions:**', 'position: sticky', 'clip-path: inset()', 'Statement:', 'Rail:', 'prefers-reduced-motion']) assert.ok(en.includes(s), s);
+    const ar = buildPrompt(swell, emptyBrief, 'ar', { origin });
+    for (const s of ['**التفاعلات:**', 'التكبير:', 'العبارة:', 'الشريط الأفقي:']) assert.ok(ar.includes(s), s);
+    assert.ok(!buildPrompt(andalus, emptyBrief, 'en', { origin }).includes('**Interactions:**'));
+  });
+
+  it('has words for every interaction any design uses', () => {
+    for (const d of DESIGNS) for (const k of promptData(d).interactions) assert.ok(interactionText[k], `${d.slug}: ${k}`);
+    for (const k of ['zoom', 'curtain', 'layers', 'spotlight', 'trail', 'tilt']) assert.ok(heroText[k], k);
   });
 });

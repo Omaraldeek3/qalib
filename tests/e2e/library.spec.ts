@@ -1,4 +1,10 @@
 import { expect, test } from '@playwright/test';
+import { DESIGNS } from '../../src/catalog/index.ts';
+import { cardData } from '../../src/ui/cards.ts';
+
+// Counts come from the catalogue, so adding designs does not break the tests.
+const inStyle = (cat: string) => DESIGNS.filter(d => d.cat === cat).length;
+const matching = (word: string) => DESIGNS.map(d => cardData(d, 'en')).filter(c => c.search.includes(word)).length;
 
 test.describe('in an Arabic browser', () => {
   test.use({ locale: 'ar-PS' });
@@ -17,26 +23,26 @@ test('an English browser gets English', async ({ page }) => {
 test('the home page lists every design and filters them', async ({ page }) => {
   await page.goto('/en');
   const cards = page.locator('.catalog .dcard');
-  await expect(cards).toHaveCount(108);
+  await expect(cards).toHaveCount(DESIGNS.length);
   await page.getByRole('group', { name: 'Style' }).getByRole('button', { name: 'Retro' }).click();
-  await expect(cards).toHaveCount(6);
+  await expect(cards).toHaveCount(inStyle('retro'));
   await expect(page).toHaveURL(/style=retro/);
   await page.getByRole('button', { name: 'Clear' }).click();
   await page.locator('.filters input[type="search"]').fill('restaurant');
-  await expect(cards).toHaveCount(7);
+  await expect(cards).toHaveCount(matching('restaurant'));
 });
 
 test('the hero search hands its words to the catalogue', async ({ page }) => {
   await page.goto('/en');
   await page.locator('.hsearch input').fill('wedding');
   await page.locator('.hsearch button').click();
-  await expect(page.locator('.catalog .dcard')).toHaveCount(5);
+  await expect(page.locator('.catalog .dcard')).toHaveCount(matching('wedding'));
 });
 
 test('a style page shows its six designs', async ({ page }) => {
   await page.goto('/ar/styles/heritage');
   await expect(page.locator('h1')).toHaveText('تراثي');
-  await expect(page.locator('.catalog .dcard')).toHaveCount(6);
+  await expect(page.locator('.catalog .dcard')).toHaveCount(inStyle('heritage'));
 });
 
 test('a design page frames the demo and builds a prompt from the brief', async ({ page, context }) => {

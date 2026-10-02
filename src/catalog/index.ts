@@ -17,6 +17,7 @@ import { artdeco } from './designs/artdeco';
 import { handdrawn } from './designs/handdrawn';
 import { geometric } from './designs/geometric';
 import { conventional } from './designs/conventional';
+import { interactive } from './designs/interactive';
 import type { DesignInput } from './designs/input';
 import type { CategoryId, Design } from './types';
 
@@ -25,7 +26,7 @@ export { PROFILES, profile } from './profiles';
 
 const byCategory: Record<CategoryId, DesignInput[]> = {
   classic, vintage, modern, animated, heritage, digital, minimal, luxury, playful,
-  editorial, brutalist, glass, retro, organic, artdeco, handdrawn, geometric, conventional,
+  editorial, brutalist, glass, retro, organic, artdeco, handdrawn, geometric, conventional, interactive,
 };
 
 /** Every design, numbered in catalogue order. */

@@ -10,7 +10,8 @@ export type L = { ar: string; en: string };
 export type CategoryId =
   | 'classic' | 'vintage' | 'modern' | 'animated' | 'heritage' | 'digital'
   | 'minimal' | 'luxury' | 'playful' | 'editorial' | 'brutalist' | 'glass'
-  | 'retro' | 'organic' | 'artdeco' | 'handdrawn' | 'geometric' | 'conventional';
+  | 'retro' | 'organic' | 'artdeco' | 'handdrawn' | 'geometric' | 'conventional'
+  | 'interactive';
 
 export type ProfileId =
   | 'restaurant' | 'cafe' | 'sweets' | 'farm' | 'construction' | 'agency'
@@ -115,9 +116,11 @@ export type Profile = {
 // ---- Layout variants ----------------------------------------------------
 
 export const navVariants = ['bar', 'center', 'split', 'minimal', 'pill'] as const;
-export const heroVariants = ['split', 'centered', 'fullbleed', 'type', 'collage', 'framed', 'editorial', 'device', 'poster', 'arch'] as const;
-export const aboutVariants = ['split', 'quote', 'columns', 'overlap'] as const;
-export const itemsVariants = ['cards', 'list', 'menu', 'zigzag', 'gallery', 'masonry', 'strip', 'bento', 'timeline', 'pricing', 'steps', 'table'] as const;
+export const heroVariants = ['split', 'centered', 'fullbleed', 'type', 'collage', 'framed', 'editorial', 'device', 'poster', 'arch',
+  // Interactive heroes: driven by the scroll (zoom, curtain) or the pointer (layers, spotlight, trail, tilt).
+  'zoom', 'layers', 'spotlight', 'trail', 'tilt', 'curtain'] as const;
+export const aboutVariants = ['split', 'quote', 'columns', 'overlap', 'scrub'] as const;
+export const itemsVariants = ['cards', 'list', 'menu', 'zigzag', 'gallery', 'masonry', 'strip', 'bento', 'timeline', 'pricing', 'steps', 'table', 'rail'] as const;
 export const quotesVariants = ['cards', 'single', 'wall', 'marquee'] as const;
 export const contactVariants = ['split', 'center', 'card', 'form'] as const;
 export const ctaVariants = ['band', 'big', 'image'] as const;
@@ -210,7 +213,7 @@ export type Category = {
 
 export type Design = {
   slug: string;
-  /** Catalogue number, 1–108. */
+  /** Catalogue number, from 1. */
   no: number;
   cat: CategoryId;
   profile: ProfileId;

@@ -1,0 +1,70 @@
+/* Interactive: the page answers the pointer and the scroll. Huge type, pill buttons,
+   full-screen stages; the layout of the interactive variants lives in base.css. */
+html {
+  --fs-h1: clamp(3rem, 7.6vw, 7rem);
+  --fs-h2: clamp(2.2rem, 5vw, 4.2rem);
+  --lh-head: .96;
+  --tracking-head: -0.035em;
+  --sec-pad: clamp(84px, 11vw, 150px);
+  --radius-btn: 999px; --radius-badge: 999px; --radius-icon: 50%;
+  --btn-pad: 1em 2em; --fw-btn: 600;
+  --case-eyebrow: uppercase; --tracking-eyebrow: .2em; --fs-eyebrow: .74rem;
+  --card-border: 1px solid var(--line); --alt-bg: var(--surface);
+  --marquee-bg: transparent; --marquee-ink: var(--ink); --marquee-border: 1px solid var(--line); --marquee-size: clamp(2.4rem, 6.4vw, 5.6rem); --marquee-speed: 26s; --marquee-sep: "●"; --marquee-sep-color: var(--accent);
+  --step-rule: 1px solid var(--line); --tbl-rule: 1px solid var(--line);
+  --reveal-y: 54px;
+}
+html[lang="ar"] { --fs-h1: clamp(2.6rem, 6.4vw, 5.8rem); --fs-h2: clamp(2rem, 4.4vw, 3.6rem); --lh-head: 1.28; --fs-eyebrow: .95rem; }
+
+/* Headlines carry the page. */
+.hero--layers .hero__title, .hero--trail .hero__title { font-size: clamp(3.4rem, 10vw, 9.4rem); }
+html[lang="ar"] .hero--layers .hero__title, html[lang="ar"] .hero--trail .hero__title { font-size: clamp(3rem, 8.4vw, 7.6rem); }
+.hero--spotlight .hero__title { font-size: clamp(3rem, 8.8vw, 8rem); }
+html[lang="ar"] .hero--spotlight .hero__title { font-size: clamp(2.7rem, 7.6vw, 6.6rem); }
+.hero--tilt .hero__title { font-size: clamp(2.8rem, 6.4vw, 6rem); }
+.hero--curtain .hero__title { font-size: clamp(2.8rem, 7vw, 6.4rem); }
+.sec__title { font-size: var(--fs-h2); }
+.eyebrow { display: inline-flex; align-items: center; gap: .7rem; }
+.eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
+.hero--layers .eyebrow, .spot__layer .eyebrow, .zoom__head .eyebrow, .hero--trail .eyebrow { justify-content: center; }
+
+/* Buttons lean toward the pointer (runtime, rich motion) and glow a little. */
+.btn--primary { box-shadow: 0 16px 36px -18px var(--accent); }
+.btn--primary:hover { transform: translateY(-2px) scale(1.02); }
+.btn--ghost { border-width: 1.5px; }
+
+/* The scroll hint at the foot of a stage. */
+.pin__hint { display: grid; justify-items: center; gap: 8px; }
+.pin__hint::after { content: ""; width: 1px; height: 30px; background: currentColor; transform-origin: top; animation: hint 1.8s var(--ease) infinite; }
+@keyframes hint { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+/* A ring cursor that inverts over whatever is under it. */
+.fx-cursor { border-color: #fff; mix-blend-mode: difference; }
+.fx-cursor.is-hover { background: #fff; }
+
+/* Cards lift; photos come forward. */
+.card, .rail__card, .tile { transition: transform .5s var(--ease); }
+.card:hover { transform: translateY(-6px); }
+.card__media img, .rail__media img, .tile img { transition: transform 1s var(--ease); }
+.card:hover .card__media img, .rail__card:hover .rail__media img, .tile:hover img { transform: scale(1.06); }
+.rail__card:hover { transform: translateY(-8px); }
+.rail__title { font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(1.25rem, 1.8vw, 1.6rem); line-height: 1.2; }
+.bento .card:first-child { background: var(--accent); color: var(--on-accent); border: 0; }
+.bento .card:first-child .card__text, .bento .card:first-child .card__meta { color: inherit; opacity: .85; }
+.bento .card:first-child .card__icon { background: color-mix(in srgb, var(--on-accent) 16%, transparent); color: var(--on-accent); }
+
+/* The statement and the bands. */
+.scrub__text { letter-spacing: -0.02em; }
+html[lang="ar"] .scrub__text { line-height: 1.6; }
+.marquee__item { -webkit-text-stroke: 1.2px var(--ink); color: transparent; }
+.marquee__item:nth-child(3n) { -webkit-text-stroke: 0; color: var(--accent); }
+.quotes--marquee .quote { background: var(--surface); border: 1px solid var(--line); }
+.stats--big .stat__value { color: var(--accent); }
+.zig__num, .step__num { color: var(--accent); }
+.cta--big .cta__title { font-size: clamp(3rem, 9.6vw, 8.6rem); transition: color .3s; }
+.cta--big .cta__title:hover { color: var(--accent); }
+.foot--big .foot__word { -webkit-text-stroke: 1.5px var(--ink); color: transparent; transition: color .5s; }
+.foot--big .foot__word:hover { color: var(--accent); -webkit-text-stroke-color: var(--accent); }
+.countdown__box { border-color: color-mix(in srgb, currentColor 40%, transparent); }
+.plan.is-featured { --featured-bg: var(--accent); --featured-ink: var(--on-accent); }
+.plan.is-featured .btn--primary { background: var(--on-accent); color: var(--accent); }

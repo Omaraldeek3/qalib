@@ -59,3 +59,24 @@ public/thumbs/    committed: cover and full-page screenshots per design and lang
 ## Out of scope
 
 Editing content in the browser, exporting sites, accounts, a server. A later version could add more designs per style or let a design be previewed with another business's content.
+
+## Update, later on 2026-10-02: the Interactive style and 12 designs per style
+
+Omar liked the library and asked for more designs and a style whose sites react to the user, "like sites where the hero moves and changes as you scroll down with the mouse". A live prototype of eight interactions (an Artifact) went to him first; he approved all eight and chose 12 designs per style: 19 styles, 228 designs.
+
+**The Interactive style (تفاعلي).** Twelve designs, each built on one signature interaction, two designs per hero:
+
+| Interaction | Where | What it does |
+| --- | --- | --- |
+| zoom | hero | the stage holds while the photo grows from a framed card to full screen; the call to action appears at the end |
+| layers | hero | photos and shapes float at different depths and follow the pointer |
+| spotlight | hero | a dark hero; the pointer carries a light that reveals the colour photo and filled headline underneath; pressing widens it |
+| trail | hero | moving the pointer drops photos that pop in and fade |
+| tilt | hero | a phone or photo card leans toward the pointer with a moving glare and turns slightly with the scroll |
+| curtain | hero | two panels carrying the brand name open like doors with the scroll, revealing the photo and headline |
+| scrub | about | one statement held on screen, its words lighting up one by one with the scroll |
+| rail | items | the vertical scroll slides a row of cards sideways, then the page continues |
+
+**How it works.** One small engine in `runtime.js`, no libraries. Pinned sections (`[data-pin]`) are tall, with a sticky stage; a rAF scroll handler writes `--p` (0 to 1) on each, and CSS turns it into transforms, clip-paths and opacity. Pointer sections (`[data-mouse]`) get `--mx`/`--my` (-1 to 1, eased) and `--sx`/`--sy` (pixels); with no pointer for two seconds they drift on their own, so phones see the effect too. Pinning only happens with JavaScript and without `prefers-reduced-motion`; otherwise every section falls back to a still layout with all content visible. Layout of the new variants lives in `base.css` like every other variant; the style's identity lives in `kits/interactive.css`. The prompt gains an Interactions block that explains each mechanism precisely.
+
+**More designs.** Every existing style gets six more designs (108 new), using demo businesses the style does not have yet where possible, new palette and font pairings, and different section variants, so a style reads as a family and not as recolours. Thumbnails for interactive designs are taken in their first frame (motion on); full-page thumbnails use the still fallback.
