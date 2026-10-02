@@ -1,0 +1,97 @@
+/* Brutalist: raw on purpose. Thick borders, hard shadows, loud colour, massive type. */
+html {
+  --sec-pad: clamp(64px, 8vw, 110px);
+  --lh-head: .92;
+  --tracking-head: -0.01em;
+  --fs-h2: clamp(2.6rem, 6.4vw, 5.6rem);
+  --radius: 0px !important;
+  --radius-btn: 0; --radius-badge: 0; --radius-mark: 0; --radius-icon: 0; --radius-media: 0; --radius-input: 0; --radius-social: 0;
+  --btn-border-w: 3px; --btn-pad: .9em 1.6em; --case-btn: uppercase; --fw-btn: 700;
+  --font-eyebrow: var(--font-body); --tracking-eyebrow: .06em; --fs-eyebrow: .85rem; --eyebrow-color: var(--ink); --fw-eyebrow: 700;
+  --card-border: 3px solid var(--ink); --card-shadow: 7px 7px 0 var(--ink);
+  --nav-bg: var(--bg); --nav-blur: none; --nav-line: var(--ink);
+  --step-rule: 3px solid var(--ink); --tbl-rule: 3px solid var(--ink); --menu-rule: 3px solid var(--ink); --leader: 3px solid var(--ink);
+  --marquee-bg: var(--ink); --marquee-ink: var(--pop); --marquee-border: 0; --marquee-size: clamp(2.4rem, 6vw, 5rem); --marquee-sep: "✕"; --marquee-sep-color: var(--accent2); --marquee-speed: 18s;
+  --grid-line: color-mix(in srgb, var(--ink) 12%, transparent); --grid-size: 64px;
+  --input-border: 3px solid var(--ink);
+  /* The colour that sits on black; designs whose accent is black use the page colour. */
+  --pop: var(--accent);
+}
+html[lang="ar"] { --lh-head: 1.2; }
+[data-decor~="grid"] body { background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: var(--grid-size) var(--grid-size); }
+[data-decor~="mono"] { --img-filter: grayscale(1) contrast(1.35); }
+h1, h2, h3 { text-transform: uppercase; }
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { text-transform: none; }
+.eyebrow { display: inline-block; padding: .25em .7em; background: var(--accent); color: var(--on-accent); border: 3px solid var(--ink); }
+.eyebrow::before { content: "■ "; }
+.sec { border-block-start: 3px solid var(--ink); }
+.sec[data-num]::after { content: attr(data-num); position: absolute; top: calc(var(--sec-pad) * .5); inset-inline-end: max(var(--gutter), calc((100% - var(--wrap)) / 2)); font-family: var(--font-display); font-size: clamp(4rem, 10vw, 9rem); line-height: 1; color: transparent; -webkit-text-stroke: 3px var(--ink); opacity: .9; pointer-events: none; }
+.nav { border-block-end: 3px solid var(--ink); }
+.nav__links a { font-weight: 700; text-transform: uppercase; opacity: 1; border-block-end: 3px solid transparent; }
+.nav__links a:hover { border-block-end-color: var(--ink); color: inherit; }
+.brand__mark { background: var(--ink); color: var(--pop); }
+.btn { border-color: var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.btn--primary { background: var(--accent); color: var(--on-accent); }
+.btn--ghost { background: var(--surface); color: var(--ink); }
+.btn--primary:hover, .btn--ghost:hover { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--ink); background: var(--ink); color: var(--pop); border-color: var(--ink); }
+.hero { border-block-end: 3px solid var(--ink); }
+.hero--poster .hero__title, .hero--type .hero__title { font-size: clamp(3.6rem, 13vw, 13rem); line-height: .86; letter-spacing: -.02em; }
+html[lang="ar"] .hero--poster .hero__title, html[lang="ar"] .hero--type .hero__title { line-height: 1.1; font-size: clamp(3.2rem, 11vw, 10rem); }
+.hero--poster .hero__text { background: var(--bg); border: 3px solid var(--ink); padding: clamp(1rem, 2.4vw, 2rem); box-shadow: 10px 10px 0 var(--ink); }
+.hero--poster .hero__lead { border: 0; padding: 0; background: none; }
+.hero--poster .hero__media, .hero--type .hero__media, .hero--split .hero__media { border: 3px solid var(--ink); box-shadow: 12px 12px 0 var(--ink); }
+.hero__lead { color: var(--ink); background: var(--surface); border: 3px solid var(--ink); padding: 1rem 1.2rem; }
+.badge { background: var(--accent2); color: var(--surface); border: 3px solid var(--ink); font-weight: 700; text-transform: uppercase; transform: rotate(-3deg); }
+.about--columns .about__media { border: 3px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
+.about__body { color: var(--ink); }
+.about__quote { border: 3px solid var(--ink); background: var(--accent); color: var(--on-accent); padding: 1rem; font-family: var(--font-display); text-transform: uppercase; }
+html[lang="ar"] .about__quote { text-transform: none; }
+.card { border-radius: 0; }
+.card__media { border-block-end: 3px solid var(--ink); }
+.card__title { font-size: 1.5rem; }
+.card__icon { border: 3px solid var(--ink); background: var(--accent); color: var(--on-accent); }
+.card__tag { background: var(--ink); color: var(--pop); border-radius: 0; }
+.card:hover { transform: translate(-3px, -3px); box-shadow: 10px 10px 0 var(--ink); }
+.tbl__row { padding-inline: .8rem; }
+.tbl__row:hover { background: var(--accent); color: var(--on-accent); }
+.tbl__row:hover .tbl__text, .tbl__row:hover .tbl__num { color: inherit; }
+.tbl__title { font-size: clamp(1.3rem, 2.4vw, 1.9rem); text-transform: uppercase; }
+html[lang="ar"] .tbl__title { text-transform: none; }
+.step { border: 3px solid var(--ink); padding: 1.4rem; background: var(--surface); box-shadow: 6px 6px 0 var(--ink); }
+.step__num { font-size: clamp(3rem, 6vw, 4.6rem); color: var(--ink); -webkit-text-stroke: 0; }
+.tile { border: 3px solid var(--ink); }
+.tile figcaption { background: var(--ink); color: var(--pop); text-transform: uppercase; font-weight: 700; }
+.stats { border-block: 3px solid var(--ink); background: var(--surface); padding-block: 0; }
+.stats__grid { gap: 0; }
+.stat { padding: 2rem 1.2rem; border-inline-end: 3px solid var(--ink); }
+.stat:last-child { border-inline-end: 0; }
+.stat__value { color: var(--ink); }
+@media (max-width: 760px) { .stat { border-block-end: 3px solid var(--ink); } }
+.quote { border-radius: 0; }
+.quote blockquote { font-weight: 700; }
+.quote__avatar { border-radius: 0; background: var(--accent); color: var(--on-accent); border: 3px solid var(--ink); }
+.quotes--wall .quote:nth-child(2) { background: var(--accent); color: var(--on-accent); }
+.quotes--wall .quote:nth-child(2) .quote__role { color: inherit; opacity: .75; }
+.plan { border-radius: 0; }
+.plan.is-featured { --featured-bg: var(--ink); --featured-ink: var(--pop); }
+.plan__amount { font-size: clamp(2.6rem, 5vw, 3.6rem); }
+.faq__list { border-block-start: 3px solid var(--ink); }
+.faq__item { border-block-end: 3px solid var(--ink); }
+.faq__item summary { text-transform: uppercase; }
+html[lang="ar"] .faq__item summary { text-transform: none; }
+.faq__item summary::after { content: "↓"; color: var(--ink); }
+.faq__item[open] summary::after { transform: rotate(180deg); }
+.cta--big { background: var(--accent); color: var(--on-accent); border-block: 3px solid var(--ink); }
+.cta--big .cta__title { font-size: clamp(3.4rem, 12vw, 11rem); }
+.cta--band { background: var(--accent2); color: var(--surface); border-block: 3px solid var(--ink); }
+.contact__panel, .contact--card .contact__card { border: 3px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
+.field label { text-transform: uppercase; }
+.foot { background: var(--ink); color: var(--surface); border: 0; --foot-muted: color-mix(in srgb, var(--surface) 70%, transparent); --foot-line: color-mix(in srgb, var(--surface) 30%, transparent); }
+.foot--big .foot__word { color: var(--pop); text-transform: uppercase; font-size: clamp(4rem, 19vw, 18rem); letter-spacing: -.03em; }
+.foot .social { border-radius: 0; }
+.logo-word { opacity: 1; border: 3px solid var(--ink); padding: .2em .6em; background: var(--surface); }
+.timeline::before { width: 3px; background: var(--ink); }
+.tl__dot { border-radius: 0; border-color: var(--ink); background: var(--accent); }
+.countdown__box { border: 3px solid var(--ink); border-radius: 0; background: var(--surface); box-shadow: 5px 5px 0 var(--ink); }
+[data-decor~="hazard"] .marquee, [data-decor~="hazard"] .foot { border-block-start: 22px solid transparent; border-image: repeating-linear-gradient(-45deg, var(--ink) 0 22px, var(--bg) 22px 44px) 22; }
+[data-decor~="hazard"] .hero__media { box-shadow: 12px 12px 0 var(--accent2); }

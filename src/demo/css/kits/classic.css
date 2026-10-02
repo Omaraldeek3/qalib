@@ -1,0 +1,87 @@
+/* Classic: serif dignity, symmetry, hairline rules, framed pictures. */
+html {
+  --sec-pad: clamp(84px, 11vw, 152px);
+  --lh-head: 1.12;
+  --tracking-head: 0;
+  --radius-btn: 0; --radius-media: 0; --radius-badge: 0; --radius-mark: 0; --radius-icon: 0;
+  --btn-pad: 1em 2.2em; --case-btn: uppercase; --tracking-btn: .18em; --fs-btn: .76rem;
+  --font-eyebrow: var(--font-body); --fs-eyebrow: .76rem; --tracking-eyebrow: .3em; --eyebrow-color: var(--accent2);
+  --nav-bg: var(--bg); --nav-blur: none; --nav-line: var(--line);
+  --leader: 1px dotted var(--accent2); --menu-rule: 0; --step-rule: 1px solid var(--line);
+  --frame: 1px solid var(--accent2); --divider-color: var(--accent2); --alt-bg: var(--surface);
+  --icon-bg: transparent; --icon-ink: var(--accent2); --price-color: var(--accent);
+  --card-border: 1px solid var(--line); --tbl-rule: 1px solid var(--ink);
+}
+html[lang="ar"] { --fs-btn: 1rem; --fs-eyebrow: .95rem; }
+.items .sec__head, .quotes .sec__head, .faq .sec__head, .contact--center .sec__head { margin-inline: auto; text-align: center; }
+.sec__title::after { content: ""; display: block; width: 56px; height: 1px; margin: 1.3rem 0 0; background: var(--accent2); }
+.items .sec__title::after, .quotes .sec__title::after, .faq .sec__title::after, .contact--center .sec__title::after { margin-inline: auto; }
+.items .sec__lead, .quotes .sec__lead, .contact--center .sec__lead { margin-inline: auto; }
+.faq__list { margin-inline: auto; }
+.nav__links a { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+html[lang="ar"] .nav__links a { font-size: 1rem; }
+.nav--center .brand { font-size: 1.9rem; }
+.brand__mark { background: transparent; color: var(--accent); border: 1px solid var(--accent2); font-family: var(--font-display); }
+.btn--ghost { border-width: 1px; }
+.btn--primary:hover { transform: none; background: var(--ink); color: var(--bg); }
+
+.hero__frame { border: 1px solid var(--accent2); outline: 1px solid var(--accent2); outline-offset: 9px; background: color-mix(in srgb, var(--surface) 60%, transparent); }
+.hero__frame::before, .hero__frame::after { content: "❦"; position: absolute; left: 50%; transform: translateX(-50%); padding-inline: .8rem; background: var(--bg); color: var(--accent2); font-size: 1.1rem; line-height: 1; }
+.hero__frame::before { top: -.7rem; }
+.hero__frame::after { bottom: -.7rem; transform: translateX(-50%) rotate(180deg); }
+.hero__title { font-weight: var(--fw-display); }
+.hero__lead { font-size: clamp(1.1rem, 1.5vw, 1.3rem); }
+.hero--split .hero__media, .hero--centered .hero__media, .hero--framed .hero__media, .about__media, .zig__media, .about__strip .media {
+  padding: 10px; background: var(--surface); border: 1px solid var(--line);
+}
+.hero--split .hero__media img, .hero--centered .hero__media img, .hero--framed .hero__media img, .about__media img, .zig__media img, .about__strip .media img { outline: 1px solid var(--line); }
+.hero--fullbleed .hero__title { font-size: clamp(2.8rem, 7vw, 6rem); }
+.hero--fullbleed .hero__text { margin-inline: auto; text-align: center; }
+.hero--fullbleed .hero__in { margin-inline: auto; }
+.hero--fullbleed .hero__lead { margin-inline: auto; }
+.hero--fullbleed .hero__actions { justify-content: center; }
+.badge { background: transparent; border-color: var(--accent2); color: var(--accent2); letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; }
+html[lang="ar"] .badge { font-size: .9rem; }
+
+.about__media2 { box-shadow: none; border: 1px solid var(--line); padding: 8px; background: var(--surface); }
+.about__quote { border: 0; padding: 0; font-style: italic; color: var(--accent); }
+.bigquote p { font-style: italic; font-weight: 400; }
+.bigquote p::before, .bigquote p::after { color: var(--accent2); }
+html[lang="en"] .bigquote p::before { content: "“"; }
+html[lang="en"] .bigquote p::after { content: "”"; }
+
+.card { outline: 1px solid var(--line); outline-offset: -7px; text-align: center; }
+.card__body { padding: 1.7rem 1.6rem 2rem; align-items: center; }
+.card__icon { margin-inline: auto; border: 1px solid var(--accent2); border-radius: 50%; }
+.card__foot { justify-content: center; flex-direction: column; align-items: center; gap: .3rem; }
+.card__tag { background: var(--bg); color: var(--accent); border: 1px solid var(--accent2); }
+.menu__name { text-align: center; font-style: italic; font-weight: 400; font-size: 1.8rem; }
+.menu__name::after { content: "❦"; display: block; margin-top: .35rem; font-size: .9rem; font-style: normal; color: var(--accent2); }
+.menu__title { font-weight: 600; }
+.row__title, .tbl__title { font-weight: 600; }
+.step { text-align: center; }
+.step__num { font-style: italic; font-weight: 400; color: var(--accent2); }
+.step__icon { display: none; }
+.tile { padding: 8px; background: var(--surface); border: 1px solid var(--line); }
+.tile figcaption { inset: auto 8px 8px; }
+.stats { border-block: 1px solid var(--line); }
+.stats__grid { text-align: center; }
+.stat__value { font-weight: 400; color: var(--accent); }
+.quote { text-align: center; align-items: center; outline: 1px solid var(--line); outline-offset: -7px; }
+.quotes--single .quote { outline: 0; }
+.quote blockquote { font-family: var(--font-display); font-size: 1.15rem; font-style: italic; }
+.quote figcaption { flex-direction: column; text-align: center; }
+.quote__avatar { background: transparent; border: 1px solid var(--accent2); color: var(--accent2); }
+.plan { text-align: center; outline: 1px solid var(--line); outline-offset: -8px; }
+.plan__tag { align-self: center; }
+.plan__list li { justify-content: center; }
+.plan.is-featured { --featured-bg: var(--accent); --featured-ink: var(--on-accent); }
+.cta--band { text-align: center; }
+.cta--band .cta__in { flex-direction: column; justify-content: center; }
+.cta--band .cta__text { margin-inline: auto; }
+.contact__panel, .contact__card { outline: 1px solid var(--accent2); outline-offset: -8px; border-color: var(--accent2); }
+.faq__item summary { font-weight: 600; }
+.foot { border-block-start: 3px double var(--accent2); }
+.foot--big .foot__word { font-weight: 400; text-align: center; letter-spacing: .02em; }
+.divider { padding-block: 0; }
+[data-scheme="dark"] .hero__frame::before, [data-scheme="dark"] .hero__frame::after { background: var(--bg); }

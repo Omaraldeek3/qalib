@@ -1,0 +1,57 @@
+import type { DesignInput } from './input';
+
+export const minimal: DesignInput[] = [
+  {
+    slug: 'blank', profile: 'photographer',
+    name: { ar: 'فراغ', en: 'Blank' },
+    blurb: { ar: 'أبيض وأسود وصور بلا ألوان، الصور وحدها تتكلم.', en: 'White, black and colourless photos; the pictures do the talking.' },
+    scheme: 'light',
+    palette: { bg: '#FFFFFF', surface: '#F4F4F2', ink: '#111111', muted: '#7C7C77', accent: '#111111', accent2: '#B5B5B0', line: '#E6E6E3', onAccent: '#FFFFFF' },
+    fonts: { display: 'inter', body: 'inter', displayAr: 'alexandria', bodyAr: 'ibm-plex-sans-arabic' },
+    decor: ['mono'],
+  },
+  {
+    slug: 'sukun', profile: 'clinic',
+    name: { ar: 'سكون', en: 'Sukun' },
+    blurb: { ar: 'بيج هادئ وأخضر مريمية، قوائم بدل البطاقات ومسافات تتنفس.', en: 'Quiet beige and sage, lists instead of cards and room to breathe.' },
+    scheme: 'light',
+    palette: { bg: '#F6F3EE', surface: '#EFEAE2', ink: '#2C2A26', muted: '#827C71', accent: '#5F806B', accent2: '#C9B79C', line: '#E0D9CD', onAccent: '#FFFFFF' },
+    fonts: { display: 'instrument-serif', body: 'dm-sans', displayAr: 'mada', bodyAr: 'mada' },
+  },
+  {
+    slug: 'essence', profile: 'perfume',
+    name: { ar: 'جوهر', en: 'Essence' },
+    blurb: { ar: 'حجري رمادي وخط رفيع طويل، كل عطر في مساحته الخاصة.', en: 'Stone grey and a tall thin face, each perfume in its own space.' },
+    scheme: 'light',
+    palette: { bg: '#F2F0EB', surface: '#E9E6DF', ink: '#1A1A18', muted: '#7D7A72', accent: '#1A1A18', accent2: '#A39E92', line: '#DCD8CF', onAccent: '#F2F0EB' },
+    fonts: { display: 'italiana', body: 'inter', displayAr: 'markazi-text', bodyAr: 'mada' },
+    layout: { hero: 'split', offer: 'cards' },
+  },
+  {
+    slug: 'nordic', profile: 'cafe',
+    name: { ar: 'شمالي', en: 'Nordic' },
+    blurb: { ar: 'خشب فاتح وأبيض دافئ وخط واحد، كمقهى إسكندنافي هادئ.', en: 'Light oak, warm white and one typeface, like a quiet Scandinavian cafe.' },
+    scheme: 'light',
+    palette: { bg: '#F7F5F0', surface: '#EFEBE3', ink: '#24221F', muted: '#7A756C', accent: '#9A6B47', accent2: '#6E7F72', line: '#E3DED4', onAccent: '#FFFFFF' },
+    fonts: { display: 'dm-sans', body: 'dm-sans', displayAr: 'vazirmatn', bodyAr: 'vazirmatn' },
+    layout: { hero: 'split' },
+  },
+  {
+    slug: 'paper', profile: 'wedding',
+    name: { ar: 'ورق', en: 'Paper' },
+    blurb: { ar: 'دعوة بيضاء بخط مذيّل رفيع ولون واحد، أنيقة بلا أي زخرفة.', en: 'A white invitation in a fine serif and one colour, elegant without a single ornament.' },
+    scheme: 'light',
+    palette: { bg: '#FBFAF7', surface: '#F3F0EA', ink: '#2B2A28', muted: '#85817A', accent: '#9C7C5B', accent2: '#C8B9A6', line: '#E7E2D9', onAccent: '#FFFFFF' },
+    fonts: { display: 'cormorant', body: 'inter', displayAr: 'amiri', bodyAr: 'mada' },
+    layout: { about: 'quote' },
+  },
+  {
+    slug: 'frame', profile: 'realestate',
+    name: { ar: 'إطار', en: 'Frame' },
+    blurb: { ar: 'أبيض ناصع وعنوان ضخم رفيع وصور كبيرة، كمجلة معمارية.', en: 'Bright white, a huge thin headline and big photos, like an architecture journal.' },
+    scheme: 'light',
+    palette: { bg: '#FFFFFF', surface: '#F5F5F3', ink: '#0F0F0F', muted: '#7A7A75', accent: '#0F0F0F', accent2: '#C4A484', line: '#EBEBE8', onAccent: '#FFFFFF' },
+    fonts: { display: 'inter-tight', body: 'inter', displayAr: 'noto-kufi-arabic', bodyAr: 'noto-sans-arabic' },
+    layout: { hero: 'type', offer: 'cards', about: 'columns' },
+  },
+];
