@@ -52,6 +52,8 @@ button, input, textarea, select { font: inherit; color: inherit; }
 
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: var(--fw-display); line-height: var(--lh-head); letter-spacing: var(--tracking-head); text-wrap: balance; }
 p { text-wrap: pretty; }
+/* A word longer than a narrow screen breaks instead of pushing the page sideways. */
+h1, h2, h3, h4 { overflow-wrap: anywhere; }
 .wrap { width: min(var(--wrap), 100% - var(--gutter) * 2); margin-inline: auto; }
 .sec { position: relative; padding-block: var(--sec-pad); }
 .sec--alt { background: var(--alt-bg, transparent); }
@@ -97,6 +99,9 @@ html[dir="rtl"] .flip svg { transform: scaleX(-1); }
 .nav__in { position: relative; display: flex; align-items: center; gap: clamp(16px, 3vw, 40px); min-height: var(--nav-h, 76px); }
 .brand { display: inline-flex; align-items: center; gap: .65rem; font-family: var(--font-display); font-weight: var(--fw-display); font-size: var(--brand-size, 1.35rem); line-height: 1; white-space: nowrap; }
 .brand__mark { display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; flex: none; border-radius: var(--radius-mark, 50%); background: var(--mark-bg, var(--accent)); color: var(--mark-ink, var(--on-accent)); font-size: 1rem; }
+/* A long business name gives way on a narrow screen instead of pushing the menu button out. */
+.brand { min-width: 0; }
+.brand__name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .nav__links { display: flex; gap: clamp(16px, 2.4vw, 34px); margin-inline-start: auto; font-size: var(--nav-size, .96rem); }
 .nav__links a { position: relative; padding-block: .4rem; color: var(--nav-link, inherit); opacity: .82; transition: opacity .2s, color .2s; }
 .nav__links a:hover { opacity: 1; color: var(--accent); }
@@ -162,7 +167,7 @@ html[dir="rtl"] .flip svg { transform: scaleX(-1); }
 .hero--centered .hero__media { margin-block-start: clamp(40px, 6vw, 72px); aspect-ratio: 21 / 9; }
 
 .hero--fullbleed { min-height: min(94vh, 900px); display: flex; align-items: flex-end; color: #fff; padding-block-end: clamp(48px, 8vw, 110px); }
-.hero--fullbleed .hero__in { width: min(var(--wrap), 100% - var(--gutter) * 2); }
+.hero--fullbleed .hero__in { width: min(var(--wrap), 100% - var(--gutter) * 2); margin-inline: auto; }
 .hero--fullbleed .hero__media { position: absolute; inset: 0; border-radius: 0; z-index: 0; }
 .hero--fullbleed .hero__media::after { content: ""; position: absolute; inset: 0; background: var(--hero-overlay, linear-gradient(to top, rgba(0, 0, 0, .78), rgba(0, 0, 0, .2) 62%, rgba(0, 0, 0, .3))); }
 .hero--fullbleed .hero__text { max-width: 46rem; }
@@ -315,7 +320,7 @@ html[dir="rtl"] .marquee__track, html[dir="rtl"] .quotes__track { animation-name
 .zig__num { display: block; font-family: var(--font-display); font-size: 3rem; line-height: 1; color: var(--accent); }
 .zig__title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-block: .45rem .7rem; }
 .zig__text { color: var(--muted); max-width: 30rem; }
-.zig__foot { display: flex; gap: 1.2rem; align-items: baseline; margin-block-start: 1.2rem; }
+.zig__foot { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; align-items: baseline; margin-block-start: 1.2rem; }
 .zig__price { font-family: var(--font-display); font-weight: var(--fw-display); font-size: 1.4rem; }
 .zig__meta { color: var(--muted); font-size: .9rem; }
 

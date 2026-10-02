@@ -32,11 +32,17 @@ function* strings(v: unknown, path = ''): Generator<[string, L]> {
 }
 
 describe('catalogue', () => {
-  it('has 19 styles, each growing from 6 to 12 designs, numbered from 1', () => {
+  it('has 19 styles with 12 designs each, numbered 1 to 228', () => {
     assert.equal(CATEGORIES.length, 19);
-    for (const c of CATEGORIES) assert.ok([6, 12].includes(DESIGNS.filter(d => d.cat === c.id).length), c.id);
-    assert.equal(DESIGNS.filter(d => d.cat === 'interactive').length, 12);
-    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: DESIGNS.length }, (_, i) => i + 1));
+    for (const c of CATEGORIES) assert.equal(DESIGNS.filter(d => d.cat === c.id).length, 12, c.id);
+    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: 228 }, (_, i) => i + 1));
+  });
+
+  it('gives every style twelve different demo businesses', () => {
+    for (const c of CATEGORIES) {
+      const profiles = DESIGNS.filter(d => d.cat === c.id).map(d => d.profile);
+      assert.equal(new Set(profiles).size, profiles.length, c.id);
+    }
   });
 
   it('uses unique kebab-case slugs', () => {

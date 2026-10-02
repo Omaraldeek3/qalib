@@ -1,6 +1,6 @@
 # Qalib · قالب
 
-A library of website designs. 108 designs in 18 styles, each with a live demo in Arabic and English and a detailed prompt that tells Claude Code how to build a site in that style.
+A library of website designs. 228 designs in 19 styles, twelve each, every one with a live demo in Arabic and English and a detailed prompt that tells Claude Code how to build a site in that style.
 
 **Live:** https://qalib.omardeek.tech
 
@@ -14,11 +14,15 @@ A library of website designs. 108 designs in 18 styles, each with a live demo in
 
 ## The styles
 
-Classic, Vintage, Modern, Animated, Heritage, Digital, Minimal, Luxury, Playful, Editorial, Brutalist, Glass, Retro, Organic, Art Deco, Hand-drawn, Geometric and Conventional, six designs each, across twenty kinds of business: restaurants, cafes, sweets, farm shops, contractors, agencies, software companies, clinics, perfumers, boutiques, photographers, apps, weddings, conferences, sign workshops, hotels, academies, gyms, real estate and law firms.
+Classic, Vintage, Modern, Animated, Heritage, Digital, Minimal, Luxury, Playful, Editorial, Brutalist, Glass, Retro, Organic, Art Deco, Hand-drawn, Geometric, Conventional and Interactive, twelve designs each, across twenty kinds of business: restaurants, cafes, sweets, farm shops, contractors, agencies, software companies, clinics, perfumers, boutiques, photographers, apps, weddings, conferences, sign workshops, hotels, academies, gyms, real estate and law firms.
+
+The Interactive style is built on the visitor's own movement: a photo that opens to full screen as you scroll, a curtain bearing the brand name that parts, layers that follow the pointer, a spotlight that reveals the colour underneath, a trail of photos, a phone that tilts toward the pointer, a statement read word by word and a row of cards that slides sideways. Every one of them has a still version for people who prefer less motion.
 
 ## How it is built
 
 Designs are data. A design names a style, a demo business, a palette, fonts, a layout variant for each section and a few decorations (`src/catalog/designs/<style>.ts`). At build time `scripts/build-demos.tsx` renders every design to static HTML with React: shared, semantic section markup, a base stylesheet that lays out every variant (`src/demo/css/base.css`) and one stylesheet per style that gives it its identity (`src/demo/css/kits/<style>.css`). The prompt builder (`src/prompt`) reads the same data, so the prompt always describes what the demo shows.
+
+The interactions need no library: pinned sections hold a sticky stage while one scroll handler writes their progress to a CSS variable, pointer sections get eased pointer values, and CSS turns both into transforms, clip-paths and opacity (`src/demo/runtime.js`, the interactive part of `base.css`). Without JavaScript or with reduced motion, every section is a still layout.
 
 ```
 src/catalog/   designs, styles, demo businesses (profiles), fonts

@@ -1,13 +1,17 @@
 // The social preview image (public/og.png), drawn from real design covers.
 // Run after `npm run demos` and `npm run thumbs`.
-import { writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { chromium } from '@playwright/test';
 
 const pub = join(process.cwd(), 'public');
 const url = p => pathToFileURL(join(pub, p)).href;
-const fan = ['kinetic', 'andalus', 'tatreez', 'candy', 'terminal'];
+const fan = ['kinetic', 'doors', 'tatreez', 'strata', 'terminal'];
+// The counts come from the built demos, so the image follows the catalogue.
+const slugs = readdirSync(join(pub, 'demos'));
+const styles = new Set(slugs.map(s => readFileSync(join(pub, 'demos', s, 'en.html'), 'utf8').match(/data-style="([a-z-]+)"/)[1])).size;
+const arDigits = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="${url('fonts/reem-kufi.css')}"><link rel="stylesheet" href="${url('fonts/bricolage-grotesque.css')}"><link rel="stylesheet" href="${url('fonts/ibm-plex-mono.css')}">
@@ -28,8 +32,8 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
   <div>
     <span class="mark">قالب</span>
     <p class="latin">QALIB · qalib.omardeek.tech</p>
-    <h1>108 website designs,<br><em>18 styles</em>, one prompt away.</h1>
-    <p class="ar">١٠٨ تصاميم مواقع بالعربية والإنجليزية</p>
+    <h1>${slugs.length} website designs,<br><em>${styles} styles</em>, one prompt away.</h1>
+    <p class="ar">${arDigits(slugs.length)} تصميمًا للمواقع بالعربية والإنجليزية</p>
   </div>
   <div class="fan">${fan.map((s, i) => `<div class="card" style="transform: translateX(-50%) rotate(${(i - 2) * 9}deg)"><img src="${url(`thumbs/${s}-en.webp`)}"></div>`).join('')}</div>
 </div></body></html>`;

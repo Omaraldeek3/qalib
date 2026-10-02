@@ -100,3 +100,4 @@ html[lang="ar"] .foot--big .foot__word { letter-spacing: 0; text-transform: none
 .countdown__num { color: var(--accent); font-weight: 400; }
 .timeline::before { background: var(--accent); width: 1px; }
 .tl__dot { border-radius: 0; transform: rotate(45deg) scale(.85); border-width: 1px; background: var(--accent); }
+@media (max-width: 600px) { .nav--center .brand { font-size: 1.15rem; letter-spacing: .08em; } html[lang="ar"] .nav--center .brand { font-size: 1.4rem; } }
