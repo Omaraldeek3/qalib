@@ -47,15 +47,21 @@
     requestAnimationFrame(step);
   };
 
-  // Big figures shrink to fit their column instead of spilling out of it.
-  const fit = () => $$('.stat__value').forEach(el => {
-    const shown = el.textContent;
-    if (el.dataset.count) el.textContent = el.dataset.count;
-    el.style.fontSize = '';
-    for (let i = 0; i < 3 && el.scrollWidth > el.clientWidth + 1; i++) {
-      el.style.fontSize = `${parseFloat(getComputedStyle(el).fontSize) * el.clientWidth / el.scrollWidth * 0.97}px`;
+  // Big figures shrink to fit their columns instead of spilling out of them,
+  // all by the same amount so a row of figures stays one size.
+  const fit = () => $$('.stats__grid').forEach(grid => {
+    const vals = $$('.stat__value', grid);
+    const shown = vals.map(el => el.textContent);
+    vals.forEach(el => { el.style.fontSize = ''; if (el.dataset.count) el.textContent = el.dataset.count; });
+    const base = vals.map(el => parseFloat(getComputedStyle(el).fontSize));
+    let k = 1;
+    for (let i = 0; i < 3; i++) {
+      const over = Math.max(...vals.map(el => el.scrollWidth / el.clientWidth));
+      if (over <= 1.01) break;
+      k *= 0.97 / over;
+      vals.forEach((el, j) => { el.style.fontSize = `${base[j] * k}px`; });
     }
-    el.textContent = shown;
+    vals.forEach((el, j) => { el.textContent = shown[j]; });
   });
   fit();
   if (d.fonts) d.fonts.ready.then(fit);
