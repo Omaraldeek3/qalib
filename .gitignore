@@ -14,3 +14,6 @@ public/demos/
 public/fonts/
 src/demo/generated/
 .claude/
+
+.vercel
+.env*
