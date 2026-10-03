@@ -7,10 +7,10 @@ import { chromium } from '@playwright/test';
 
 const pub = join(process.cwd(), 'public');
 const url = p => pathToFileURL(join(pub, p)).href;
-const fan = ['kinetic', 'doors', 'tatreez', 'strata', 'terminal'];
+const fan = ['playdough', 'borealis', 'tatreez', 'arcade-cafe', 'glossy'];
 // The counts come from the built demos, so the image follows the catalogue.
 const slugs = readdirSync(join(pub, 'demos'));
-const styles = new Set(slugs.map(s => readFileSync(join(pub, 'demos', s, 'en.html'), 'utf8').match(/data-style="([a-z-]+)"/)[1])).size;
+const styles = new Set(slugs.map(s => readFileSync(join(pub, 'demos', s, 'en.html'), 'utf8').match(/data-style="([a-z0-9-]+)"/)[1])).size;
 const arDigits = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">

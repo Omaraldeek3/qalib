@@ -18,6 +18,13 @@ import { handdrawn } from './designs/handdrawn';
 import { geometric } from './designs/geometric';
 import { conventional } from './designs/conventional';
 import { interactive } from './designs/interactive';
+import { bento } from './designs/bento';
+import { clay } from './designs/clay';
+import { soft } from './designs/soft';
+import { aurora } from './designs/aurora';
+import { y2k } from './designs/y2k';
+import { pixel } from './designs/pixel';
+import { skeuo } from './designs/skeuo';
 import type { DesignInput } from './designs/input';
 import type { CategoryId, Design } from './types';
 
@@ -27,6 +34,7 @@ export { PROFILES, profile } from './profiles';
 const byCategory: Record<CategoryId, DesignInput[]> = {
   classic, vintage, modern, animated, heritage, digital, minimal, luxury, playful,
   editorial, brutalist, glass, retro, organic, artdeco, handdrawn, geometric, conventional, interactive,
+  bento, clay, soft, aurora, y2k, pixel, skeuo,
 };
 
 /** Every design, numbered in catalogue order. */

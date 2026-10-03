@@ -11,7 +11,7 @@ export type CategoryId =
   | 'classic' | 'vintage' | 'modern' | 'animated' | 'heritage' | 'digital'
   | 'minimal' | 'luxury' | 'playful' | 'editorial' | 'brutalist' | 'glass'
   | 'retro' | 'organic' | 'artdeco' | 'handdrawn' | 'geometric' | 'conventional'
-  | 'interactive';
+  | 'interactive' | 'bento' | 'clay' | 'soft' | 'aurora' | 'y2k' | 'pixel' | 'skeuo';
 
 export type ProfileId =
   | 'restaurant' | 'cafe' | 'sweets' | 'farm' | 'construction' | 'agency'

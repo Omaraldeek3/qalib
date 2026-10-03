@@ -1,6 +1,6 @@
 # Qalib · قالب
 
-A library of website designs. 228 designs in 19 styles, twelve each, every one with a live demo in Arabic and English and a detailed prompt that tells Claude Code how to build a site in that style.
+A library of website designs. 312 designs in 26 styles, twelve each, every one with a live demo in Arabic and English and a detailed prompt that tells Claude Code how to build a site in that style.
 
 **Live:** https://qalib.omardeek.tech
 
@@ -14,9 +14,11 @@ A library of website designs. 228 designs in 19 styles, twelve each, every one w
 
 ## The styles
 
-Classic, Vintage, Modern, Animated, Heritage, Digital, Minimal, Luxury, Playful, Editorial, Brutalist, Glass, Retro, Organic, Art Deco, Hand-drawn, Geometric, Conventional and Interactive, twelve designs each, across twenty kinds of business: restaurants, cafes, sweets, farm shops, contractors, agencies, software companies, clinics, perfumers, boutiques, photographers, apps, weddings, conferences, sign workshops, hotels, academies, gyms, real estate and law firms.
+Classic, Vintage, Modern, Animated, Heritage, Digital, Minimal, Luxury, Playful, Editorial, Brutalist, Glass, Retro, Organic, Art Deco, Hand-drawn, Geometric, Conventional, Interactive, Bento, Clay, Soft UI, Aurora, Y2K, Pixel and Skeuo, twelve designs each, across twenty kinds of business: restaurants, cafes, sweets, farm shops, contractors, agencies, software companies, clinics, perfumers, boutiques, photographers, apps, weddings, conferences, sign workshops, hotels, academies, gyms, real estate and law firms.
 
 The Interactive style is built on the visitor's own movement: a photo that opens to full screen as you scroll, a curtain bearing the brand name that parts, layers that follow the pointer, a spotlight that reveals the colour underneath, a trail of photos, a phone that tilts toward the pointer, a statement read word by word and a row of cards that slides sideways. Every one of them has a still version for people who prefer less motion.
+
+Seven styles came from the style catalogue in [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), picking the ones Qalib did not cover yet: Bento (a grid of cards in different sizes), Clay (puffy pastel shapes), Soft UI (neumorphism), Aurora (drifting colour fields), Y2K (chrome and gloss), Pixel (1980s game graphics) and Skeuo (wood, leather, paper and brass built in CSS). Their palettes, shadows and motion follow that catalogue's notes for each style.
 
 ## How it is built
 

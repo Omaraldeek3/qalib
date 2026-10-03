@@ -32,10 +32,10 @@ function* strings(v: unknown, path = ''): Generator<[string, L]> {
 }
 
 describe('catalogue', () => {
-  it('has 19 styles with 12 designs each, numbered 1 to 228', () => {
-    assert.equal(CATEGORIES.length, 19);
+  it('has 26 styles with 12 designs each, numbered 1 to 312', () => {
+    assert.equal(CATEGORIES.length, 26);
     for (const c of CATEGORIES) assert.equal(DESIGNS.filter(d => d.cat === c.id).length, 12, c.id);
-    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: 228 }, (_, i) => i + 1));
+    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: 312 }, (_, i) => i + 1));
   });
 
   it('gives every style twelve different demo businesses', () => {

@@ -1,0 +1,97 @@
+/* Bento: every section is a grid of rounded cards in different sizes on a quiet grey ground. */
+html {
+  --lh-head: 1.04;
+  --tracking-head: -0.035em;
+  --fs-h1: clamp(2.6rem, 5.6vw, 4.8rem);
+  --sec-pad: clamp(56px, 7vw, 96px);
+  --grid-gap: clamp(10px, 1.4vw, 16px);
+  --radius-btn: 999px; --radius-badge: 999px; --radius-icon: 14px; --radius-mark: 12px; --radius-input: 14px;
+  --btn-pad: .85em 1.6em; --fw-btn: 600;
+  --case-eyebrow: none; --tracking-eyebrow: 0; --fs-eyebrow: .82rem; --fw-eyebrow: 600; --eyebrow-color: var(--muted);
+  --card-border: 0; --card-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 6px 18px -8px rgba(0, 0, 0, .1); --card-pad: clamp(1.2rem, 2.4vw, 1.8rem);
+  --alt-bg: transparent; --nav-bg: transparent;
+  --step-rule: 0; --tbl-rule: 1px solid var(--line);
+  --marquee-bg: var(--surface); --marquee-border: 0; --marquee-sep: "•";
+  --input-bg: var(--bg); --input-border: 0;
+  --tile: var(--surface);
+  --tile-shadow: var(--card-shadow);
+  --hero-eyebrow: var(--ink);
+  --reveal-y: 18px;
+}
+[data-scheme="dark"] { --card-shadow: 0 0 0 1px var(--line); }
+html[lang="ar"] { --lh-head: 1.3; }
+
+/* Anything that holds content becomes a tile. */
+.card, .quote, .plan, .contact__panel, .contact--card .contact__card, .step, .faq__list, .menu__group, .tbl, .countdown__box, .tl, .about__body, .zig__row {
+  background: var(--tile); border: 0; border-radius: var(--radius); box-shadow: var(--tile-shadow);
+}
+.card, .quote, .plan, .step, .menu__group { transition: transform .35s var(--ease), box-shadow .35s; }
+.card:hover, .quote:hover, .plan:hover, .step:hover { transform: scale(1.02); }
+.eyebrow { display: inline-flex; padding: .35em .9em; border-radius: 999px; background: var(--tile); box-shadow: var(--tile-shadow); color: var(--ink); }
+.eyebrow::before { content: ""; width: 7px; height: 7px; margin-inline-end: .55em; align-self: center; border-radius: 50%; background: var(--accent); }
+.nav--pill .nav__in { background: color-mix(in srgb, var(--tile) 82%, transparent); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); box-shadow: var(--tile-shadow); border: 0; }
+.brand__mark { border-radius: 10px; }
+.btn--ghost { background: var(--tile); border-color: transparent; box-shadow: var(--tile-shadow); color: var(--ink); }
+.btn--ghost:hover { background: var(--tile); color: var(--accent); border-color: transparent; }
+.badge { background: var(--tile); border: 0; box-shadow: var(--tile-shadow); }
+
+/* The hero is a grid of tiles too: the text in one, the photo in another. */
+.hero--split .hero__text, .hero--collage .hero__text, .hero--device .hero__text, .hero--arch .hero__text, .hero--editorial .hero__text {
+  padding: clamp(1.6rem, 4vw, 3.2rem); border-radius: calc(var(--radius) + 8px); background: var(--tile); box-shadow: var(--tile-shadow);
+}
+.hero--split .hero__in, .hero--collage .hero__in, .hero--device .hero__in, .hero--arch .hero__in { gap: var(--grid-gap); align-items: stretch; }
+.hero--split .hero__text, .hero--collage .hero__text, .hero--device .hero__text, .hero--arch .hero__text { display: flex; flex-direction: column; justify-content: center; }
+.hero__media, .about__media, .about__media2, .zig__media { border-radius: calc(var(--radius) + 8px); }
+.hero--split .hero__media { max-height: none; }
+.hero--device .hero__media, .hero--device .phones { border-radius: calc(var(--radius) + 8px); background: color-mix(in srgb, var(--accent) 12%, var(--tile)); }
+.hero--centered .hero__media, .hero--framed .hero__media, .hero--type .hero__media { border-radius: calc(var(--radius) + 8px); }
+.hero--fullbleed .hero__text { padding: clamp(1.6rem, 4vw, 3rem); border-radius: calc(var(--radius) + 6px); background: color-mix(in srgb, var(--tile) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: var(--ink); }
+.hero--fullbleed .hero__text .hero__lead { color: var(--muted); }
+.hero--fullbleed .badge { background: var(--tile); color: var(--ink); border: 0; }
+.hero--fullbleed .btn--ghost { color: var(--ink); }
+.hero--fullbleed .hero__media::after { background: none; }
+
+/* Figures sit in their own tiles, huge. */
+.stats__grid { gap: var(--grid-gap); }
+.stats__grid > * { padding: clamp(1.2rem, 2.6vw, 1.8rem); border-radius: var(--radius); background: var(--tile); box-shadow: var(--tile-shadow); }
+.stats__grid > :first-child { background: var(--accent); color: var(--on-accent); }
+.stats__grid > :first-child .stat__value, .stats__grid > :first-child .stat__label { color: inherit; }
+.stat__value { font-size: clamp(2.4rem, 5vw, 3.8rem); letter-spacing: -0.04em; }
+.stats--big .stats__grid > * { min-height: 11rem; display: flex; flex-direction: column; justify-content: space-between; }
+
+/* The first card of a bento grid takes the colour. */
+.bento > .card:first-child { background: var(--accent); color: var(--on-accent); }
+.bento > .card:first-child .card__text, .bento > .card:first-child .card__meta, .bento > .card:first-child .card__price { color: inherit; opacity: .88; }
+.bento > .card:first-child .card__icon { background: color-mix(in srgb, var(--on-accent) 16%, transparent); color: var(--on-accent); }
+.bento > .card:nth-child(4) { background: color-mix(in srgb, var(--accent2) 26%, var(--tile)); }
+.card__icon { background: color-mix(in srgb, var(--accent) 12%, var(--tile)); color: var(--accent); }
+.card::after { content: "↗"; position: absolute; top: 1rem; inset-inline-end: 1.1rem; font-size: 1rem; opacity: .35; transition: opacity .3s; }
+html[dir="rtl"] .card::after { content: "↖"; }
+.card:hover::after { opacity: 1; }
+.card__media { margin: 8px 8px 0; border-radius: calc(var(--radius) - 8px); }
+.card__tag { border-radius: 999px; }
+
+.step { padding: 1.6rem; }
+.step__num { display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 12px; background: color-mix(in srgb, var(--accent) 14%, var(--tile)); color: var(--accent); font-size: 1rem; }
+.tile { border-radius: var(--radius); }
+.tile figcaption { inset: auto 10px 10px; width: auto; border-radius: 14px; background: color-mix(in srgb, var(--tile) 86%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--ink); }
+.tile figcaption * { color: var(--ink); }
+.quote__avatar { border-radius: 12px; }
+.plan.is-featured { background: var(--accent); color: var(--on-accent); }
+.plan.is-featured .btn--primary { background: var(--on-accent); color: var(--accent); }
+.tbl, .faq__list { padding-inline: 1.4rem; }
+.faq__item:last-child { border: 0; }
+.menu__group { padding: 1.6rem; }
+.tl { padding: 1.2rem 1.4rem; }
+.cta--band { margin-inline: var(--gutter); border-radius: calc(var(--radius) + 8px); background: var(--accent); color: var(--on-accent); }
+.cta--band .btn--primary { background: var(--on-accent); color: var(--accent); }
+.cta--big .cta__in { padding: clamp(2rem, 6vw, 4rem); border-radius: calc(var(--radius) + 8px); background: var(--tile); box-shadow: var(--tile-shadow); }
+.contact--card, .contact--split { background: transparent; }
+.contact__info { gap: var(--grid-gap); }
+.info { padding: 1rem 1.2rem; border-radius: calc(var(--radius) - 6px); background: var(--tile); box-shadow: var(--tile-shadow); }
+.field input, .field textarea, .field select { box-shadow: inset 0 0 0 1px var(--line); }
+.marquee { margin-inline: var(--gutter); border-radius: 999px; box-shadow: var(--tile-shadow); }
+.foot { background: transparent; }
+.foot__cols > * { padding: 1.4rem; border-radius: var(--radius); background: var(--tile); box-shadow: var(--tile-shadow); }
+.foot__cols > :first-child { background: transparent; box-shadow: none; padding-inline: 0; }
+.deco-grid { opacity: .5; }
