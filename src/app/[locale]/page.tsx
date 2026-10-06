@@ -8,7 +8,7 @@ import { cardData, catalogCopy } from '@/ui/cards';
 import { HeroSearch } from '@/ui/HeroSearch';
 import { StyleTiles } from '@/ui/StyleTiles';
 
-const FAN = ['kinetic', 'andalus', 'tatreez', 'candy', 'terminal'];
+const FAN = ['kinetic', 'andalus', 'tatreez', 'storytime', 'terminal'];
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

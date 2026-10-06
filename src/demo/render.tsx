@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { category } from '@/catalog/categories';
 import { font, stack } from '@/catalog/fonts';
 import { resolveLayout } from '@/catalog/layout';
+import { profileFor } from '@/catalog';
 import { profile } from '@/catalog/profiles';
 import type { Design, L, Lang, Section } from '@/catalog/types';
 import { About, Items, Logos, Marquee, Stats } from './blocks';
@@ -25,7 +26,7 @@ const kitCss = (id: string) => {
 export function makeCtx(design: Design, lang: Lang): Ctx {
   const cat = category(design.cat);
   return {
-    design, cat, profile: profile(design.profile), lang,
+    design, cat, profile: profileFor(design), lang,
     layout: resolveLayout(design),
     decor: new Set(design.decor ?? []),
   };

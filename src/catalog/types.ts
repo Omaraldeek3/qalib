@@ -18,7 +18,9 @@ export type ProfileId =
   | 'restaurant' | 'cafe' | 'sweets' | 'farm' | 'construction' | 'agency'
   | 'software' | 'clinic' | 'perfume' | 'boutique' | 'photographer' | 'app'
   | 'wedding' | 'conference' | 'signage' | 'hotel' | 'academy' | 'gym'
-  | 'realestate' | 'law';
+  | 'realestate' | 'law'
+  | 'bookshop' | 'music' | 'garage' | 'florist' | 'vet' | 'cowork' | 'gallery' | 'wallet'
+  | 'dive' | 'trails' | 'stars' | 'travel' | 'bikes';
 
 /** A photo in public/img, named by its Lorem Picsum id. */
 export type ImgId = number;

@@ -2,9 +2,9 @@ import type { DesignInput } from './input';
 
 export const editorial: DesignInput[] = [
   {
-    slug: 'daily', profile: 'restaurant',
-    name: { ar: 'اليومية', en: 'The Daily' },
-    blurb: { ar: 'مطعم يقدّم نفسه كصفحة جريدة: ترويسة وأعمدة وقائمة طعام كأخبار اليوم.', en: 'A restaurant presented as a newspaper page: masthead, columns and a menu set like the day\'s news.' },
+    slug: 'dispatch', profile: 'travel',
+    name: { ar: 'رسائل السفر', en: 'Dispatch' },
+    blurb: { ar: 'مكتب سفر يقدّم نفسه كصفحة جريدة: ترويسة وأعمدة ورحلات كأنها رسائل اليوم من الخارج.', en: 'A travel agency presented as a newspaper page: masthead, columns and trips set like the day\'s dispatches from abroad.' },
     scheme: 'light',
     palette: { bg: '#F4F1EA', surface: '#EBE6DB', ink: '#141414', muted: '#5C5A55', accent: '#C0261C', accent2: '#141414', line: '#CFC9BC', onAccent: '#FFFFFF' },
     fonts: { display: 'playfair-display', body: 'source-serif-4', displayAr: 'markazi-text', bodyAr: 'noto-naskh-arabic' },
@@ -50,9 +50,9 @@ export const editorial: DesignInput[] = [
     decor: ['mono'],
   },
   {
-    slug: 'folio', profile: 'boutique',
+    slug: 'folio', profile: 'bookshop',
     name: { ar: 'فوليو', en: 'Folio' },
-    blurb: { ar: 'متجر أزياء كمجلة موضة: خط ديدون أنيق وصور كبيرة وتعليقات صغيرة.', en: 'A fashion shop as a fashion magazine: an elegant Didone, big pictures and small captions.' },
+    blurb: { ar: 'مكتبة كمجلة أدبية: خط ديدون أنيق، صور كبيرة للكتب وتعليقات صغيرة، والأمسيات في قائمة هادئة.', en: 'A bookshop as a literary review: an elegant Didone, big photos of books with small captions, and the evenings in a quiet list.' },
     scheme: 'light',
     palette: { bg: '#FAF7F2', surface: '#F0EBE3', ink: '#1C1A17', muted: '#6E6860', accent: '#B4532A', accent2: '#1C1A17', line: '#DDD6CB', onAccent: '#FFFFFF' },
     fonts: { display: 'bodoni-moda', body: 'lora', displayAr: 'el-messiri', bodyAr: 'noto-naskh-arabic' },
@@ -108,9 +108,9 @@ export const editorial: DesignInput[] = [
     decor: ['mono'],
   },
   {
-    slug: 'op-ed', profile: 'cafe',
-    name: { ar: 'افتتاحية', en: 'Op-Ed' },
-    blurb: { ar: 'ليل دافئ وطوبي وأخضر مريمية، مقهى يُقرأ كصفحة الرأي: عنوان كبير فوق خط، قائمة منقّطة، وصور في جدار.', en: 'A warm night, brick and sage, a café that reads like the opinion page: a big headline over a rule, a dotted menu and a wall of photos.' },
+    slug: 'deep', profile: 'dive',
+    name: { ar: 'عُمق', en: 'Deep' },
+    blurb: { ar: 'ليل دافئ ومرجاني طوبي وأخضر مريمية، مركز غوص يُقرأ كمجلة بحرية: عنوان كبير فوق خط، دورات في قائمة منقّطة، وصور الشعاب في جدار.', en: 'A warm night, brick coral and sage, a dive centre that reads like a sea journal: a big headline over a rule, courses in a dotted list and a wall of reef photos.' },
     scheme: 'dark',
     palette: { bg: '#15120F', surface: '#1E1A16', ink: '#F1EAE0', muted: '#ADA295', accent: '#E2725B', accent2: '#8FA889', line: '#2E2822', onAccent: '#15120F' },
     fonts: { display: 'playfair-display', body: 'source-serif-4', displayAr: 'amiri', bodyAr: 'noto-naskh-arabic' },

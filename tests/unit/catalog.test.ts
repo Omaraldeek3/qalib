@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
-import { CATEGORIES, DESIGNS, PROFILES } from '../../src/catalog/index.ts';
+import { CATEGORIES, DESIGNS, PROFILES, profileFor } from '../../src/catalog/index.ts';
 import { FONTS } from '../../src/catalog/fonts.ts';
 import {
   appNavVariants, appPanelVariants, appViewVariants,
@@ -44,6 +44,23 @@ describe('catalogue', () => {
     for (const c of CATEGORIES) {
       const profiles = DESIGNS.filter(d => d.cat === c.id).map(d => d.profile);
       assert.equal(new Set(profiles).size, profiles.length, c.id);
+    }
+  });
+
+  it('spreads the designs over every business, so no demo content repeats from card to card', () => {
+    const per = new Map<string, number>();
+    for (const d of DESIGNS) per.set(d.profile, (per.get(d.profile) ?? 0) + 1);
+    assert.equal(per.size, Object.keys(PROFILES).length);
+    for (const [profile, n] of per) assert.ok(n >= 5 && n <= 12, `${profile}: ${n} designs`);
+  });
+
+  it('opens the designs of one business on different photos, in turn', () => {
+    for (const p of Object.values(PROFILES)) {
+      const hero = p.sections.find(s => s.kind === 'hero');
+      if (hero?.kind !== 'hero' || !hero.imgs?.length) continue;
+      const designs = DESIGNS.filter(d => d.profile === p.id && CATEGORIES.find(c => c.id === d.cat)!.kind !== 'app');
+      const leads = designs.map(d => (profileFor(d).sections.find(s => s.kind === 'hero') as typeof hero).img);
+      assert.equal(new Set(leads).size, Math.min(designs.length, hero.imgs.length + 1), p.id);
     }
   });
 

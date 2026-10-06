@@ -2,9 +2,9 @@ import type { DesignInput } from './input';
 
 export const heritage: DesignInput[] = [
   {
-    slug: 'tatreez', profile: 'boutique',
+    slug: 'tatreez', profile: 'gallery',
     name: { ar: 'تطريز', en: 'Tatreez' },
-    blurb: { ar: 'أحمر التطريز الفلسطيني على الكريمي، شرائط غرز متصالبة وصور داخل أقواس.', en: 'Palestinian embroidery red on cream, cross-stitch bands and photos inside arches.' },
+    blurb: { ar: 'أحمر التطريز الفلسطيني على الكريمي، صالة عرض بشرائط غرز متصالبة وصور داخل أقواس، لمعرض عن الخيط والذاكرة.', en: 'Palestinian embroidery red on cream, a gallery of cross-stitch bands and photos inside arches, for an exhibition of thread and memory.' },
     scheme: 'light',
     palette: { bg: '#F6EFE3', surface: '#FFF9F0', ink: '#2A1A14', muted: '#6E5A4C', accent: '#A61E22', accent2: '#1F3B2D', line: '#DFCDB5', onAccent: '#FFF6EA' },
     fonts: { display: 'marcellus', body: 'lora', displayAr: 'reem-kufi', bodyAr: 'noto-naskh-arabic' },
@@ -43,9 +43,9 @@ export const heritage: DesignInput[] = [
     css: 'html[lang="ar"] h3, html[lang="ar"] .faq__item summary, html[lang="ar"] .quote blockquote, html[lang="ar"] .about__quote, html[lang="ar"] .stat__value, html[lang="ar"] .plan__amount, html[lang="ar"] .card__price, html[lang="ar"] .step__num, html[lang="ar"] .brand, html[lang="ar"] .menu__title, html[lang="ar"] .countdown__num { font-family: var(--font-body); font-weight: 700; } html[lang="ar"] .hero__title { font-size: clamp(3.2rem, 7.4vw, 6.4rem); }',
   },
   {
-    slug: 'diwan', profile: 'cafe',
+    slug: 'diwan', profile: 'bookshop',
     name: { ar: 'ديوان', en: 'Diwan' },
-    blurb: { ar: 'أحمر قرمزي وذهب ونقوش، كمقهى شعبي قديم بجلسات عربية.', en: 'Crimson, gold and patterns, like an old coffee house with floor seating.' },
+    blurb: { ar: 'أحمر قرمزي وذهب ونقوش، مكتبة في البلدة القديمة باسم ديوان الشعر: عنوان في إطار، الكتب في قائمة منقّطة، وفواصل بنجوم ثمانية.', en: 'Crimson, gold and patterns, an old-city bookshop named after the poetry collection: a framed headline, the books in a dotted list and eight-pointed stars between sections.' },
     scheme: 'dark',
     palette: { bg: '#2A0F12', surface: '#36161A', ink: '#F4E4C8', muted: '#CDAE8E', accent: '#D8A657', accent2: '#3E6B4E', line: '#4D2328', onAccent: '#2A0F12' },
     fonts: { display: 'cormorant', body: 'eb-garamond', displayAr: 'amiri', bodyAr: 'amiri' },

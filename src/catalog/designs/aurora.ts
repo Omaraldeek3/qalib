@@ -4,9 +4,9 @@ import type { DesignInput } from './input';
 // picks its own two lights (accent, accent2); the kit mixes a third.
 export const aurora: DesignInput[] = [
   {
-    slug: 'borealis', profile: 'conference',
+    slug: 'borealis', profile: 'stars',
     name: { ar: 'بوريالِس', en: 'Borealis' },
-    blurb: { ar: 'كحلي عميق وفيروزي ووردي، مهرجان موسيقي تحت شفق يتحرك ببطء.', en: 'Deep navy, teal and pink, a music festival under a slowly moving aurora.' },
+    blurb: { ar: 'كحلي عميق وفيروزي ووردي، نادي فلك تحت شفق يتحرك ببطء.', en: 'Deep navy, teal and pink, an astronomy club under a slowly moving aurora.' },
     scheme: 'dark',
     palette: { bg: '#0B0B1E', surface: '#14142C', ink: '#F4F4FF', muted: '#A9A9C8', accent: '#FF2E9A', accent2: '#00E0FF', line: '#24244A', onAccent: '#1A0010' },
     fonts: { display: 'sora', body: 'inter', displayAr: 'readex-pro', bodyAr: 'readex-pro' },
@@ -68,9 +68,9 @@ export const aurora: DesignInput[] = [
     layout: { schedule: 'timeline', about: 'split' },
   },
   {
-    slug: 'afterglow', profile: 'gym',
+    slug: 'afterglow', profile: 'bikes',
     name: { ar: 'توهج', en: 'Afterglow' },
-    blurb: { ar: 'أسود وأحمر ناري وبرتقالي، نادي ركوب دراجات داخلي تحت أضواء ملونة.', en: 'Black, fire red and orange, an indoor cycling club under coloured lights.' },
+    blurb: { ar: 'أسود وأحمر ناري وبرتقالي، محل دراجات تتوهج جولاته الليلية تحت أضواء ملونة.', en: 'Black, fire red and orange, a bike shop whose night rides glow under coloured lights.' },
     scheme: 'dark',
     palette: { bg: '#0D0707', surface: '#1A0E0E', ink: '#FFF2EE', muted: '#C5A39C', accent: '#FF3D3D', accent2: '#FF9F1C', line: '#2E1717', onAccent: '#1A0000' },
     fonts: { display: 'archivo-black', body: 'archivo', displayAr: 'lalezar', bodyAr: 'cairo' },

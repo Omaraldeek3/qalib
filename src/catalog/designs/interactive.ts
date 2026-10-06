@@ -5,9 +5,9 @@ import type { DesignInput } from './input';
 // lights up word by word (about: scrub) or a rail of cards (rail).
 export const interactive: DesignInput[] = [
   {
-    slug: 'swell', profile: 'hotel',
+    slug: 'swell', profile: 'dive',
     name: { ar: 'مدّ', en: 'Swell' },
-    blurb: { ar: 'رذاذ البحر وغروب برتقالي؛ صورة البيت تكبر مع التمرير حتى تملأ الشاشة، ثم عبارة تُضاء كلمة كلمة.', en: 'Sea mist and a sunset orange; the photo of the house grows with the scroll until it fills the screen, then a statement lights up word by word.' },
+    blurb: { ar: 'رذاذ البحر وغروب برتقالي؛ صورة ما تحت الماء تكبر مع التمرير حتى تملأ الشاشة، ثم جملة عن البحر تُضاء كلمة كلمة.', en: 'Sea mist and a sunset orange; the underwater photo grows with the scroll until it fills the screen, then a line about the sea lights up word by word.' },
     scheme: 'light',
     palette: { bg: '#E6EFF1', surface: '#FFFFFF', ink: '#0C2A36', muted: '#4A6670', accent: '#E8743B', accent2: '#0F6E83', line: '#CBDDE2', onAccent: '#1A0B03' },
     fonts: { display: 'fraunces', body: 'outfit', displayAr: 'aref-ruqaa', bodyAr: 'readex-pro' },
@@ -66,9 +66,9 @@ export const interactive: DesignInput[] = [
     decor: ['progress', 'cursor'],
   },
   {
-    slug: 'trace', profile: 'photographer',
+    slug: 'trace', profile: 'trails',
     name: { ar: 'أثر', en: 'Trace' },
-    blurb: { ar: 'أبيض المعرض وحبر أسود؛ حرّك الفأرة فتتساقط الصور خلفها وتتلاشى، والاسم ينقلب لونه فوقها.', en: 'Gallery white and black ink; move the mouse and photos drop behind it and fade, the name inverting over them.' },
+    blurb: { ar: 'أبيض الورق وحبر أسود؛ حرّك الفأرة فتتساقط صور الدرب خلفها وتتلاشى كآثار الأقدام، والاسم ينقلب لونه فوقها.', en: 'Paper white and black ink; move the mouse and trail photos drop behind it and fade like footprints, the name inverting over them.' },
     scheme: 'light',
     palette: { bg: '#F6F5F2', surface: '#FFFFFF', ink: '#111111', muted: '#5E5A55', accent: '#1B1B1B', accent2: '#C84B31', line: '#E2DFD9', onAccent: '#F6F5F2' },
     fonts: { display: 'instrument-serif', body: 'inter-tight', displayAr: 'markazi-text', bodyAr: 'readex-pro' },
@@ -97,9 +97,9 @@ export const interactive: DesignInput[] = [
     decor: ['progress', 'cursor', 'blobs'],
   },
   {
-    slug: 'surge', profile: 'gym',
+    slug: 'surge', profile: 'bikes',
     name: { ar: 'اندفاع', en: 'Surge' },
-    blurb: { ar: 'أسود وأحمر ناري وخط عريض مضغوط؛ صورة المدرب تميل مع المؤشر، وعبارة الصالة تُضاء مع النزول.', en: 'Black, fiery red and tall condensed type; the coach photo tilts with the pointer, and the gym\'s creed lights up as you go down.' },
+    blurb: { ar: 'أسود وأحمر ناري وخط عريض مضغوط؛ صورة الدرّاجة تميل مع المؤشر، وشعار المحل يُضاء مع النزول.', en: 'Black, fiery red and tall condensed type; the rider\'s photo tilts with the pointer, and the shop\'s motto lights up as you go down.' },
     scheme: 'dark',
     palette: { bg: '#0B0B0B', surface: '#161616', ink: '#F5F5F0', muted: '#A3A39A', accent: '#FF3B1F', accent2: '#FFD400', line: '#262626', onAccent: '#0B0B0B' },
     fonts: { display: 'anton', body: 'archivo', displayAr: 'changa', bodyAr: 'tajawal' },

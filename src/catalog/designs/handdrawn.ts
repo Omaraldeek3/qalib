@@ -2,18 +2,18 @@ import type { DesignInput } from './input';
 
 export const handdrawn: DesignInput[] = [
   {
-    slug: 'notebook', profile: 'academy',
+    slug: 'notebook', profile: 'bookshop',
     name: { ar: 'دفتر', en: 'Notebook' },
-    blurb: { ar: 'ورق دفتر مسطّر وحبر أزرق وشريط لاصق، كدفتر طالب نشيط.', en: 'Ruled notebook paper, blue ink and tape, like a keen student\'s notebook.' },
+    blurb: { ar: 'ورق مسطّر وحبر أزرق وشريط لاصق، مكتبة تكتب كدفتر قارئ: ملاحظات بخط اليد على كل عنوان.', en: 'Ruled paper, blue ink and tape, a bookshop that writes like a reader\'s notebook: handwritten notes on every title.' },
     scheme: 'light',
     palette: { bg: '#FDFBF5', surface: '#FFFFFF', ink: '#23395B', muted: '#5E6F8A', accent: '#E4572E', accent2: '#4CB944', line: '#23395B', onAccent: '#FFFFFF' },
     fonts: { display: 'patrick-hand', body: 'nunito', displayAr: 'playpen-sans-arabic', bodyAr: 'tajawal' },
     decor: ['notebook', 'tape', 'divider-scribble'],
   },
   {
-    slug: 'sketch', profile: 'agency',
+    slug: 'sketch', profile: 'gallery',
     name: { ar: 'سكتش', en: 'Sketch' },
-    blurb: { ar: 'حدود مرسومة بقلم وأوراق لاصقة على ورق مربعات، لاستوديو يحب الأفكار الأولى.', en: 'Pen-drawn borders and sticky notes on graph paper, for a studio that loves first ideas.' },
+    blurb: { ar: 'حدود مرسومة بقلم وأوراق لاصقة على ورق مربعات، صالة عرض تحب المسودات الأولى: ورش ورسومات أولية وتركيب صور في الواجهة.', en: 'Pen-drawn borders and sticky notes on graph paper, a gallery that loves first drafts: workshops, sketches and a collage up top.' },
     scheme: 'light',
     palette: { bg: '#FFFFFF', surface: '#FAFAF7', ink: '#1A1A1A', muted: '#5C5C5C', accent: '#2D5BFF', accent2: '#FFCF33', line: '#1A1A1A', onAccent: '#FFFFFF' },
     fonts: { display: 'caveat', body: 'dm-sans', displayAr: 'vibes', bodyAr: 'readex-pro' },
@@ -90,9 +90,9 @@ export const handdrawn: DesignInput[] = [
     decor: ['notebook', 'divider-scribble'],
   },
   {
-    slug: 'kind-care', profile: 'clinic',
-    name: { ar: 'رعاية لطيفة', en: 'Kind Care' },
-    blurb: { ar: 'أبيض مزرق وأزرق وبرتقالي، عيادة تشرح بالرسم: ورق مربعات خفيف، أيقونات مرسومة، وأسئلة شائعة بلغة بسيطة.', en: 'Bluish white, blue and orange, a clinic that explains with drawings: light graph paper, drawn icons and an FAQ in plain words.' },
+    slug: 'kind-paws', profile: 'vet',
+    name: { ar: 'رِفق', en: 'Kind Paws' },
+    blurb: { ar: 'أبيض مزرق وأزرق وبرتقالي، طبيب بيطري يشرح بالرسم: ورق مربعات خفيف، أيقونات مرسومة، والزيارة الأولى بخطوات بسيطة.', en: 'Bluish white, blue and orange, a vet who explains with drawings: light graph paper, drawn icons and the first visit in simple steps.' },
     scheme: 'light',
     palette: { bg: '#F5FAFF', surface: '#FFFFFF', ink: '#1D2F40', muted: '#536577', accent: '#3B78B4', accent2: '#F28C38', line: '#DCE7F2', onAccent: '#FFFFFF' },
     fonts: { display: 'caveat', body: 'nunito', displayAr: 'playpen-sans-arabic', bodyAr: 'tajawal' },

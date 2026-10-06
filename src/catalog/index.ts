@@ -27,7 +27,9 @@ import { pixel } from './designs/pixel';
 import { skeuo } from './designs/skeuo';
 import { workbench } from './designs/workbench';
 import type { DesignInput } from './designs/input';
-import type { CategoryId, Design } from './types';
+import type { CategoryId, Design, HeroData, Profile } from './types';
+import { category } from './categories';
+import { profile } from './profiles';
 
 export { CATEGORIES, category } from './categories';
 export { PROFILES, profile } from './profiles';
@@ -53,4 +55,19 @@ export function design(slug: string): Design | undefined {
 
 export function designsIn(cat: CategoryId): Design[] {
   return DESIGNS.filter(d => d.cat === cat);
+}
+
+/** The business as one design shows it. Every design of the same business
+ *  leads with a different one of its hero photos, in turn, so two cards for
+ *  the same bookshop don't open on the same picture. */
+export function profileFor(d: Design): Profile {
+  const p = profile(d.profile);
+  const hero = p.sections.find((s): s is HeroData => s.kind === 'hero');
+  if (!hero?.imgs?.length) return p;
+  const siblings = DESIGNS.filter(x => x.profile === d.profile && category(x.cat).kind !== 'app');
+  const pool = [hero.img, ...hero.imgs];
+  const turn = Math.max(0, siblings.findIndex(x => x.slug === d.slug)) % pool.length;
+  if (!turn) return p;
+  const photos = [...pool.slice(turn), ...pool.slice(0, turn)];
+  return { ...p, sections: p.sections.map(s => (s === hero ? { ...hero, img: photos[0], imgs: photos.slice(1) } : s)) };
 }
