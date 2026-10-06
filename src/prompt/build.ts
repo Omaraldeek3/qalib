@@ -1,5 +1,6 @@
 import type { L, Lang } from '@/catalog/types';
 import {
+  appKindText, appNavText, appPanelText, appViewText,
   aboutText, contactText, ctaText, decorText, footerText, heroText, interactionText, itemsText, kindText, motionText, navText, pr,
   quotesText, roleText, stackText, statsText, type Stack,
 } from './copy';
@@ -40,6 +41,10 @@ function variantText(item: OutlineItem): L | undefined {
     case 'contact': return v ? contactText[v] : undefined;
     case 'cta': return v ? ctaText[v] : undefined;
     case 'footer': return v ? footerText[v] : undefined;
+    case 'app-nav': return v ? appNavText[v] : undefined;
+    case 'app-panel': return v ? appPanelText[v] : undefined;
+    case 'app-view': return v ? appViewText[v] : undefined;
+    case 'app-head': case 'app-stats': case 'app-status': return appKindText[item.kind];
     default: return kindText[item.kind];
   }
 }
@@ -54,7 +59,7 @@ export function buildPrompt(data: PromptData, brief: Brief, lang: Lang, opts: Pr
   const out: string[] = [];
   const h = (s: string) => out.push('', `## ${s}`, '');
 
-  out.push(`# ${fill(T(pr.title), { name: T(data.name) })}`, '', fill(T(pr.intro), { no }));
+  out.push(`# ${fill(T(data.app ? pr.appTitle : pr.title), { name: T(data.name) })}`, '', fill(T(data.app ? pr.appIntro : pr.intro), { no }));
 
   // 1. The project.
   const typeName = brief.type === 'other' ? brief.typeOther.trim() : brief.type ? T(data.suggestions[brief.type]?.label ?? { ar: brief.type, en: brief.type }) : '';
@@ -122,7 +127,8 @@ export function buildPrompt(data: PromptData, brief: Brief, lang: Lang, opts: Pr
     const title = item.title ? ` «${T(item.title)}»` : '';
     out.push(`${i + 1}. **${T(item.label)}**${title}${desc ? `: ${T(desc)}` : ''}`);
   });
-  const wanted = brief.type && brief.type !== 'other' ? data.suggestions[brief.type] : undefined;
+  if (data.app) out.push('', T(pr.appNote));
+  const wanted = !data.app && brief.type && brief.type !== 'other' ? data.suggestions[brief.type] : undefined;
   if (wanted && brief.type !== data.demoProfile) {
     out.push('', fill(T(pr.suggested), { type: T(wanted.label) }), wanted.sections.map(s => T(s)).join(' · '));
   } else if (brief.type === 'other' && brief.typeOther.trim()) {

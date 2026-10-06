@@ -582,6 +582,29 @@ export const CATEGORIES: Category[] = [
     motion: 'subtle', radius: 8,
     tile: { bg: '#5A3920', ink: '#F3E3C3', accent: '#D4A94E', font: 'playfair-display', fontAr: 'amiri' },
   },
+  {
+    id: 'workbench',
+    kind: 'app',
+    name: { ar: 'واجهات الأدوات', en: 'Tool interfaces' },
+    tagline: { ar: 'تطبيقات عمل لا مواقع تعريفية', en: 'Working apps, not brochure sites' },
+    description: {
+      ar: 'واجهة الأداة التي يعمل بها النشاط كل يوم: شريط تنقّل بالأدوات، ومساحة عمل في الوسط، ولوحة إعدادات بجانبها، وأرقام تتحدّث مع كل تغيير. لورش القص ولوحات التحكم وأنظمة الحجز والمطابخ وكل برنامج يُستخدم أكثر مما يُتصفَّح.',
+      en: 'The tool a business works in every day: navigation by tool, a workspace in the middle, a settings panel beside it and figures that update with every change. For cutting workshops, dashboards, booking systems, kitchens and any software that is used more than it is browsed.',
+    },
+    dna: {
+      type: { ar: 'خط واحد واضح بأوزان متوسطة للواجهة كلها، وأحجام صغيرة مضبوطة (13–15px للنص)، وأرقام بعرض ثابت للقيم والمقاسات.', en: 'One clear typeface in medium weights for the whole interface, small precise sizes (13–15px for text) and tabular figures for values and measurements.' },
+      color: { ar: 'خلفية محايدة للتطبيق وسطح أفتح للوحات، ولون مميز واحد للإجراء الأهم في كل شاشة، وألوان حالة هادئة (أخضر، كهرماني، أحمر) للوسوم فقط.', en: 'A neutral app background with lighter panels, one accent for the most important action on each screen, and calm status colours (green, amber, red) for tags only.' },
+      layout: { ar: 'هيكل تطبيق بملء الشاشة: تنقّل ثابت (شريط جانبي أو شريط أيقونات أو تبويبات علوية)، رأس مساحة العمل بعنوان وأزرار، مساحة العمل، ولوحة إعدادات بعرض ثابت؛ على الجوال تتحول اللوحة إلى درج سفلي.', en: 'A full-screen app shell: fixed navigation (sidebar, icon rail or top tabs), a workspace header with title and actions, the workspace, and a fixed-width settings panel; on phones the panel becomes a bottom drawer.' },
+      shape: { ar: 'حقول وأزرار بارتفاع موحّد (36px تقريباً)، حدود رفيعة بدل الظلال الثقيلة، مفاتيح تبديل وأشرطة تمرير ومحددات مقطعية حقيقية.', en: 'Fields and buttons at one height (about 36px), hairline borders instead of heavy shadows, real switches, sliders and segmented controls.' },
+      imagery: { ar: 'محتوى العمل نفسه هو الصورة: رسم قص، مخطط، تقويم، بطاقات، جدول أو صور المنتجات؛ أيقونات خطية بسماكة واحدة.', en: 'The work itself is the picture: a cutting drawing, a plan, a calendar, cards, a table or product photos; line icons at one stroke weight.' },
+      motion: { ar: 'سريعة ووظيفية (120–200ms): إبراز العنصر النشط، فتح اللوحات، وتحديث الأرقام؛ بلا حركة زخرفية.', en: 'Quick and functional (120–200ms): highlighting the active item, opening panels and updating figures; no decorative motion.' },
+      details: { ar: 'شارة عدد بجانب عناصر التنقل، شريط حالة سفلي، اختصارات لوحة المفاتيح، ومؤشرات «محفوظ» و«يعمل على جهازك».', en: 'Count badges beside navigation items, a status bar, keyboard shortcuts, and "saved" and "runs on your device" indicators.' },
+      avoid: { ar: 'أقسام الصفحات التعريفية (واجهة بصورة ضخمة، آراء العملاء، تذييل طويل)، النصوص التسويقية، والأزرار الكثيرة بلون مميز.', en: 'Landing-page sections (big hero photos, testimonials, long footers), marketing copy and many accent-coloured buttons.' },
+    },
+    defaults: layout({ nav: 'minimal', hero: 'type', about: 'columns', quotes: 'single', contact: 'card', cta: 'band', footer: 'simple' }),
+    motion: 'subtle', radius: 8,
+    tile: { bg: '#E9E6DE', ink: '#181B17', accent: '#C9431B', font: 'manrope', fontAr: 'tajawal' },
+  },
 ];
 
 export const categoryIds = CATEGORIES.map(c => c.id);

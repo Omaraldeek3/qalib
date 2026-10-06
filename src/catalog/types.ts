@@ -11,7 +11,8 @@ export type CategoryId =
   | 'classic' | 'vintage' | 'modern' | 'animated' | 'heritage' | 'digital'
   | 'minimal' | 'luxury' | 'playful' | 'editorial' | 'brutalist' | 'glass'
   | 'retro' | 'organic' | 'artdeco' | 'handdrawn' | 'geometric' | 'conventional'
-  | 'interactive' | 'bento' | 'clay' | 'soft' | 'aurora' | 'y2k' | 'pixel' | 'skeuo';
+  | 'interactive' | 'bento' | 'clay' | 'soft' | 'aurora' | 'y2k' | 'pixel' | 'skeuo'
+  | 'workbench';
 
 export type ProfileId =
   | 'restaurant' | 'cafe' | 'sweets' | 'farm' | 'construction' | 'agency'
@@ -209,7 +210,22 @@ export type Category = {
   radius: number;
   /** How the style's tile looks in the library. */
   tile: { bg: string; ink: string; accent: string; font: string; fontAr: string };
+  /** An app style shows the business's working tool (its back office), not its website. */
+  kind?: 'app';
 };
+
+// ---- App interfaces -----------------------------------------------------
+
+/** Where the app's navigation sits: a labelled sidebar, an icon rail, or tabs along the top. */
+export const appNavVariants = ['sidebar', 'rail', 'topbar'] as const;
+/** Which side the settings panel takes, beside the workspace. */
+export const appPanelVariants = ['start', 'end'] as const;
+/** What the workspace shows. */
+export const appViewVariants = ['canvas', 'plan', 'kanban', 'table', 'week', 'timeline', 'grid', 'dashboard', 'gallery', 'document'] as const;
+export type AppNav = (typeof appNavVariants)[number];
+export type AppPanel = (typeof appPanelVariants)[number];
+export type AppView = (typeof appViewVariants)[number];
+export type AppLayout = { nav: AppNav; panel: AppPanel; view: AppView };
 
 export type Design = {
   slug: string;
@@ -231,4 +247,6 @@ export type Design = {
   radius?: number;
   /** Extra CSS for this design only, appended after the style's kit. */
   css?: string;
+  /** For app styles: how the working tool is laid out. */
+  app?: AppLayout;
 };

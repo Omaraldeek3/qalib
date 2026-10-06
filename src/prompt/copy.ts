@@ -142,6 +142,47 @@ export const kindLabel: Record<string, L> = {
   footer: t('التذييل', 'Footer'),
 };
 
+// ---- App interfaces (the workbench style) ----
+
+export const appKindLabel: Record<string, L> = {
+  'app-nav': t('التنقل', 'Navigation'),
+  'app-head': t('رأس مساحة العمل', 'Workspace header'),
+  'app-panel': t('لوحة الإعدادات', 'Settings panel'),
+  'app-view': t('مساحة العمل', 'Workspace'),
+  'app-stats': t('الأرقام', 'Figures'),
+  'app-status': t('شريط الحالة', 'Status bar'),
+};
+
+export const appNavText: Record<string, L> = {
+  sidebar: t('شريط جانبي ثابت بعرض 248px: الشعار واسم الأداة، حقل بحث، ثم الأدوات في مجموعات بعناوين صغيرة، لكل أداة أيقونة وشارة عدد عند الحاجة، والعنصر النشط بخلفية بلون التمييز الخافت وخط على حافته.', 'A fixed 248px sidebar: logo and tool name, a search field, then the tools in groups with small headings, each with an icon and a count badge where needed; the active item has a faint accent background and a bar on its edge.'),
+  rail: t('شريط أيقونات ضيق بعرض 68px: أيقونة لكل أداة بتلميح يظهر عند المرور، وشارة عدد صغيرة، وصورة المستخدم في الأسفل؛ يترك المساحة كلها لمساحة العمل.', 'A narrow 68px icon rail: one icon per tool with a tooltip on hover, a small count badge and the user\'s avatar at the bottom; it leaves the whole screen to the workspace.'),
+  topbar: t('شريط علوي ثابت: الشعار، ثم الأدوات كتبويبات أفقية بخط سفلي للنشط، ثم البحث وصورة المستخدم.', 'A sticky top bar: logo, then the tools as horizontal tabs underlined when active, then search and the user\'s avatar.'),
+};
+
+export const appPanelText: Record<string, L> = {
+  start: t('لوحة إعدادات بعرض 300px في بداية السطر، ثابتة أثناء التمرير، مقسمة إلى أقسام مرقمة فيها حقول بوحدات ومفاتيح تبديل وأشرطة تمرير ومحددات مقطعية.', 'A 300px settings panel at the start edge, sticky while scrolling, in numbered sections of fields with units, switches, sliders and segmented controls.'),
+  end: t('لوحة تفاصيل بعرض 300px في نهاية السطر تعرض العنصر المحدد في مساحة العمل وتعدّله، ثابتة أثناء التمرير.', 'A 300px details panel at the end edge that shows and edits whatever is selected in the workspace; sticky while scrolling.'),
+};
+
+export const appViewText: Record<string, L> = {
+  canvas: t('لوح عمل بخلفية محايدة عليه ورقة بيضاء بظل، وعليها رسم القص بخطوط حمراء رفيعة والحفر بالأزرق، وتحتها المقاسات بالملليمتر.', 'A neutral board holding a white sheet with a shadow, the cutting drawing on it in thin red lines and engraving in blue, with the size in millimetres beneath.'),
+  plan: t('مخطط معماري بخطوط بيضاء على شبكة، الغرف بأسمائها ومساحاتها، وخط أبعاد بخط ثابت العرض.', 'An architectural plan in white lines on a grid, rooms with their names and areas, and a dimension line in a monospaced face.'),
+  kanban: t('لوحة أعمدة (جديد، قيد العمل، مراجعة، منجز) بعدّاد لكل عمود وبطاقات فيها عنوان وسطر وصف ووسم ملون وأحرف المسؤول.', 'A board of columns (new, doing, review, done) with a count per column and cards holding a title, a line of detail, a coloured tag and the owner\'s initials.'),
+  table: t('جدول بيانات بخلفية بيضاء: رؤوس رمادية صغيرة، أسطر بفواصل رفيعة، أرقام بعرض ثابت، ووسم حالة ملون في آخر عمود، والسطر المحدد بلون التمييز الخافت.', 'A data table on white: small grey headers, hairline rows, tabular numbers and a coloured status tag in the last column; the selected row in a faint accent.'),
+  week: t('تقويم أسبوعي: أعمدة للأيام وأسطر للساعات، والمواعيد كتل ملونة بحسب الشخص بخط ملون على حافتها.', 'A week calendar: days as columns, hours as rows, and appointments as blocks coloured by person with a coloured bar on their edge.'),
+  timeline: t('لوحة زمنية: سطر لكل مورد (غرفة أو قاعة) وأعمدة للوقت، والحجوزات أشرطة ملونة بأسمائها تمتد على مدتها.', 'A timeline: one row per resource (room or hall), time across the top, and bookings as named coloured bars spanning their length.'),
+  grid: t('شبكة بطاقات بصور طولية، وعليها وسم صغير، وتحتها الاسم والكمية والسعر.', 'A grid of cards with tall photos, a small tag on top, and the name, quantity and price below.'),
+  dashboard: t('لوحة قياس: رسم بياني خطي لسنتين بمساحة ملونة تحت الخط الحالي وخط متقطع للسابق، وبجانبه قائمة بنسب وأشرطة.', 'A dashboard: a two-year line chart with a filled area under the current line and a dashed line for the previous one, beside a list of shares with bars.'),
+  gallery: t('شبكة صور متساوية بنجوم تقييم وأعلام اختيار أو رفض، والصور المرفوضة باهتة بالأبيض والأسود.', 'An even grid of photos with star ratings and pick or reject flags; rejected photos are faded to greyscale.'),
+  document: t('محرر مستند بعرض قراءة مريح: كتل (عنوان، فقرة، صورة، قائمة، سؤال اختبار) لكل منها مقبض سحب يظهر عند المرور، وزر «أضف كتلة».', 'A document editor at a comfortable measure: blocks (heading, paragraph, image, list, quiz question), each with a drag handle on hover, and an "add a block" button.'),
+};
+
+export const appKindText: Record<string, L> = {
+  'app-head': t('مسار تنقل صغير، عنوان الصفحة وسطر وصف، أزرار الإجراء في الطرف (زر واحد فقط بلون التمييز)، وتبويبات مقطعية تحتها.', 'A small breadcrumb, the page title with a line of description, action buttons at the end (only one in the accent colour), and segmented tabs beneath.'),
+  'app-stats': t('أربعة مربعات أرقام بعرض متساوٍ: تسمية صغيرة رمادية ورقم كبير بأرقام ثابتة العرض ووحدته.', 'Four equal figure tiles: a small grey label and a large tabular number with its unit.'),
+  'app-status': t('شريط حالة سفلي: نقطة خضراء ونص حالة في جهة، و«محفوظ» في الأخرى.', 'A status bar at the bottom: a green dot and a status line on one side, "Saved" on the other.'),
+};
+
 export const kindText: Record<string, L> = {
   marquee: t('شريط من كلمات قصيرة يتحرك باستمرار بين الأقسام', 'a band of short words running continuously sideways'),
   logos: t('صف من أسماء العملاء أو الشركاء كشعارات نصية', 'a row of client or partner names set as wordmarks'),
@@ -249,6 +290,9 @@ export const stackName: Record<Stack, L> = {
 
 export const pr = {
   title: t('ابنِ موقعًا بتصميم «{name}»', 'Build a website in the "{name}" style'),
+  appTitle: t('ابنِ واجهة تطبيق بتصميم «{name}»', 'Build an app interface in the "{name}" style'),
+  appIntro: t('أنت تبني واجهة أداة عمل جاهزة للاستخدام اليومي، لا صفحة تعريفية. اتبع نظام التصميم أدناه بدقة، واجعل كل أداة في المشروع صفحة بالهيكل نفسه. التصميم مأخوذ من مكتبة قالب (التصميم رقم {no}).', 'You are building the interface of a working tool for daily use, not a landing page. Follow the design system below exactly, and give every tool in the project a page with the same shell. The design comes from the Qalib library (design No. {no}).'),
+  appNote: t('الهيكل نفسه لكل أداة: التنقل ثابت، ورأس مساحة العمل يتغير عنوانه وأزراره، ولوحة الإعدادات تعرض حقول الأداة المفتوحة، ومساحة العمل تعرض ما تنتجه. على الجوال تصبح لوحة الإعدادات درجًا سفليًا يفتحه زر في الرأس.', 'The same shell for every tool: fixed navigation, a workspace header whose title and actions change, a settings panel holding the open tool\'s fields, and a workspace showing what the tool makes. On phones the settings panel becomes a bottom drawer opened from a button in the header.'),
   intro: t('أنت تبني موقعًا جاهزًا للنشر. اتبع نظام التصميم أدناه بدقة، وطوّع المحتوى للمشروع. التصميم مأخوذ من مكتبة قالب (التصميم رقم {no}).', 'You are building a production-ready website. Follow the design system below exactly and adapt the content to the project. The design comes from the Qalib library (design No. {no}).'),
   project: t('المشروع', 'The project'),
   name: t('الاسم', 'Name'),

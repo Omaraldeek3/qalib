@@ -5,10 +5,12 @@ import { describe, it } from 'node:test';
 import { CATEGORIES, DESIGNS, PROFILES } from '../../src/catalog/index.ts';
 import { FONTS } from '../../src/catalog/fonts.ts';
 import {
+  appNavVariants, appPanelVariants, appViewVariants,
   aboutVariants, contactVariants, ctaVariants, footerVariants, heroVariants, itemsVariants, navVariants, quotesVariants, statsVariants,
   type L,
 } from '../../src/catalog/types.ts';
 import { decorText } from '../../src/prompt/copy.ts';
+import { APPS } from '../../src/catalog/apps.ts';
 
 const root = process.cwd();
 
@@ -32,10 +34,10 @@ function* strings(v: unknown, path = ''): Generator<[string, L]> {
 }
 
 describe('catalogue', () => {
-  it('has 26 styles with 12 designs each, numbered 1 to 312', () => {
-    assert.equal(CATEGORIES.length, 26);
+  it('has 27 styles with 12 designs each, numbered 1 to 324', () => {
+    assert.equal(CATEGORIES.length, 27);
     for (const c of CATEGORIES) assert.equal(DESIGNS.filter(d => d.cat === c.id).length, 12, c.id);
-    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: 312 }, (_, i) => i + 1));
+    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: 324 }, (_, i) => i + 1));
   });
 
   it('gives every style twelve different demo businesses', () => {
@@ -43,6 +45,20 @@ describe('catalogue', () => {
       const profiles = DESIGNS.filter(d => d.cat === c.id).map(d => d.profile);
       assert.equal(new Set(profiles).size, profiles.length, c.id);
     }
+  });
+
+  it('lays out every app design with known parts, for a business that has a working tool', () => {
+    const apps = DESIGNS.filter(d => CATEGORIES.find(c => c.id === d.cat)!.kind === 'app');
+    assert.equal(apps.length, 12);
+    for (const d of apps) {
+      assert.ok(d.app, d.slug);
+      assert.ok(appNavVariants.includes(d.app!.nav) && appPanelVariants.includes(d.app!.panel) && appViewVariants.includes(d.app!.view), d.slug);
+      assert.ok(APPS[d.profile], `${d.slug}: no app for ${d.profile}`);
+    }
+    // No two app designs share the same navigation, panel side and workspace.
+    const shapes = apps.map(d => `${d.app!.nav}/${d.app!.panel}/${d.app!.view}`);
+    assert.equal(new Set(shapes).size, shapes.length);
+    for (const d of DESIGNS.filter(x => !apps.includes(x))) assert.equal(d.app, undefined, d.slug);
   });
 
   it('uses unique kebab-case slugs', () => {
@@ -86,7 +102,7 @@ describe('catalogue', () => {
   });
 
   it('has every text in Arabic and English', () => {
-    for (const [path, l] of strings({ PROFILES, CATEGORIES, DESIGNS })) {
+    for (const [path, l] of strings({ PROFILES, CATEGORIES, DESIGNS, APPS })) {
       assert.ok(l.ar.trim() && l.en.trim(), `empty text at ${path}`);
     }
   });

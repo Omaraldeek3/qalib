@@ -3,7 +3,8 @@ import { font } from '@/catalog/fonts';
 import { itemsVariant, resolveLayout } from '@/catalog/layout';
 import { PROFILES, profile } from '@/catalog/profiles';
 import type { Category, Design, L, Motion, Palette, Profile, ProfileId, Section } from '@/catalog/types';
-import { kindLabel } from './copy';
+import { app } from '@/catalog/apps';
+import { appKindLabel, kindLabel } from './copy';
 
 // Everything the prompt builder needs about one design, gathered on the
 // server so the browser only receives this small object.
@@ -28,6 +29,8 @@ export type PromptData = {
   interactions: string[];
   demoType: L;
   demoProfile: ProfileId;
+  /** An app interface (the workbench style) rather than a website. */
+  app?: true;
   outline: OutlineItem[];
   suggestions: Record<string, { label: L; sections: L[] }>;
 };
@@ -73,9 +76,23 @@ export function interactions(p: Profile, design: Design): string[] {
   return out;
 }
 
+/** The parts of an app interface, in the order the prompt describes them. */
+export function appOutline(design: Design): OutlineItem[] {
+  const a = app(design.profile), l = design.app!;
+  return [
+    { kind: 'app-nav', label: appKindLabel['app-nav'], variant: l.nav },
+    { kind: 'app-head', label: appKindLabel['app-head'], title: a.title },
+    { kind: 'app-panel', label: appKindLabel['app-panel'], variant: l.panel, title: a.panelTitle },
+    { kind: 'app-view', label: appKindLabel['app-view'], variant: l.view },
+    { kind: 'app-stats', label: appKindLabel['app-stats'] },
+    { kind: 'app-status', label: appKindLabel['app-status'] },
+  ];
+}
+
 export function promptData(design: Design): PromptData {
   const cat = category(design.cat);
   const p = profile(design.profile);
+  const isApp = cat.kind === 'app';
   const f = design.fonts;
   const suggestions: PromptData['suggestions'] = {};
   for (const [id, prof] of Object.entries(PROFILES)) {
@@ -96,10 +113,11 @@ export function promptData(design: Design): PromptData {
     },
     motion: design.motion ?? cat.motion,
     decor: design.decor ?? [],
-    interactions: interactions(p, design),
-    demoType: p.label,
+    interactions: isApp ? [] : interactions(p, design),
+    demoType: isApp ? { ar: `أداة العمل في ${p.label.ar}`, en: `the working tool of a ${p.label.en.toLowerCase()}` } : p.label,
     demoProfile: p.id,
-    outline: outline(p, design),
+    outline: isApp ? appOutline(design) : outline(p, design),
+    ...(isApp ? { app: true as const } : {}),
     suggestions,
   };
 }
