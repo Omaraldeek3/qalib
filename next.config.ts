@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { RENAMED } from './src/catalog/renamed';
 
 // React needs eval() in development only, for its debugging tools.
 const dev = process.env.NODE_ENV === 'development';
@@ -15,6 +16,13 @@ const common = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Designs renamed when they moved to another business keep their old links.
+  async redirects() {
+    return Object.entries(RENAMED).flatMap(([from, to]) => [
+      { source: `/:locale(ar|en)/d/${from}`, destination: `/:locale/d/${to}`, permanent: true },
+      { source: `/demos/${from}/:file`, destination: `/demos/${to}/:file`, permanent: true },
+    ]);
+  },
   async headers() {
     // When two rules set the same header, the later one wins.
     return [

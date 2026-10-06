@@ -11,6 +11,7 @@ import {
 } from '../../src/catalog/types.ts';
 import { decorText } from '../../src/prompt/copy.ts';
 import { APPS } from '../../src/catalog/apps.ts';
+import { RENAMED } from '../../src/catalog/renamed.ts';
 
 const root = process.cwd();
 
@@ -52,6 +53,14 @@ describe('catalogue', () => {
     for (const d of DESIGNS) per.set(d.profile, (per.get(d.profile) ?? 0) + 1);
     assert.equal(per.size, Object.keys(PROFILES).length);
     for (const [profile, n] of per) assert.ok(n >= 5 && n <= 12, `${profile}: ${n} designs`);
+  });
+
+  it('sends every renamed address to a design that exists, and never hides one', () => {
+    const slugs = new Set(DESIGNS.map(d => d.slug));
+    for (const [from, to] of Object.entries(RENAMED)) {
+      assert.ok(!slugs.has(from), `${from} is a live design`);
+      assert.ok(slugs.has(to), `${to} does not exist`);
+    }
   });
 
   it('opens the designs of one business on different photos, in turn', () => {

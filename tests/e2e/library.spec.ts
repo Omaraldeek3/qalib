@@ -20,6 +20,14 @@ test('an English browser gets English', async ({ page }) => {
   await expect(page).toHaveURL(/\/en\/d\/andalus$/);
 });
 
+test('a renamed design keeps its old address', async ({ page, request }) => {
+  await page.goto('/ar/d/qahwa-1948');
+  await expect(page).toHaveURL(/\/ar\/d\/tarab-1948$/);
+  const demo = await request.get('/demos/qahwa-1948/en.html', { maxRedirects: 0 });
+  expect(demo.status()).toBe(308);
+  expect(demo.headers()['location']).toBe('/demos/tarab-1948/en.html');
+});
+
 test('the home page lists every design and filters them', async ({ page }) => {
   await page.goto('/en');
   const cards = page.locator('.catalog .dcard');
