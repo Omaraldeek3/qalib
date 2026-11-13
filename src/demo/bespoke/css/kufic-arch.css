@@ -1,0 +1,90 @@
+.ka-wrap {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: 24px 20px 72px;
+}
+.ka-frame {
+  border: 2px solid var(--ink);
+  padding: 6px;
+  background: var(--bg);
+}
+.ka-inner {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: clamp(22px, 4vw, 44px);
+  display: grid;
+  gap: 36px;
+}
+.ka-head {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--line); font-size: 13.5px;
+}
+.ka-head strong { font-family: var(--font-display); font-size: 20px; color: var(--accent); }
+.ka-head nav { display: flex; gap: 18px; color: var(--muted); }
+
+.ka-portal-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.ka-wing { display: grid; gap: 14px; }
+.ka-wing h1 { font-size: clamp(2rem, 3.5vw, 3rem); }
+.ka-wing p { color: var(--muted); font-size: 15.5px; }
+.ka-arch {
+  position: relative;
+  border: 2px solid var(--accent2);
+  border-radius: 170px 170px 0 0;
+  padding: 12px;
+  background: var(--bg);
+}
+.ka-arch-inner {
+  border-radius: 160px 160px 0 0;
+  overflow: hidden;
+  height: 360px;
+  position: relative;
+}
+.ka-arch-inner img { width: 100%; height: 100%; object-fit: cover; }
+.ka-cap {
+  text-align: center; padding-top: 10px; font-size: 12.5px; color: var(--accent2); font-weight: 600;
+}
+
+.ka-explorer {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  align-items: center;
+}
+.ka-svg-stage {
+  height: 220px; border: 1px solid var(--line); background: var(--surface); padding: 18px;
+  display: grid; place-items: center; color: var(--ink);
+}
+.ka-motif-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ka-motif-tabs button {
+  padding: 8px 14px; border: 1px solid var(--line); background: var(--surface); font-size: 13px; font-weight: 600;
+}
+.ka-motif-tabs button.is-active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+
+.ka-triptych {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.ka-plaque {
+  padding: 20px; border: 1px solid var(--line); background: var(--bg); display: grid; gap: 8px;
+}
+.ka-plaque small { color: var(--accent); font-size: 12px; font-weight: 700; }
+.ka-plaque h3 { font-size: 1.2rem; }
+.ka-plaque p { font-size: 14px; color: var(--muted); }
+
+.ka-foot {
+  padding-top: 18px; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.ka-cta { padding: 11px 22px; background: var(--accent); color: var(--on-accent); font-weight: 700; }
+
+@media (max-width: 960px) {
+  .ka-portal-grid, .ka-explorer, .ka-triptych { grid-template-columns: 1fr; }
+  .ka-arch { max-width: 340px; margin-inline: auto; }
+}

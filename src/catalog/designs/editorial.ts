@@ -118,12 +118,11 @@ export const editorial: DesignInput[] = [
     decor: ['mono'],
   },
   {
-    slug: 'monograph', profile: 'portfolio',
-    name: { ar: 'مجلّد', en: 'Monograph' },
-    blurb: { ar: 'ورق دافئ وحبر فحمي وأزرق كوبالت، بورتفوليو كغلاف مجلة تصميم بثلاثة أعمدة ومشاريع متعرجة.', en: 'Warm editorial paper, charcoal ink and cobalt blue — a magazine-cover portfolio with three-column intro and zigzag case studies.' },
+    slug: 'swiss-broadsheet', profile: 'portfolio', bespoke: 'swiss-broadsheet',
+    name: { ar: 'الصحيفة السويسرية', en: 'Swiss Broadsheet' },
+    blurb: { ar: 'إصدار جريدة سويسرية بثلاثة أعمدة غير متماثلة تفصلها قواعد عمودية كاملة، وحرف استهلالي كبير ومرشّح تقارير حي.', en: 'Archival newspaper broadsheet with double-ruled masthead, 3 vertical column bays, drop-cap column lead and filterable lab dispatches.' },
     scheme: 'light',
-    palette: { bg: '#F5F1E8', surface: '#FCF9F2', ink: '#181614', muted: '#615B52', accent: '#1D4ED8', accent2: '#B45309', line: '#DFD8CA', onAccent: '#FFFFFF' },
-    fonts: { display: 'fraunces', body: 'newsreader', displayAr: 'amiri', bodyAr: 'noto-naskh-arabic' },
-    layout: { nav: 'center', hero: 'editorial', gallery: 'zigzag', about: 'overlap', quotes: 'single' },
+    palette: { bg: '#F4EFE6', surface: '#FFFDF9', ink: '#141210', muted: '#5E574E', accent: '#C92A2A', accent2: '#1F4E5F', line: '#D8D0C3', onAccent: '#FFFFFF' },
+    fonts: { display: 'bodoni-moda', body: 'newsreader', displayAr: 'amiri', bodyAr: 'noto-naskh-arabic', accent: 'space-mono' },
   },
 ];

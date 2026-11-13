@@ -30,6 +30,7 @@ export type PromptOptions = { origin: string; css?: string };
 const fill = (s: string, vars: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
 
 function variantText(item: OutlineItem): L | undefined {
+  if (item.desc) return item.desc;
   const v = item.variant;
   switch (item.kind) {
     case 'nav': return v ? navText[v] : undefined;

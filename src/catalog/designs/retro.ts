@@ -121,14 +121,4 @@ export const retro: DesignInput[] = [
     layout: { hero: 'centered', offer: 'cards', extra: 'list' },
     decor: ['sun', 'stripes'],
   },
-  {
-    slug: 'sunset-tape', profile: 'portfolio',
-    name: { ar: 'شريط الغروب', en: 'Sunset Tape' },
-    blurb: { ar: 'كريمي دافئ وبرتقالي محروق وخردلي، بورتفوليو بروح ملصقات السبعينات وشريط صور أفقي.', en: 'Warm cream, burnt orange and mustard — a seventies poster portfolio with striped sun and horizontal photo strip.' },
-    scheme: 'light',
-    palette: { bg: '#F8F0DF', surface: '#FFFBF2', ink: '#231A15', muted: '#69584C', accent: '#D94F1E', accent2: '#E6A817', line: '#E5D8BF', onAccent: '#FFFFFF' },
-    fonts: { display: 'righteous', body: 'work-sans', displayAr: 'rakkas', bodyAr: 'tajawal' },
-    layout: { nav: 'bar', hero: 'poster', gallery: 'strip', about: 'overlap' },
-    decor: ['sun', 'stripes'],
-  },
 ];

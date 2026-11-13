@@ -110,14 +110,4 @@ export const soft: DesignInput[] = [
     fonts: { display: 'cormorant', body: 'lora', displayAr: 'aref-ruqaa', bodyAr: 'noto-naskh-arabic' },
     layout: { hero: 'centered', schedule: 'timeline' },
   },
-  {
-    slug: 'cloud-soft', profile: 'portfolio',
-    name: { ar: 'سحاب ناعم', en: 'Cloud Soft' },
-    blurb: { ar: 'لؤلؤي مزرق وإنديغو ناعم، بطاقات بارزة بظلال مزدوجة حالمة وحواف مستديرة للغاية.', en: 'Pearl blue-grey and royal indigo — tactile neumorphic surfaces with dual soft shadows and generous pill radii.' },
-    scheme: 'light',
-    palette: { bg: '#E8EDF5', surface: '#E8EDF5', ink: '#1E2433', muted: '#555E75', accent: '#4F46E5', accent2: '#0EA5E9', line: '#D4DCE8', onAccent: '#FFFFFF' },
-    fonts: { display: 'plus-jakarta-sans', body: 'dm-sans', displayAr: 'fustat', bodyAr: 'tajawal' },
-    layout: { nav: 'pill', hero: 'split', offer: 'bento', gallery: 'cards' },
-    radius: 26,
-  },
 ];

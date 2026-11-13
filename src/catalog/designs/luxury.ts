@@ -111,13 +111,11 @@ export const luxury: DesignInput[] = [
     layout: { schedule: 'table' },
   },
   {
-    slug: 'velvet-brass', profile: 'portfolio',
-    name: { ar: 'مخمل ونحاس', en: 'Velvet & Brass' },
-    blurb: { ar: 'إسبريسو داكن وعاجي دافئ وذهب مصقول، بورتفوليو فاخر بإطار مهيب وعناوين رفيعة التباين.', en: 'Espresso black, warm ivory and brushed brass — an architectural luxury portfolio with a framed hero and high-contrast serif display.' },
+    slug: 'noir-cinema', profile: 'portfolio', bespoke: 'noir-cinema',
+    name: { ar: 'المسرح السينمائي', en: 'Noir Cinema' },
+    blurb: { ar: 'مسرح سينمائي عريض بحواف ذهبية وإطار بورتريه متدرّج، يتغيّر مشهده وعنوانه باختيار أي فصل من شريط الأفلام.', en: 'Widescreen cinema frame with chapter counter, vignette portrait plate and an interactive 5-chapter horizontal filmstrip switcher.' },
     scheme: 'dark',
-    palette: { bg: '#0F0C0A', surface: '#1A1512', ink: '#F5EFE6', muted: '#B0A494', accent: '#D4AF37', accent2: '#8C6D46', line: '#2B231D', onAccent: '#141004' },
-    fonts: { display: 'bodoni-moda', body: 'manrope', displayAr: 'markazi-text', bodyAr: 'tajawal' },
-    layout: { nav: 'split', hero: 'framed', gallery: 'masonry', about: 'quote', quotes: 'single' },
-    decor: ['progress'],
+    palette: { bg: '#090807', surface: '#151310', ink: '#F3EBDD', muted: '#A69C8E', accent: '#D4AF37', accent2: '#C86D51', line: '#29241E', onAccent: '#0F0B02' },
+    fonts: { display: 'cormorant-garamond', body: 'manrope', displayAr: 'amiri', bodyAr: 'tajawal', accent: 'space-mono' },
   },
 ];

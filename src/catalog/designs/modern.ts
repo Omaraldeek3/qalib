@@ -113,13 +113,11 @@ export const modern: DesignInput[] = [
     layout: { nav: 'pill', hero: 'fullbleed', offer: 'bento', gallery: 'masonry', cta: 'image' },
   },
   {
-    slug: 'obsidian-ember', profile: 'portfolio',
-    name: { ar: 'جمرة داكنة', en: 'Obsidian Ember' },
-    blurb: { ar: 'فحمي عميق وكهرماني دافئ ولمسة سماوية، بورتفوليو مطور ومصمم بنظام شبكي عصري وأرقام بارزة.', en: 'Deep obsidian, warm amber and a cyan spark — a modern developer-designer portfolio with big metrics and crisp bento cards.' },
+    slug: 'monolith-split', profile: 'portfolio', bespoke: 'monolith-split',
+    name: { ar: 'انقسام ثابت', en: 'Monolith Split' },
+    blurb: { ar: 'شاشة مقسومة ٤٠/٦٠: عمود هوية داكن مثبت بكامل الارتفاع وفصول تتبع التمرير، يقابله مسار قدرات وأعمال متدفق.', en: 'True 40/60 split screen: full-height pinned obsidian rail with live availability and scroll-spy index beside a flowing capability and work deck.' },
     scheme: 'dark',
-    palette: { bg: '#09090B', surface: '#141418', ink: '#F4F4F6', muted: '#9E9EA8', accent: '#F59E0B', accent2: '#22D3EE', line: '#23232A', onAccent: '#140C00' },
+    palette: { bg: '#090A0D', surface: '#13151B', ink: '#F4F4F6', muted: '#9CA3B2', accent: '#F5A524', accent2: '#38BDF8', line: '#232732', onAccent: '#140C00' },
     fonts: { display: 'space-grotesk', body: 'inter', displayAr: 'alexandria', bodyAr: 'ibm-plex-sans-arabic', accent: 'jetbrains-mono' },
-    layout: { nav: 'bar', hero: 'split', offer: 'bento', gallery: 'cards', about: 'columns', stats: 'big' },
-    decor: ['progress'],
   },
 ];

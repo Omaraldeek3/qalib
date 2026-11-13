@@ -117,13 +117,11 @@ export const organic: DesignInput[] = [
     decor: ['grain', 'leaves'],
   },
   {
-    slug: 'olive-stone', profile: 'portfolio',
-    name: { ar: 'حجر وزيتون', en: 'Olive & Stone' },
-    blurb: { ar: 'حجر جيري دافئ وأخضر زيتوني وطيني، صورة مقوّسة ومشاريع متعرجة بإحساس طبيعي هادئ.', en: 'Warm limestone, olive green and terracotta — an arched hero portrait, natural grain and serene zigzag rhythm.' },
+    slug: 'paper-atelier', profile: 'portfolio', bespoke: 'paper-atelier',
+    name: { ar: 'الدفتر المفتوح', en: 'Studio Spread' },
+    blurb: { ar: 'انتشار دفتر أستوديو مفتوح بصفحتين يفصلهما كعب مخيّط عمودياً، مع ألسنة تبويب جانبية تقلب محتوى الصفحة المقابلة.', en: 'Open two-page book spread bisected by a stitched spine, pairing a portrait folio with tabbed bookmark dividers flipping the opposite page.' },
     scheme: 'light',
-    palette: { bg: '#F1EDE4', surface: '#FAF7F0', ink: '#222821', muted: '#5D6358', accent: '#2C4A36', accent2: '#C26B46', line: '#DDD6C7', onAccent: '#FFFFFF' },
-    fonts: { display: 'cormorant-garamond', body: 'lora', displayAr: 'amiri', bodyAr: 'mada' },
-    layout: { nav: 'split', hero: 'arch', gallery: 'zigzag', about: 'split', quotes: 'single' },
-    decor: ['leaves', 'grain'],
+    palette: { bg: '#EAE5DA', surface: '#FAF7F0', ink: '#1F241E', muted: '#5B6358', accent: '#3E6240', accent2: '#B56E2A', line: '#D6CFC1', onAccent: '#FFFFFF' },
+    fonts: { display: 'fraunces', body: 'newsreader', displayAr: 'el-messiri', bodyAr: 'noto-naskh-arabic', accent: 'space-mono' },
   },
 ];

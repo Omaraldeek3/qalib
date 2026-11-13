@@ -4,6 +4,7 @@ import { itemsVariant, resolveLayout } from '@/catalog/layout';
 import { PROFILES, profile } from '@/catalog/profiles';
 import type { Category, Design, L, Motion, Palette, Profile, ProfileId, Section } from '@/catalog/types';
 import { app } from '@/catalog/apps';
+import { bespokeDemoType, bespokeOutline } from '@/demo/bespoke/specs';
 import { appKindLabel, kindLabel } from './copy';
 
 // Everything the prompt builder needs about one design, gathered on the
@@ -11,7 +12,7 @@ import { appKindLabel, kindLabel } from './copy';
 
 export type FontRef = { family: string; weights: number[] };
 
-export type OutlineItem = { kind: string; label: L; variant?: string; title?: L };
+export type OutlineItem = { kind: string; label: L; variant?: string; title?: L; desc?: L };
 
 export type PromptData = {
   no: number;
@@ -93,6 +94,7 @@ export function promptData(design: Design): PromptData {
   const cat = category(design.cat);
   const p = profile(design.profile);
   const isApp = cat.kind === 'app';
+  const bespoke = design.bespoke;
   const f = design.fonts;
   const suggestions: PromptData['suggestions'] = {};
   for (const [id, prof] of Object.entries(PROFILES)) {
@@ -113,10 +115,12 @@ export function promptData(design: Design): PromptData {
     },
     motion: design.motion ?? cat.motion,
     decor: design.decor ?? [],
-    interactions: isApp ? [] : interactions(p, design),
-    demoType: isApp ? { ar: `أداة العمل في ${p.label.ar}`, en: `the working tool of a ${p.label.en.toLowerCase()}` } : p.label,
+    interactions: isApp || bespoke ? [] : interactions(p, design),
+    demoType: isApp
+      ? { ar: `أداة العمل في ${p.label.ar}`, en: `the working tool of a ${p.label.en.toLowerCase()}` }
+      : (bespoke ? (bespokeDemoType(bespoke) ?? p.label) : p.label),
     demoProfile: p.id,
-    outline: isApp ? appOutline(design) : outline(p, design),
+    outline: isApp ? appOutline(design) : (bespoke ? bespokeOutline(bespoke) : outline(p, design)),
     ...(isApp ? { app: true as const } : {}),
     suggestions,
   };

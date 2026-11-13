@@ -8,6 +8,7 @@ import { profileFor } from '@/catalog';
 import { profile } from '@/catalog/profiles';
 import type { Design, L, Lang, Section } from '@/catalog/types';
 import { About, Items, Logos, Marquee, Stats } from './blocks';
+import { bespokeThemeCss, renderBespokeDemo } from './bespoke';
 import { Contact, Cta, Faq, Footer, Quotes, Topbar, WhatsApp } from './bottom';
 import { tx, type Ctx } from './context';
 import { Divider, Fx, dividerTypes } from './decor';
@@ -63,6 +64,7 @@ html[lang="ar"] {
 
 /** Everything the design looks like: base layout, the style's kit, tokens and design tweaks. */
 export function designCss(design: Design): string {
+  if (design.bespoke) return [bespokeThemeCss(design.bespoke), `/* ---------- design: ${design.slug} ---------- */`, tokensCss(design), design.css ?? ''].join('\n');
   // An app style draws a working tool on its own base, with no website kit.
   if (category(design.cat).kind === 'app') return [appCss, `/* ---------- design: ${design.slug} ---------- */`, tokensCss(design), design.css ?? ''].join('\n');
   return [baseCss, `/* ---------- style: ${design.cat} ---------- */`, kitCss(design.cat), `/* ---------- design: ${design.slug} ---------- */`, tokensCss(design), design.css ?? ''].join('\n');
@@ -71,6 +73,7 @@ export function designCss(design: Design): string {
 const navKinds = new Set(['about', 'items', 'testimonials', 'faq', 'contact']);
 
 export function renderDemo(design: Design, lang: Lang, origin: string): string {
+  if (design.bespoke) return renderBespokeDemo(design, lang, origin, designCss(design), demoFonts(design, lang));
   if (category(design.cat).kind === 'app') return renderAppDemo(design, lang, origin);
   const ctx = makeCtx(design, lang);
   const p = ctx.profile;

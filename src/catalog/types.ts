@@ -251,4 +251,6 @@ export type Design = {
   css?: string;
   /** For app styles: how the working tool is laid out. */
   app?: AppLayout;
+  /** Custom bespoke architectural layout key (bypasses shared base.css skeleton). */
+  bespoke?: string;
 };

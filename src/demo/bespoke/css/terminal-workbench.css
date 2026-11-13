@@ -1,0 +1,132 @@
+.tw-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 46px 1fr 30px;
+}
+.tw-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+.tw-chrome-start { display: flex; align-items: center; gap: 12px; }
+.tw-lights { display: flex; gap: 6px; }
+.tw-lights i { width: 10px; height: 10px; border-radius: 50%; display: block; background: var(--line); }
+.tw-lights i:first-child { background: #ef4444; }
+.tw-lights i:nth-child(2) { background: #f59e0b; }
+.tw-lights i:nth-child(3) { background: #10b981; }
+.tw-branch {
+  padding: 2px 9px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent); font-size: 12px; font-weight: 600;
+}
+
+.tw-workspace {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr) 280px;
+  min-height: 0;
+}
+.tw-tree {
+  background: var(--surface);
+  border-inline-end: 1px solid var(--line);
+  padding: 16px 10px;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+.tw-tree-title {
+  padding-inline: 10px; font-size: 11.5px; font-weight: 700; color: var(--muted); margin-bottom: 4px;
+}
+.tw-file {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 10px; border-radius: 7px; font-size: 13px; color: var(--muted); text-align: start;
+}
+.tw-file:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); color: var(--ink); }
+.tw-file.is-active {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tw-editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+}
+.tw-tabs {
+  display: flex; overflow-x: auto; border-bottom: 1px solid var(--line); background: var(--bg);
+}
+.tw-tab {
+  padding: 10px 18px; border-inline-end: 1px solid var(--line); font-size: 12.5px; color: var(--muted);
+}
+.tw-tab.is-active { background: var(--surface); color: var(--ink); border-bottom: 2px solid var(--accent); }
+
+.tw-pane { padding: 26px 28px; display: grid; gap: 22px; align-content: start; }
+.tw-code-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.tw-code-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  font-size: 13.5px;
+  line-height: 1.75;
+  padding: 2px 14px 2px 0;
+}
+.tw-ln { text-align: center; color: var(--muted); opacity: .55; user-select: none; }
+.tw-kw { color: var(--accent2); }
+.tw-str { color: var(--accent); }
+.tw-hero-banner {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  display: grid;
+  gap: 10px;
+}
+.tw-hero-banner h1 { font-size: clamp(1.7rem, 2.8vw, 2.35rem); }
+.tw-hero-banner p { color: var(--muted); font-size: 15px; }
+.tw-cmd-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.tw-cmd-btn {
+  padding: 8px 14px; border-radius: 8px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 13px;
+}
+.tw-cmd-ghost {
+  padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); font-size: 13px;
+}
+
+.tw-inspector {
+  background: var(--surface);
+  border-inline-start: 1px solid var(--line);
+  padding: 18px 16px;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+.tw-metric-grid { display: grid; gap: 10px; }
+.tw-metric {
+  padding: 12px; border-radius: 9px; background: var(--bg); border: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.tw-metric strong { color: var(--accent); font-size: 20px; }
+.tw-metric small { color: var(--muted); font-size: 12.5px; }
+.tw-log {
+  padding: 12px; border-radius: 9px; background: var(--bg); border: 1px solid var(--line);
+  font-size: 12px; color: var(--muted); display: grid; gap: 6px;
+}
+.tw-log span b { color: var(--accent); font-weight: 600; }
+
+.tw-status {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-inline: 16px; background: var(--accent); color: var(--on-accent);
+  font-size: 12px; font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .tw-workspace { grid-template-columns: 1fr; }
+  .tw-tree { border-inline-end: 0; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; }
+  .tw-inspector { border-inline-start: 0; border-top: 1px solid var(--line); }
+}

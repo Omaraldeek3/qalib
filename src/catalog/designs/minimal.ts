@@ -111,12 +111,11 @@ export const minimal: DesignInput[] = [
     decor: ['mono'],
   },
   {
-    slug: 'chalk-line', profile: 'portfolio',
-    name: { ar: 'سطر طباشيري', en: 'Chalk Line' },
-    blurb: { ar: 'أبيض معرض فني وطيني محروق واحد، بورتفوليو يبدأ بعنوان ضخم ثم قوائم فائقة النقاء.', en: 'Gallery white and a single terracotta accent — a typographic portfolio with clean hairline lists and quiet whitespace.' },
+    slug: 'index-stage', profile: 'portfolio', bespoke: 'index-stage',
+    name: { ar: 'الفهرس المسرحي', en: 'Index Stage' },
+    blurb: { ar: 'هدوء متاحف بلا بطاقات حشو: قائمة أعمال مرقّمة بأسطر رفيعة ومنصة معاينة ثابتة تتبدّل صورتها وتفاصيلها عند المرور.', en: 'Museum-calm austerity with a 60/40 split ledger where hovering or clicking any hairline project row updates the pinned preview stage live.' },
     scheme: 'light',
-    palette: { bg: '#FAFAFA', surface: '#FFFFFF', ink: '#111111', muted: '#666666', accent: '#C84B31', accent2: '#A3A3A3', line: '#E5E5E5', onAccent: '#FFFFFF' },
-    fonts: { display: 'inter-tight', body: 'inter', displayAr: 'noto-kufi-arabic', bodyAr: 'mada' },
-    layout: { nav: 'minimal', hero: 'type', offer: 'list', gallery: 'masonry', about: 'quote', process: 'list' },
+    palette: { bg: '#FAFAFA', surface: '#FFFFFF', ink: '#111111', muted: '#616161', accent: '#C84B31', accent2: '#8C8C8C', line: '#E2E2E2', onAccent: '#FFFFFF' },
+    fonts: { display: 'inter-tight', body: 'inter', displayAr: 'noto-kufi-arabic', bodyAr: 'mada', accent: 'jetbrains-mono' },
   },
 ];

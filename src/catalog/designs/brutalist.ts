@@ -124,13 +124,11 @@ export const brutalist: DesignInput[] = [
     decor: ['mono', 'grid'],
   },
   {
-    slug: 'acid-block', profile: 'portfolio',
-    name: { ar: 'كتلة حمضية', en: 'Acid Block' },
-    blurb: { ar: 'رمادي إسمنتي وأسود صارم وليموني نيون، بورتفوليو جريء كملصق شارع بحدود سميكة وظلال صلبة.', en: 'Raw concrete grey, stark black and acid lime — a bold poster-style portfolio with hard shadows and exposed grids.' },
+    slug: 'exposed-spec', profile: 'portfolio', bespoke: 'exposed-spec',
+    name: { ar: 'الشبكة المكشوفة', en: 'Exposed Matrix' },
+    blurb: { ar: 'شبكة بلا هوامش تمتد من الحافة للحافة بحدود سوداء حادة، وصندوق تحكم داكن معكوس يرشّح جدول الأعمال لحظياً.', en: 'Zero-margin edge-to-edge exposed 2px table grid pairing stark display manifesto cells with an inverted neon filter panel.' },
     scheme: 'light',
-    palette: { bg: '#ECECE7', surface: '#FFFFFF', ink: '#000000', muted: '#3D3D38', accent: '#D9FF00', accent2: '#FF3B00', line: '#000000', onAccent: '#000000' },
-    fonts: { display: 'archivo-black', body: 'space-mono', displayAr: 'changa', bodyAr: 'ibm-plex-sans-arabic' },
-    layout: { nav: 'bar', hero: 'poster', gallery: 'cards', process: 'table' },
-    decor: ['grid'],
+    palette: { bg: '#EEEDE8', surface: '#FFFFFF', ink: '#0D0D0D', muted: '#52524E', accent: '#C8F904', accent2: '#1D4ED8', line: '#0D0D0D', onAccent: '#0D0D0D' },
+    fonts: { display: 'archivo-black', body: 'space-mono', displayAr: 'changa', bodyAr: 'ibm-plex-sans-arabic', accent: 'space-mono' },
   },
 ];

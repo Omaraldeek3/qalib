@@ -121,13 +121,11 @@ export const digital: DesignInput[] = [
     decor: ['grid', 'scanlines'],
   },
   {
-    slug: 'kernel-01', profile: 'portfolio',
-    name: { ar: 'نواة ٠١', en: 'Kernel 01' },
-    blurb: { ar: 'أسود طرفية وأخضر فوسفوري وعنبر تقني، واجهة هندسية بسطر يُكتب حرفاً بحرف وخط زمني للأنظمة.', en: 'Terminal black, phosphor emerald and amber — an engineering portfolio with typing eyebrow, blueprint grid and system timeline.' },
+    slug: 'terminal-workbench', profile: 'portfolio', bespoke: 'terminal-workbench',
+    name: { ar: 'طرفية المطور', en: 'Developer IDE' },
+    blurb: { ar: 'نافذة تطوير حقيقية من ٣ أعمدة: شجرة ملفات تفاعلية، محرّر برمجي مرقّم الأسطر تتبدّل ملفاته فوراً، ومراقب أداء حي.', en: '3-pane developer IDE canvas: clickable file explorer tree switching live center buffers alongside a real-time studio telemetry inspector.' },
     scheme: 'dark',
-    palette: { bg: '#060A08', surface: '#0E1512', ink: '#E6F7EE', muted: '#85A897', accent: '#10F59A', accent2: '#FBBF24', line: '#192922', onAccent: '#021A0F' },
-    fonts: { display: 'space-mono', body: 'ibm-plex-sans', displayAr: 'handjet', bodyAr: 'ibm-plex-sans-arabic', accent: 'jetbrains-mono' },
-    layout: { nav: 'bar', hero: 'type', offer: 'list', gallery: 'table', process: 'timeline' },
-    decor: ['grid', 'typing', 'scanlines'],
+    palette: { bg: '#0B0E14', surface: '#121721', ink: '#E6EDF3', muted: '#8B949E', accent: '#10B981', accent2: '#F59E0B', line: '#222A38', onAccent: '#031A12' },
+    fonts: { display: 'space-mono', body: 'ibm-plex-sans', displayAr: 'ibm-plex-sans-arabic', bodyAr: 'ibm-plex-sans-arabic', accent: 'jetbrains-mono' },
   },
 ];
