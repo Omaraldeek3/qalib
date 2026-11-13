@@ -116,4 +116,14 @@ export const organic: DesignInput[] = [
     layout: { hero: 'split', offer: 'cards', gallery: 'masonry', process: 'steps' },
     decor: ['grain', 'leaves'],
   },
+  {
+    slug: 'olive-stone', profile: 'portfolio',
+    name: { ar: 'حجر وزيتون', en: 'Olive & Stone' },
+    blurb: { ar: 'حجر جيري دافئ وأخضر زيتوني وطيني، صورة مقوّسة ومشاريع متعرجة بإحساس طبيعي هادئ.', en: 'Warm limestone, olive green and terracotta — an arched hero portrait, natural grain and serene zigzag rhythm.' },
+    scheme: 'light',
+    palette: { bg: '#F1EDE4', surface: '#FAF7F0', ink: '#222821', muted: '#5D6358', accent: '#2C4A36', accent2: '#C26B46', line: '#DDD6C7', onAccent: '#FFFFFF' },
+    fonts: { display: 'cormorant-garamond', body: 'lora', displayAr: 'amiri', bodyAr: 'mada' },
+    layout: { nav: 'split', hero: 'arch', gallery: 'zigzag', about: 'split', quotes: 'single' },
+    decor: ['leaves', 'grain'],
+  },
 ];

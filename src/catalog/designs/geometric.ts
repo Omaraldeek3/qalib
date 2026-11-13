@@ -124,4 +124,14 @@ export const geometric: DesignInput[] = [
     decor: ['mondrian'],
     css: 'html { --accent3: #F4C430; }',
   },
+  {
+    slug: 'bauhaus-folio', profile: 'portfolio',
+    name: { ar: 'باوهاوس', en: 'Bauhaus Folio' },
+    blurb: { ar: 'ورق دافئ وأزرق كوبالت وأحمر قرمزي، أشكال هندسية تنزلق في الواجهة وشبكة مشاريع متوازنة.', en: 'Warm paper, Bauhaus cobalt and vermilion — sliding geometric shapes in the hero and a structured bento showcase.' },
+    scheme: 'light',
+    palette: { bg: '#F4F1EA', surface: '#FFFFFF', ink: '#141414', muted: '#59554E', accent: '#1B4FD8', accent2: '#E03E2D', line: '#141414', onAccent: '#FFFFFF' },
+    fonts: { display: 'space-grotesk', body: 'work-sans', displayAr: 'reem-kufi', bodyAr: 'cairo' },
+    layout: { nav: 'bar', hero: 'collage', gallery: 'bento', process: 'steps' },
+    decor: ['shapes'],
+  },
 ];

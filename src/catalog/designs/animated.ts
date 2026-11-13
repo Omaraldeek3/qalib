@@ -121,4 +121,14 @@ export const animated: DesignInput[] = [
     layout: { offer: 'bento', contact: 'form' },
     decor: ['grid', 'progress', 'cursor', 'icons'],
   },
+  {
+    slug: 'kinetic-flow', profile: 'portfolio',
+    name: { ar: 'تدفق حركي', en: 'Kinetic Flow' },
+    blurb: { ar: 'أردوازي ليلي وبنفسجي كهربائي وليموني، صورة الواجهة تتمدد مع التمرير والمشاريع تمر في مسار أفقي.', en: 'Deep slate, electric violet and lime — a scroll-zoom hero, parallax layers and a horizontal project rail.' },
+    scheme: 'dark',
+    palette: { bg: '#0B101B', surface: '#141C2E', ink: '#F1F5FF', muted: '#99A5C2', accent: '#8B5CF6', accent2: '#A3E635', line: '#222D47', onAccent: '#FFFFFF' },
+    fonts: { display: 'bricolage-grotesque', body: 'outfit', displayAr: 'kufam', bodyAr: 'readex-pro' },
+    layout: { nav: 'pill', hero: 'zoom', gallery: 'rail', about: 'overlap' },
+    decor: ['progress', 'cursor', 'parallax'],
+  },
 ];

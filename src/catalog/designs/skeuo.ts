@@ -122,4 +122,14 @@ export const skeuo: DesignInput[] = [
     layout: { offer: 'cards' },
     css: 'html { --material: var(--wood); }',
   },
+  {
+    slug: 'slate-atelier', profile: 'portfolio',
+    name: { ar: 'لوح أردوازي', en: 'Slate Atelier' },
+    blurb: { ar: 'أردواز هندسي داكن وأزرار نحاسية مصقولة وبطاقات ورقية مخيطة، بورتفوليو بملمس طاولة المهندس.', en: 'Architectural dark slate, brushed brass buttons and stitched paper sheets — a tactile drafting-table portfolio.' },
+    scheme: 'dark',
+    palette: { bg: '#1E252B', surface: '#F3ECE0', ink: '#F2ECE4', muted: '#B6C2CC', accent: '#E0A948', accent2: '#5BA4B5', line: '#12171B', onAccent: '#181204' },
+    fonts: { display: 'playfair-display', body: 'lora', displayAr: 'amiri', bodyAr: 'noto-naskh-arabic' },
+    layout: { nav: 'bar', hero: 'split', gallery: 'cards', process: 'steps' },
+    css: 'html { --material: var(--slate); }',
+  },
 ];

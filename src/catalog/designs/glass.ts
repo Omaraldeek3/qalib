@@ -120,4 +120,14 @@ export const glass: DesignInput[] = [
     layout: { offer: 'menu', gallery: 'bento' },
     decor: ['blobs'],
   },
+  {
+    slug: 'frosted-cosmos', profile: 'portfolio',
+    name: { ar: 'زجاج ليلي', en: 'Frosted Cosmos' },
+    blurb: { ar: 'كحلي فضائي وأزرق سماوي وبنفسجي ناعم، ألواح زجاجية شفافة تطفو فوق بقع ضوئية متحركة.', en: 'Midnight indigo, sky cyan and orchid — translucent glass panels floating over softly drifting light fields.' },
+    scheme: 'dark',
+    palette: { bg: '#070B19', surface: '#10172D', ink: '#EEF4FF', muted: '#9BA8C7', accent: '#38BDF8', accent2: '#C084FC', line: '#1F2A4D', onAccent: '#031521' },
+    fonts: { display: 'outfit', body: 'inter', displayAr: 'cairo', bodyAr: 'tajawal' },
+    layout: { nav: 'pill', hero: 'centered', gallery: 'bento', offer: 'cards' },
+    decor: ['blobs', 'progress'],
+  },
 ];

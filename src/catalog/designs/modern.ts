@@ -112,4 +112,14 @@ export const modern: DesignInput[] = [
     fonts: { display: 'work-sans', body: 'work-sans', displayAr: 'tajawal', bodyAr: 'tajawal' },
     layout: { nav: 'pill', hero: 'fullbleed', offer: 'bento', gallery: 'masonry', cta: 'image' },
   },
+  {
+    slug: 'obsidian-ember', profile: 'portfolio',
+    name: { ar: 'جمرة داكنة', en: 'Obsidian Ember' },
+    blurb: { ar: 'فحمي عميق وكهرماني دافئ ولمسة سماوية، بورتفوليو مطور ومصمم بنظام شبكي عصري وأرقام بارزة.', en: 'Deep obsidian, warm amber and a cyan spark — a modern developer-designer portfolio with big metrics and crisp bento cards.' },
+    scheme: 'dark',
+    palette: { bg: '#09090B', surface: '#141418', ink: '#F4F4F6', muted: '#9E9EA8', accent: '#F59E0B', accent2: '#22D3EE', line: '#23232A', onAccent: '#140C00' },
+    fonts: { display: 'space-grotesk', body: 'inter', displayAr: 'alexandria', bodyAr: 'ibm-plex-sans-arabic', accent: 'jetbrains-mono' },
+    layout: { nav: 'bar', hero: 'split', offer: 'bento', gallery: 'cards', about: 'columns', stats: 'big' },
+    decor: ['progress'],
+  },
 ];

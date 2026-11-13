@@ -20,7 +20,7 @@ export type ProfileId =
   | 'wedding' | 'conference' | 'signage' | 'hotel' | 'academy' | 'gym'
   | 'realestate' | 'law'
   | 'bookshop' | 'music' | 'garage' | 'florist' | 'vet' | 'cowork' | 'gallery' | 'wallet'
-  | 'dive' | 'trails' | 'stars' | 'travel' | 'bikes';
+  | 'dive' | 'trails' | 'stars' | 'travel' | 'bikes' | 'portfolio';
 
 /** A photo in public/img, named by its Lorem Picsum id. */
 export type ImgId = number;

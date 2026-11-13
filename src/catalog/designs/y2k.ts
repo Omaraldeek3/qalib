@@ -120,4 +120,14 @@ export const y2k: DesignInput[] = [
     layout: { pricing: 'pricing', process: 'steps' },
     decor: ['sparkles'],
   },
+  {
+    slug: 'chrome-2000', profile: 'portfolio',
+    name: { ar: 'كروم ٢٠٠٠', en: 'Chrome 2000' },
+    blurb: { ar: 'فضي قزحي وأزرق كوبالت وماجنتا لامع، واجهة Y2K مستقبلية بهواتف عرض وشبكة بينتو مشرقة.', en: 'Iridescent chrome silver, cobalt and electric magenta — a futuristic Y2K showcase with device frames and bento tiles.' },
+    scheme: 'light',
+    palette: { bg: '#E9EEF8', surface: '#F8FAFF', ink: '#0E1B3D', muted: '#4E5D82', accent: '#1E40AF', accent2: '#D91B7A', line: '#CAD6F0', onAccent: '#FFFFFF' },
+    fonts: { display: 'orbitron', body: 'space-grotesk', displayAr: 'beiruti', bodyAr: 'cairo' },
+    layout: { nav: 'pill', hero: 'device', offer: 'cards', gallery: 'bento' },
+    decor: ['sparkles'],
+  },
 ];

@@ -118,4 +118,14 @@ export const artdeco: DesignInput[] = [
     layout: { hero: 'centered', gallery: 'masonry', process: 'steps' },
     decor: ['sunburst', 'divider-deco'],
   },
+  {
+    slug: 'gilded-arch', profile: 'portfolio',
+    name: { ar: 'قوس مذهّب', en: 'Gilded Arch' },
+    blurb: { ar: 'أزرق بترولي ليلي وذهب شامبانيا، بورتفوليو بواجهات هندسية مذهّبة وإشعاع آرت ديكو متماثل.', en: 'Midnight petrol teal and champagne gold — symmetrical Art Deco framing with golden sunburst rays.' },
+    scheme: 'dark',
+    palette: { bg: '#0A1A1F', surface: '#11262D', ink: '#F7F2E7', muted: '#A6BDC4', accent: '#E5C158', accent2: '#D97757', line: '#1D3B45', onAccent: '#0A1A1F' },
+    fonts: { display: 'cinzel', body: 'josefin-sans', displayAr: 'el-messiri', bodyAr: 'tajawal' },
+    layout: { nav: 'center', hero: 'framed', gallery: 'cards', about: 'columns' },
+    decor: ['sunburst', 'divider-deco'],
+  },
 ];

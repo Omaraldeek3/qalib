@@ -117,4 +117,13 @@ export const editorial: DesignInput[] = [
     layout: { offer: 'menu', extra: 'list', gallery: 'masonry' },
     decor: ['mono'],
   },
+  {
+    slug: 'monograph', profile: 'portfolio',
+    name: { ar: 'مجلّد', en: 'Monograph' },
+    blurb: { ar: 'ورق دافئ وحبر فحمي وأزرق كوبالت، بورتفوليو كغلاف مجلة تصميم بثلاثة أعمدة ومشاريع متعرجة.', en: 'Warm editorial paper, charcoal ink and cobalt blue — a magazine-cover portfolio with three-column intro and zigzag case studies.' },
+    scheme: 'light',
+    palette: { bg: '#F5F1E8', surface: '#FCF9F2', ink: '#181614', muted: '#615B52', accent: '#1D4ED8', accent2: '#B45309', line: '#DFD8CA', onAccent: '#FFFFFF' },
+    fonts: { display: 'fraunces', body: 'newsreader', displayAr: 'amiri', bodyAr: 'noto-naskh-arabic' },
+    layout: { nav: 'center', hero: 'editorial', gallery: 'zigzag', about: 'overlap', quotes: 'single' },
+  },
 ];

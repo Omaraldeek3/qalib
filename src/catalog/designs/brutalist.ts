@@ -123,4 +123,14 @@ export const brutalist: DesignInput[] = [
     layout: { hero: 'device', offer: 'cards', pricing: 'pricing' },
     decor: ['mono', 'grid'],
   },
+  {
+    slug: 'acid-block', profile: 'portfolio',
+    name: { ar: 'كتلة حمضية', en: 'Acid Block' },
+    blurb: { ar: 'رمادي إسمنتي وأسود صارم وليموني نيون، بورتفوليو جريء كملصق شارع بحدود سميكة وظلال صلبة.', en: 'Raw concrete grey, stark black and acid lime — a bold poster-style portfolio with hard shadows and exposed grids.' },
+    scheme: 'light',
+    palette: { bg: '#ECECE7', surface: '#FFFFFF', ink: '#000000', muted: '#3D3D38', accent: '#D9FF00', accent2: '#FF3B00', line: '#000000', onAccent: '#000000' },
+    fonts: { display: 'archivo-black', body: 'space-mono', displayAr: 'changa', bodyAr: 'ibm-plex-sans-arabic' },
+    layout: { nav: 'bar', hero: 'poster', gallery: 'cards', process: 'table' },
+    decor: ['grid'],
+  },
 ];

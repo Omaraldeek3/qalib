@@ -110,4 +110,13 @@ export const minimal: DesignInput[] = [
     layout: { hero: 'split', offer: 'list', process: 'list', pricing: 'table' },
     decor: ['mono'],
   },
+  {
+    slug: 'chalk-line', profile: 'portfolio',
+    name: { ar: 'سطر طباشيري', en: 'Chalk Line' },
+    blurb: { ar: 'أبيض معرض فني وطيني محروق واحد، بورتفوليو يبدأ بعنوان ضخم ثم قوائم فائقة النقاء.', en: 'Gallery white and a single terracotta accent — a typographic portfolio with clean hairline lists and quiet whitespace.' },
+    scheme: 'light',
+    palette: { bg: '#FAFAFA', surface: '#FFFFFF', ink: '#111111', muted: '#666666', accent: '#C84B31', accent2: '#A3A3A3', line: '#E5E5E5', onAccent: '#FFFFFF' },
+    fonts: { display: 'inter-tight', body: 'inter', displayAr: 'noto-kufi-arabic', bodyAr: 'mada' },
+    layout: { nav: 'minimal', hero: 'type', offer: 'list', gallery: 'masonry', about: 'quote', process: 'list' },
+  },
 ];

@@ -129,4 +129,15 @@ export const interactive: DesignInput[] = [
     decor: ['progress'],
     css: '.hero--curtain { --curtain-1: #5E7A68; --curtain-2: #4C6656; --curtain-ink: #F3EEE4; --curtain-knob: #C9A27E; }',
   },
+  {
+    slug: 'curtain-folio', profile: 'portfolio',
+    name: { ar: 'ستارة العرض', en: 'Curtain Folio' },
+    blurb: { ar: 'عنابي ليلي وذهبي دافئ؛ ستارة تحمل الاسم تنفتح مع التمرير، والنبذة تُضاء كلمة بكلمة، والمشاريع تمر أفقياً.', en: 'Burgundy noir and warm gold — a scroll-parting curtain reveals the portfolio, text lights up word by word, and projects glide on a rail.' },
+    scheme: 'dark',
+    palette: { bg: '#120B0E', surface: '#1C1216', ink: '#F6ECEF', muted: '#B8A0A8', accent: '#E8C170', accent2: '#C83E5B', line: '#2E1F25', onAccent: '#181003' },
+    fonts: { display: 'syne', body: 'manrope', displayAr: 'el-messiri', bodyAr: 'readex-pro' },
+    layout: { nav: 'minimal', hero: 'curtain', about: 'scrub', gallery: 'rail' },
+    decor: ['progress', 'cursor'],
+    css: '.hero--curtain { --curtain-1: #6B1A30; --curtain-2: #4E1122; --curtain-ink: #F6DFB0; --curtain-knob: #E8C170; }',
+  },
 ];

@@ -35,13 +35,13 @@ function* strings(v: unknown, path = ''): Generator<[string, L]> {
 }
 
 describe('catalogue', () => {
-  it('has 27 styles with 12 designs each, numbered 1 to 324', () => {
+  it('has 27 styles with at least 12 designs each, numbered sequentially', () => {
     assert.equal(CATEGORIES.length, 27);
-    for (const c of CATEGORIES) assert.equal(DESIGNS.filter(d => d.cat === c.id).length, 12, c.id);
-    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: 324 }, (_, i) => i + 1));
+    for (const c of CATEGORIES) assert.ok(DESIGNS.filter(d => d.cat === c.id).length >= 12, c.id);
+    assert.deepEqual(DESIGNS.map(d => d.no), Array.from({ length: DESIGNS.length }, (_, i) => i + 1));
   });
 
-  it('gives every style twelve different demo businesses', () => {
+  it('gives every style different demo businesses', () => {
     for (const c of CATEGORIES) {
       const profiles = DESIGNS.filter(d => d.cat === c.id).map(d => d.profile);
       assert.equal(new Set(profiles).size, profiles.length, c.id);
@@ -52,7 +52,7 @@ describe('catalogue', () => {
     const per = new Map<string, number>();
     for (const d of DESIGNS) per.set(d.profile, (per.get(d.profile) ?? 0) + 1);
     assert.equal(per.size, Object.keys(PROFILES).length);
-    for (const [profile, n] of per) assert.ok(n >= 5 && n <= 12, `${profile}: ${n} designs`);
+    for (const [profile, n] of per) assert.ok(n >= 5, `${profile}: ${n} designs`);
   });
 
   it('sends every renamed address to a design that exists, and never hides one', () => {

@@ -112,4 +112,14 @@ export const aurora: DesignInput[] = [
     fonts: { display: 'lexend', body: 'lexend', displayAr: 'zain', bodyAr: 'zain', accent: 'jetbrains-mono' },
     layout: { pricing: 'pricing', process: 'steps' },
   },
+  {
+    slug: 'solar-flare', profile: 'portfolio',
+    name: { ar: 'توهّج', en: 'Solar Flare' },
+    blurb: { ar: 'بنفسجي معتم وبرتقالي مرجاني وفيروزي كهربائي، واجهة بملء الشاشة وشريط مشاريع أفقي مع توهج شفق.', en: 'Deep plum black, coral flare and electric teal — a full-bleed hero, scroll-lit manifesto and horizontal project rail.' },
+    scheme: 'dark',
+    palette: { bg: '#0D0916', surface: '#161124', ink: '#F6F2FF', muted: '#A99EC4', accent: '#FF5E3A', accent2: '#00E5C3', line: '#261E3D', onAccent: '#180500' },
+    fonts: { display: 'unbounded', body: 'dm-sans', displayAr: 'alexandria', bodyAr: 'ibm-plex-sans-arabic' },
+    layout: { nav: 'pill', hero: 'fullbleed', gallery: 'rail', about: 'scrub', stats: 'big' },
+    decor: ['progress', 'cursor'],
+  },
 ];

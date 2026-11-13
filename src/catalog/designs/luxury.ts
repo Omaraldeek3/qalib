@@ -110,4 +110,14 @@ export const luxury: DesignInput[] = [
     fonts: { display: 'bodoni-moda', body: 'work-sans', displayAr: 'aref-ruqaa', bodyAr: 'almarai' },
     layout: { schedule: 'table' },
   },
+  {
+    slug: 'velvet-brass', profile: 'portfolio',
+    name: { ar: 'مخمل ونحاس', en: 'Velvet & Brass' },
+    blurb: { ar: 'إسبريسو داكن وعاجي دافئ وذهب مصقول، بورتفوليو فاخر بإطار مهيب وعناوين رفيعة التباين.', en: 'Espresso black, warm ivory and brushed brass — an architectural luxury portfolio with a framed hero and high-contrast serif display.' },
+    scheme: 'dark',
+    palette: { bg: '#0F0C0A', surface: '#1A1512', ink: '#F5EFE6', muted: '#B0A494', accent: '#D4AF37', accent2: '#8C6D46', line: '#2B231D', onAccent: '#141004' },
+    fonts: { display: 'bodoni-moda', body: 'manrope', displayAr: 'markazi-text', bodyAr: 'tajawal' },
+    layout: { nav: 'split', hero: 'framed', gallery: 'masonry', about: 'quote', quotes: 'single' },
+    decor: ['progress'],
+  },
 ];

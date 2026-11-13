@@ -122,4 +122,14 @@ export const heritage: DesignInput[] = [
     layout: { gallery: 'masonry', pricing: 'table', quotes: 'single' },
     decor: ['pattern', 'divider-star8'],
   },
+  {
+    slug: 'kufic-gold', profile: 'portfolio',
+    name: { ar: 'كوفي مذهّب', en: 'Kufic Gold' },
+    blurb: { ar: 'جوز داكن ونحاس ذهبي وأحمر تطريز فلسطيني، بورتفوليو معاصر بروح هندسية أصيلة وأقواس.', en: 'Dark walnut, brushed brass and Palestinian tatreez crimson — contemporary portfolio framed by geometric star bands.' },
+    scheme: 'dark',
+    palette: { bg: '#161210', surface: '#221B17', ink: '#F4EAE0', muted: '#B8A696', accent: '#C99A4B', accent2: '#A61E22', line: '#332822', onAccent: '#161210' },
+    fonts: { display: 'marcellus', body: 'lora', displayAr: 'reem-kufi', bodyAr: 'noto-naskh-arabic' },
+    layout: { nav: 'center', hero: 'arch', gallery: 'masonry', about: 'quote' },
+    decor: ['tatreez', 'pattern', 'divider-star8'],
+  },
 ];

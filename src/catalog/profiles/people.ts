@@ -382,3 +382,120 @@ export const conference: Profile = {
     },
   ],
 };
+
+export const portfolio: Profile = {
+  id: 'portfolio',
+  label: t('بورتفوليو', 'Portfolio'),
+  brand: t('عمر الديك', 'Omar Aldeek'),
+  mark: t('ع', 'O'),
+  tagline: t('مبرمج · مصمّم · باني أنظمة أتمتة', 'Developer · Designer · Automation builder'),
+  navCta: t('تواصل معي', 'Let\'s talk'),
+  socials: ['x', 'linkedin', 'youtube', 'behance'],
+  sections: [
+    {
+      kind: 'hero',
+      eyebrow: t('استوديو شخص واحد · فلسطين', 'One-person studio · Palestine'),
+      title: t('أبني مواقع وأدوات وأنظمة تعمل وحدها', 'I build sites, tools and systems that run themselves'),
+      lead: t('أصمّم واجهات ثنائية اللغة، أكتب برمجيات سريعة بالويب، وأبني أدوات مفتوحة المصدر وخطوط أتمتة بالذكاء الاصطناعي.', 'I design bilingual interfaces, ship fast web apps, and build open-source browser tools and AI automation pipelines.'),
+      cta: t('استكشف الأعمال', 'Explore work'),
+      cta2: t('ابدأ مشروعاً', 'Start a project'),
+      img: 0,
+      imgs: [1, 3, 7, 8, 20, 24, 26, 36, 42, 48, 60, 103, 119, 160, 180, 192, 200, 252, 304],
+      badge: t('متاح للمشاريع المختارة', 'Open for select projects'),
+    },
+    {
+      kind: 'stats',
+      items: [
+        { value: '29', label: t('أداة متصفح مجانية', 'free browser tools') },
+        { value: '9', label: t('أنظمة أتمتة تعمل يومياً', 'daily automation systems') },
+        { value: '324+', label: t('تصميم في قالب', 'designs in Qalib') },
+        { value: '436', label: t('خط عربي ولاتيني في حرف', 'fonts in Harf') },
+      ],
+    },
+    {
+      kind: 'items', id: 'fields', nav: t('المجالات', 'Fields'), role: 'offer',
+      eyebrow: t('ما أبنيه', 'What I build'),
+      title: t('أربع طبقات، يد واحدة تبنيها', 'Four layers, one pair of hands'),
+      items: [
+        item(t('مواقع وتطبيقات ويب', 'Web apps & sites'), { text: t('واجهات سريعة ثنائية اللغة بـ Next.js وTypeScript تبدأ من الهاتف.', 'Fast bilingual interfaces in Next.js and TypeScript, mobile-first.'), icon: 'code', img: 526 }),
+        item(t('التصميم والهوية البصرية', 'Design & visual identity'), { text: t('أنظمة ألوان وخطوط عربية نظيفة، وتصاميم SVG للطباعة والقص بالليزر.', 'Clean Arabic type systems, UI design and 1:1 SVG files for print and laser.'), icon: 'pen-tool', img: 534 }),
+        item(t('أنظمة الأتمتة بالذكاء الاصطناعي', 'AI automation pipelines'), { text: t('ربط النماذج اللغوية وn8n وجداول التشغيل لتكمل العمل دون تدخل.', 'Connecting LLMs, n8n and scheduled workers to finish work autonomously.'), icon: 'cpu', img: 668 }),
+        item(t('منتجات وأدوات متصفح', 'Browser tools & SaaS'), { text: t('أدوات تعمل محلياً على جهازك بلا حساب، ولوحات تحكم ببيانات حقيقية.', 'No-account local browser tools and full-stack SaaS dashboards.'), icon: 'layers', img: 823 }),
+      ],
+    },
+    {
+      kind: 'items', id: 'lab', nav: t('المختبر', 'Lab'), role: 'gallery',
+      eyebrow: t('المختبر الحي', 'Live lab'),
+      title: t('مشاريع مفتوحة تعمل الآن', 'Open tools running right now'),
+      items: [
+        item(t('Cut Studio', 'Cut Studio'), { meta: t('٢٩ أداة ليزر وتصميم', '29 laser & design tools'), img: 326 }),
+        item(t('قالب · Qalib', 'Qalib'), { meta: t('مكتبة تصاميم ثنائية اللغة', 'Bilingual design library'), img: 352 }),
+        item(t('حرف · Harf', 'Harf'), { meta: t('معاينة ٤٣٦ خطاً وتصدير SVG', '436 fonts & SVG outlines'), img: 366 }),
+        item(t('نقش · Naqsh', 'Naqsh'), { meta: t('٤٨٠ زخرفة هندسية وعربية', '480 geometric & floral SVGs'), img: 370 }),
+        item(t('شكل · Shakl', 'Shakl'), { meta: t('٣٠٢ تصميم خشبي ثلاثي الأبعاد', '302 3D laser-cut templates'), img: 400 }),
+        item(t('سيرة · Sira', 'Sira'), { meta: t('منشئ سيرة ذاتية ثنائي اللغة', 'Bilingual CV PDF builder'), img: 445 }),
+      ],
+    },
+    {
+      kind: 'about', id: 'about', nav: t('عنّي', 'About'),
+      eyebrow: t('عنّي', 'About me'),
+      title: t('أبدأ بالمشكلة، وأترك الأداة مفتوحة للجميع', 'I start from the problem, and leave the tool open'),
+      text: [
+        t('أعمل وحدي منذ بدأت: أتعلم الأداة التي تنقصني، أبني بها حلاً عملياً لورشتي أو عملي، ثم أتركه مجاناً على الويب ليستخدمه غيري.', 'I work as a one-person studio: I learn the tool I need, build a practical solution for my own workshop or workflow, and release it free on the web.'),
+        t('أركز على التوازن الدقيق بين العربية والإنجليزية: خطوط عربية حقيقية، اتجاه RTL مدروس، وأداء سريع بلا تعقيد.', 'I care deeply about parity between Arabic and English: real Arabic typography, thoughtful RTL layouts, and fast performance without bloat.'),
+      ],
+      img: 1, img2: 366,
+      quote: t('أداة واحدة لا تكفي؛ أبني ما يشغّلها.', 'One tool is never enough; I build what runs it.'),
+      sign: t('عمر الديك', 'Omar Aldeek'),
+    },
+    {
+      kind: 'items', id: 'process', role: 'process',
+      eyebrow: t('كيف أعمل', 'How I work'),
+      title: t('ثلاث قواعد عملية', 'Three working rules'),
+      items: [
+        item(t('المشكلة قبل الشكل', 'Problem before decoration'), { text: t('كل واجهة تبدأ بسيناريو الاستخدام الفعلي وما يحتاج المستخدم إنجازه في ٣٠ ثانية.', 'Every interface starts from the real workflow and what the user needs done in 30 seconds.'), icon: 'compass' }),
+        item(t('ثنائي اللغة أصيل', 'Native bilingual RTL/LTR'), { text: t('العربية ليست ترجمة فوق قالب إنجليزي؛ الخطوط والهوامش والحركة تُصمم للجهتين.', 'Arabic is never pasted onto an English template; type, spacing and motion are built for both.'), icon: 'sparkles' }),
+        item(t('أنظمة تقاس بالنتيجة', 'Systems measured by output'), { text: t('كود نظيف، معالجة أخطاء واضحة، وتكاملات تعمل في الخلفية دون مراقبة مستمرة.', 'Clean code, explicit error handling and integrations that run reliably unattended.'), icon: 'package-check' }),
+      ],
+    },
+    {
+      kind: 'testimonials', id: 'notes',
+      eyebrow: t('انطباعات', 'Notes'),
+      title: t('ما يقوله من جرّب الأدوات', 'From people using the tools'),
+      items: [
+        { quote: t('حرف وفر عليّ ساعات من تنزيل الخطوط وتجربتها على تصاميم العملاء.', 'Harf saved me hours of downloading fonts and testing them one by one for client work.'), name: t('طارق السالم', 'Tareq Al-Salem'), role: t('مصمم جرافيك', 'Graphic designer') },
+        { quote: t('أدوات Cut Studio تعمل فوراً من المتصفح دون تسجيل، وهذا ما تحتاجه الورش.', 'Cut Studio tools run right in the browser with no sign-up — exactly what workshops need.'), name: t('ليلى منصور', 'Laila Mansour'), role: t('صاحبة ورشة قص ليزر', 'Laser workshop owner') },
+        { quote: t('نظام الأتمتة يختصر أسبوع عمل كامل إلى خط إنتاج منتظم ومراقب.', 'The automation pipeline turns a whole week of manual work into a steady, monitored line.'), name: t('رامي خليل', 'Rami Khalil'), role: t('مؤسس قناة رقمية', 'Digital channel founder') },
+      ],
+    },
+    {
+      kind: 'faq', id: 'faq',
+      eyebrow: t('أسئلة شائعة', 'FAQ'),
+      title: t('أسئلة قبل أن نبدأ', 'Before we start'),
+      items: [
+        { q: t('ما الذي أحتاجه قبل التواصل؟', 'What do I need before reaching out?'), a: t('وصف واضح للمشكلة أو الفكرة وما تريد أن يتغير؛ لا تحتاج لمواصفة تقنية كاملة.', 'A clear description of the problem or idea and what should change; no technical spec needed.') },
+        { q: t('هل تبني أنظمة مخصصة أم مواقع فقط؟', 'Do you build custom systems or only websites?'), a: t('أبني المواقع التفاعلية، لوحات SaaS، وخطوط الأتمتة بالذكاء الاصطناعي وربط الواجهات البرمجية.', 'I build interactive websites, SaaS dashboards, AI automation pipelines and API integrations.') },
+        { q: t('كم يستغرق تنفيذ المشروع؟', 'How long does a project take?'), a: t('يعتمد على النطاق؛ بعد أول محادثة تحصل على جدول زمني واقعي ومراحل تسليم واضحة.', 'Depends on scope; after our first conversation you get a realistic timeline and clear milestones.') },
+      ],
+    },
+    {
+      kind: 'cta',
+      title: t('عندك فكرة تحتاج شكلاً أو كوداً أو نظاماً؟', 'Have an idea that needs shape, code, or a system?'),
+      text: t('لنبني شيئاً سريعاً، دقيقاً، ويعمل من اليوم الأول.', 'Let\'s build something fast, sharp, and ready from day one.'),
+      cta: t('ابدأ المحادثة', 'Start a conversation'),
+      img: 60,
+    },
+    {
+      kind: 'contact', id: 'contact', nav: t('تواصل', 'Contact'),
+      eyebrow: t('تواصل', 'Contact'),
+      title: t('لنتحدث عن مشروعك القادم', 'Let\'s talk about your next build'),
+      text: t('أرسل نبذة قصيرة عن الفكرة والموعد المتوقع، وسأرد عليك بتصور واضح.', 'Send a short note about your idea and timeline, and I\'ll reply with a clear plan.'),
+      phone: '+970 59 000 0000', whatsapp: '+970 59 000 0000', email: 'hello@omardeek.tech',
+      address: t('من فلسطين، إلى كل مكان', 'From Palestine, to everywhere'),
+      hours: [
+        { d: t('الرد المعتاد', 'Typical reply'), t: t('خلال ٢٤ ساعة', 'Within 24 hours') },
+      ],
+      cta: t('أرسل رسالة', 'Send a message'),
+    },
+  ],
+};

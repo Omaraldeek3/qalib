@@ -1,6 +1,6 @@
 # Qalib · قالب
 
-A library of website and app designs. 324 designs in 27 styles, twelve each, every one with a live demo in Arabic and English and a detailed prompt that tells Claude Code how to build it. The Tool interfaces style shows working apps (a cutting bench, a kitchen board, a clinic calendar and more) rather than websites.
+A library of website and app designs. 344 designs in 27 styles, every one with a live demo in Arabic and English and a detailed prompt that tells Claude Code how to build it. The Tool interfaces style shows working apps (a cutting bench, a kitchen board, a clinic calendar and more) rather than websites.
 
 **Live:** https://qalib.omardeek.tech
 

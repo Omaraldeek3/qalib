@@ -112,4 +112,14 @@ export const bento: DesignInput[] = [
     fonts: { display: 'space-grotesk', body: 'inter', displayAr: 'kufam', bodyAr: 'ibm-plex-sans-arabic', accent: 'ibm-plex-mono' },
     layout: { hero: 'fullbleed', gallery: 'bento' },
   },
+  {
+    slug: 'grid-os', profile: 'portfolio',
+    name: { ar: 'نظام الشبكة', en: 'Grid OS' },
+    blurb: { ar: 'أسود كربوني وأخضر نعناعي وبنفسجي، بورتفوليو على هيئة لوحة منتجات متكاملة بأحجام بطاقات متباينة.', en: 'Carbon black, electric mint and indigo — a product-builder portfolio arranged like a live modular OS dashboard.' },
+    scheme: 'dark',
+    palette: { bg: '#0B0D10', surface: '#151921', ink: '#F1F5F9', muted: '#94A3B8', accent: '#34D399', accent2: '#818CF8', line: '#232936', onAccent: '#041A10' },
+    fonts: { display: 'sora', body: 'plus-jakarta-sans', displayAr: 'readex-pro', bodyAr: 'tajawal', accent: 'jetbrains-mono' },
+    layout: { nav: 'pill', hero: 'device', offer: 'bento', gallery: 'bento', stats: 'big' },
+    decor: ['grid'],
+  },
 ];

@@ -117,4 +117,15 @@ export const clay: DesignInput[] = [
     fonts: { display: 'fredoka', body: 'nunito', displayAr: 'lemonada', bodyAr: 'tajawal' },
     layout: { offer: 'menu', hero: 'split' },
   },
+  {
+    slug: 'atelier-clay', profile: 'portfolio',
+    name: { ar: 'أتيليه صلصال', en: 'Atelier Clay' },
+    blurb: { ar: 'كريمي دافئ ومرجاني ونعناعي، بطاقات منتفخة ناعمة الملمس وتركيب صور متداخل.', en: 'Warm cream, coral and mint — friendly puffed clay cards, overlapping collage hero and playful rounded geometry.' },
+    scheme: 'light',
+    palette: { bg: '#FFF4EA', surface: '#FFFCF8', ink: '#2F1F16', muted: '#6E5A4E', accent: '#E85D3F', accent2: '#2D9C82', line: '#F2DFCE', onAccent: '#FFFFFF' },
+    fonts: { display: 'fredoka', body: 'nunito', displayAr: 'baloo-bhaijaan-2', bodyAr: 'cairo' },
+    layout: { nav: 'pill', hero: 'collage', gallery: 'bento', process: 'steps' },
+    decor: ['blobs'],
+    radius: 28,
+  },
 ];
